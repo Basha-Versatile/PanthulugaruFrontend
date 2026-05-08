@@ -43,21 +43,81 @@ const NAV_LINKS = [
 ];
 
 const SERVICES_LINKS = [
-  { href: "/pandits", label: "Pandits", icon: Star, description: "Find experienced pandits" },
-  { href: "/photographers", label: "Photographers", icon: Camera, description: "Capture sacred moments" },
-  { href: "/caterers", label: "Caterers", icon: UtensilsCrossed, description: "Traditional feast service" },
-  { href: "/horoscope", label: "Horoscope", icon: Sun, description: "Vedic astrology readings" },
-  { href: "/rituals", label: "Rituals", icon: BookOpen, description: "Browse all Hindu poojas" },
-  { href: "/panchangam", label: "Panchangam", icon: CalendarDays, description: "Calendar & muhurtham" },
-  { href: "/temple-jobs", label: "Temple Jobs", icon: Briefcase, description: "Temple career openings" },
-  { href: "/monthly-hire", label: "Monthly Hire", icon: Clock, description: "Hire pandits monthly" },
-  { href: "/greetings", label: "Greetings", icon: Sparkles, description: "Festival greetings cards" },
+  {
+    href: "/pandits",
+    label: "Pandits",
+    icon: Star,
+    description: "Find experienced pandits",
+  },
+  {
+    href: "/photographers",
+    label: "Photographers",
+    icon: Camera,
+    description: "Capture sacred moments",
+  },
+  {
+    href: "/caterers",
+    label: "Caterers",
+    icon: UtensilsCrossed,
+    description: "Traditional feast service",
+  },
+  {
+    href: "/horoscope",
+    label: "Horoscope",
+    icon: Sun,
+    description: "Vedic astrology readings",
+  },
+  {
+    href: "/rituals",
+    label: "Rituals",
+    icon: BookOpen,
+    description: "Browse all Hindu poojas",
+  },
+  {
+    href: "/panchangam",
+    label: "Panchangam",
+    icon: CalendarDays,
+    description: "Calendar & muhurtham",
+  },
+  {
+    href: "/temple-jobs",
+    label: "Temple Jobs",
+    icon: Briefcase,
+    description: "Temple career openings",
+  },
+  {
+    href: "/monthly-hire",
+    label: "Monthly Hire",
+    icon: Clock,
+    description: "Hire pandits monthly",
+  },
+  {
+    href: "/greetings",
+    label: "Greetings",
+    icon: Sparkles,
+    description: "Festival greetings cards",
+  },
 ];
 
 const MORE_LINKS = [
-  { href: "/vaahan-puja", label: "Vaahan Puja", icon: Truck, description: "Vehicle blessing ceremonies" },
-  { href: "/death-anniversary", label: "Death Anniversary", icon: Heart, description: "Shraddha & memorial rituals" },
-  { href: "/celebrities", label: "Celebrities", icon: Users, description: "Celebrity endorsements" },
+  {
+    href: "/vaahan-puja",
+    label: "Vaahan Puja",
+    icon: Truck,
+    description: "Vehicle blessing ceremonies",
+  },
+  {
+    href: "/death-anniversary",
+    label: "Death Anniversary",
+    icon: Heart,
+    description: "Shraddha & memorial rituals",
+  },
+  {
+    href: "/celebrities",
+    label: "Celebrities",
+    icon: Users,
+    description: "Celebrity endorsements",
+  },
 ];
 
 export function Header() {
@@ -94,7 +154,10 @@ export function Header() {
   // Close dropdowns on outside click
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
-      if (profileRef.current && !profileRef.current.contains(event.target as Node)) {
+      if (
+        profileRef.current &&
+        !profileRef.current.contains(event.target as Node)
+      ) {
         setIsProfileDropdownOpen(false);
       }
     }
@@ -115,7 +178,10 @@ export function Header() {
     setIsMoreOpen(false);
   };
   const handleServicesLeave = () => {
-    servicesTimeoutRef.current = setTimeout(() => setIsServicesOpen(false), 150);
+    servicesTimeoutRef.current = setTimeout(
+      () => setIsServicesOpen(false),
+      150,
+    );
   };
   const handleMoreEnter = () => {
     if (moreTimeoutRef.current) clearTimeout(moreTimeoutRef.current);
@@ -134,11 +200,11 @@ export function Header() {
           <div className="flex items-center justify-between h-8 text-xs">
             <div className="hidden sm:flex items-center gap-4">
               <a
-                href="tel:+919999999999"
+                href="tel:+919876543210"
                 className="flex items-center gap-1.5 hover:text-[#F0C040] transition-colors"
               >
                 <Phone className="h-3 w-3" />
-                <span>+91 99999 99999</span>
+                <span>+91 9876543210</span>
               </a>
               <span className="w-px h-3 bg-white/20" />
               <a
@@ -160,7 +226,11 @@ export function Header() {
                 className="p-1 hover:text-[#F0C040] transition-colors"
                 aria-label="Facebook"
               >
-                <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="h-3.5 w-3.5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                 </svg>
               </a>
@@ -171,7 +241,11 @@ export function Header() {
                 className="p-1 hover:text-[#F0C040] transition-colors"
                 aria-label="Instagram"
               >
-                <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="h-3.5 w-3.5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
                 </svg>
               </a>
@@ -182,7 +256,11 @@ export function Header() {
                 className="p-1 hover:text-[#F0C040] transition-colors"
                 aria-label="YouTube"
               >
-                <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="h-3.5 w-3.5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
                 </svg>
               </a>
@@ -193,7 +271,11 @@ export function Header() {
                 className="p-1 hover:text-[#F0C040] transition-colors"
                 aria-label="Twitter"
               >
-                <svg className="h-3.5 w-3.5" fill="currentColor" viewBox="0 0 24 24">
+                <svg
+                  className="h-3.5 w-3.5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </a>
@@ -207,7 +289,10 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* ─── Logo ─── */}
-            <Link href="/" className="flex items-center gap-2 flex-shrink-0 group">
+            <Link
+              href="/"
+              className="flex items-center gap-2 flex-shrink-0 group"
+            >
               <img
                 src="/logo.png"
                 alt="Panthulu Garu"
@@ -215,8 +300,7 @@ export function Header() {
               />
               <div className="flex flex-col leading-tight">
                 <span className="text-lg font-bold tracking-tight text-[#8B1A1A]">
-                  Panthulu{" "}
-                  <span className="gradient-text">Garu</span>
+                  Panthulu <span className="gradient-text">Garu</span>
                 </span>
                 <span className="text-[9px] uppercase tracking-[0.2em] text-[#D4A017]/80 font-medium hidden sm:block">
                   Sacred Services Platform
@@ -233,7 +317,7 @@ export function Header() {
                   "relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group",
                   pathname === "/"
                     ? "text-[#8B1A1A] dark:text-[#D4A017]"
-                    : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]"
+                    : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]",
                 )}
               >
                 <span className="relative z-10">Home</span>
@@ -255,14 +339,14 @@ export function Header() {
                     "relative flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group",
                     SERVICES_LINKS.some((l) => pathname === l.href)
                       ? "text-[#8B1A1A] dark:text-[#D4A017]"
-                      : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]"
+                      : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]",
                   )}
                 >
                   <span className="relative z-10">Services</span>
                   <ChevronDown
                     className={cn(
                       "h-3.5 w-3.5 transition-transform duration-200",
-                      isServicesOpen && "rotate-180"
+                      isServicesOpen && "rotate-180",
                     )}
                   />
                   {SERVICES_LINKS.some((l) => pathname === l.href) && (
@@ -286,7 +370,7 @@ export function Header() {
                               "flex items-center gap-2.5 px-3 py-2.5 rounded-lg transition-all duration-150 group/item",
                               pathname === link.href
                                 ? "bg-[#FFF8F0] dark:bg-[#D4A017]/10 text-[#8B1A1A] dark:text-[#D4A017]"
-                                : "hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10 text-gray-700 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]"
+                                : "hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10 text-gray-700 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]",
                             )}
                           >
                             <div
@@ -294,12 +378,14 @@ export function Header() {
                                 "flex-shrink-0 p-2 rounded-lg transition-all duration-200",
                                 pathname === link.href
                                   ? "bg-gradient-to-br from-[#D4A017] to-[#E07B39] text-white shadow-sm"
-                                  : "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 group-hover/item:bg-gradient-to-br group-hover/item:from-[#D4A017] group-hover/item:to-[#E07B39] group-hover/item:text-white group-hover/item:shadow-sm"
+                                  : "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 group-hover/item:bg-gradient-to-br group-hover/item:from-[#D4A017] group-hover/item:to-[#E07B39] group-hover/item:text-white group-hover/item:shadow-sm",
                               )}
                             >
                               <Icon className="h-4.5 w-4.5" />
                             </div>
-                            <span className="text-sm font-semibold">{link.label}</span>
+                            <span className="text-sm font-semibold">
+                              {link.label}
+                            </span>
                           </Link>
                         );
                       })}
@@ -315,7 +401,7 @@ export function Header() {
                   "relative px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group",
                   pathname === "/articles"
                     ? "text-[#8B1A1A] dark:text-[#D4A017]"
-                    : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]"
+                    : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]",
                 )}
               >
                 <span className="relative z-10">Articles</span>
@@ -337,14 +423,14 @@ export function Header() {
                     "relative flex items-center gap-1 px-3.5 py-2 rounded-lg text-sm font-medium transition-all duration-200 group",
                     MORE_LINKS.some((l) => pathname === l.href)
                       ? "text-[#8B1A1A] dark:text-[#D4A017]"
-                      : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]"
+                      : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]",
                   )}
                 >
                   <span className="relative z-10">More</span>
                   <ChevronDown
                     className={cn(
                       "h-3.5 w-3.5 transition-transform duration-200",
-                      isMoreOpen && "rotate-180"
+                      isMoreOpen && "rotate-180",
                     )}
                   />
                   {MORE_LINKS.some((l) => pathname === l.href) && (
@@ -368,7 +454,7 @@ export function Header() {
                               "flex items-center gap-2.5 px-3 py-2.5 rounded-lg transition-all duration-150 group/item whitespace-nowrap",
                               pathname === link.href
                                 ? "bg-[#FFF8F0] dark:bg-[#D4A017]/10 text-[#8B1A1A] dark:text-[#D4A017]"
-                                : "hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10 text-gray-700 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]"
+                                : "hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10 text-gray-700 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017]",
                             )}
                           >
                             <div
@@ -376,12 +462,14 @@ export function Header() {
                                 "flex-shrink-0 p-2 rounded-lg transition-all duration-200",
                                 pathname === link.href
                                   ? "bg-gradient-to-br from-[#D4A017] to-[#E07B39] text-white shadow-sm"
-                                  : "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 group-hover/item:bg-gradient-to-br group-hover/item:from-[#D4A017] group-hover/item:to-[#E07B39] group-hover/item:text-white group-hover/item:shadow-sm"
+                                  : "bg-gray-100 dark:bg-gray-700 text-gray-500 dark:text-gray-400 group-hover/item:bg-gradient-to-br group-hover/item:from-[#D4A017] group-hover/item:to-[#E07B39] group-hover/item:text-white group-hover/item:shadow-sm",
                               )}
                             >
                               <Icon className="h-4.5 w-4.5" />
                             </div>
-                            <span className="text-sm font-semibold">{link.label}</span>
+                            <span className="text-sm font-semibold">
+                              {link.label}
+                            </span>
                           </Link>
                         );
                       })}
@@ -431,7 +519,11 @@ export function Header() {
                 className="p-2 text-gray-500 dark:text-gray-400 hover:text-[#D4A017] hover:bg-[#D4A017]/5 dark:hover:bg-[#D4A017]/10 rounded-full transition-all duration-200"
                 aria-label="Toggle dark mode"
               >
-                {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                {isDark ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )}
               </button>
 
               {/* Notification Bell */}
@@ -441,7 +533,9 @@ export function Header() {
               {isAuthenticated && user ? (
                 <div className="relative" ref={profileRef}>
                   <button
-                    onClick={() => setIsProfileDropdownOpen(!isProfileDropdownOpen)}
+                    onClick={() =>
+                      setIsProfileDropdownOpen(!isProfileDropdownOpen)
+                    }
                     className="flex items-center gap-2 px-2.5 py-1.5 rounded-full text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10 border border-transparent hover:border-[#D4A017]/20 transition-all duration-200"
                   >
                     <div className="h-8 w-8 rounded-full bg-gradient-to-br from-[#D4A017] to-[#E07B39] text-white flex items-center justify-center text-sm font-semibold shadow-sm">
@@ -453,7 +547,7 @@ export function Header() {
                     <ChevronDown
                       className={cn(
                         "h-3.5 w-3.5 transition-transform duration-200",
-                        isProfileDropdownOpen && "rotate-180"
+                        isProfileDropdownOpen && "rotate-180",
                       )}
                     />
                   </button>
@@ -529,7 +623,11 @@ export function Header() {
                 className="p-2 text-gray-500 dark:text-gray-400 hover:text-[#D4A017] transition-colors"
                 aria-label="Toggle dark mode"
               >
-                {isDark ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+                {isDark ? (
+                  <Sun className="h-5 w-5" />
+                ) : (
+                  <Moon className="h-5 w-5" />
+                )}
               </button>
               {/* Mobile search icon */}
               <button
@@ -546,7 +644,7 @@ export function Header() {
                   "p-2 rounded-lg transition-all duration-200",
                   isMobileMenuOpen
                     ? "text-[#8B1A1A] dark:text-[#D4A017] bg-[#FFF8F0] dark:bg-[#D4A017]/10"
-                    : "text-gray-500 dark:text-gray-400 hover:text-[#8B1A1A] dark:hover:text-[#D4A017] hover:bg-gray-50 dark:hover:bg-gray-800"
+                    : "text-gray-500 dark:text-gray-400 hover:text-[#8B1A1A] dark:hover:text-[#D4A017] hover:bg-gray-50 dark:hover:bg-gray-800",
                 )}
                 aria-label="Toggle menu"
               >
@@ -604,7 +702,7 @@ export function Header() {
                       "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150",
                       pathname === link.href
                         ? "text-[#8B1A1A] dark:text-[#D4A017] bg-gradient-to-r from-[#D4A017]/10 to-[#E07B39]/5"
-                        : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017] hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10"
+                        : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017] hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10",
                     )}
                   >
                     {pathname === link.href && (
@@ -626,7 +724,7 @@ export function Header() {
                 <ChevronDown
                   className={cn(
                     "h-3.5 w-3.5 transition-transform duration-200",
-                    isMobileServicesOpen && "rotate-180"
+                    isMobileServicesOpen && "rotate-180",
                   )}
                 />
               </button>
@@ -643,13 +741,15 @@ export function Header() {
                           "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150",
                           pathname === link.href
                             ? "text-[#8B1A1A] dark:text-[#D4A017] bg-gradient-to-r from-[#D4A017]/10 to-[#E07B39]/5"
-                            : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017] hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10"
+                            : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017] hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10",
                         )}
                       >
                         <Icon
                           className={cn(
                             "h-4 w-4 flex-shrink-0",
-                            pathname === link.href ? "text-[#D4A017]" : "text-gray-400"
+                            pathname === link.href
+                              ? "text-[#D4A017]"
+                              : "text-gray-400",
                           )}
                         />
                         <div>
@@ -675,7 +775,7 @@ export function Header() {
                 <ChevronDown
                   className={cn(
                     "h-3.5 w-3.5 transition-transform duration-200",
-                    isMobileMoreOpen && "rotate-180"
+                    isMobileMoreOpen && "rotate-180",
                   )}
                 />
               </button>
@@ -692,13 +792,15 @@ export function Header() {
                           "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-150",
                           pathname === link.href
                             ? "text-[#8B1A1A] dark:text-[#D4A017] bg-gradient-to-r from-[#D4A017]/10 to-[#E07B39]/5"
-                            : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017] hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10"
+                            : "text-gray-600 dark:text-gray-300 hover:text-[#8B1A1A] dark:hover:text-[#D4A017] hover:bg-[#FFF8F0] dark:hover:bg-[#D4A017]/10",
                         )}
                       >
                         <Icon
                           className={cn(
                             "h-4 w-4 flex-shrink-0",
-                            pathname === link.href ? "text-[#D4A017]" : "text-gray-400"
+                            pathname === link.href
+                              ? "text-[#D4A017]"
+                              : "text-gray-400",
                           )}
                         />
                         <div>
@@ -741,7 +843,9 @@ export function Header() {
                       <p className="text-sm font-semibold text-gray-800 dark:text-white truncate">
                         {user.firstName} {user.lastName}
                       </p>
-                      <p className="text-xs text-gray-400 truncate">{user.email}</p>
+                      <p className="text-xs text-gray-400 truncate">
+                        {user.email}
+                      </p>
                     </div>
                   </div>
 
@@ -806,11 +910,11 @@ export function Header() {
             <div className="mt-4 pt-3 border-t border-[#D4A017]/10 dark:border-gray-700">
               <div className="flex flex-wrap items-center gap-3 px-3 text-xs text-gray-400">
                 <a
-                  href="tel:+919999999999"
+                  href="tel:+919876543210"
                   className="flex items-center gap-1.5 hover:text-[#D4A017] transition-colors"
                 >
                   <Phone className="h-3 w-3" />
-                  <span>+91 99999 99999</span>
+                  <span>+91 9876543210</span>
                 </a>
                 <a
                   href="mailto:info@panthulugaru.com"
