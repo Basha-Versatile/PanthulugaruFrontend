@@ -31,7 +31,7 @@ type ServiceListingPageProps = {
 
 const heroConfig = {
   pandit: {
-    gradient: 'from-[#E07B39] to-[#c96a2e]',
+    gradient: 'from-[#FF6B00] to-[#E05E00]',
     description: 'Find experienced and trusted pandits for your sacred ceremonies, pujas, and religious events.',
     icon: Sparkles,
   },
@@ -146,7 +146,7 @@ function ServiceListingPageInner({ type, title, fetchFn, filters = [] }: Service
   const HeroIcon = hero.icon;
 
   return (
-    <div className="min-h-screen bg-cream dark:bg-[#121212]">
+    <div className="min-h-screen bg-cream dark:bg-[#0D0907]">
       {/* Premium Hero Banner */}
       <div className={`relative bg-linear-to-r ${hero.gradient} overflow-hidden`}>
         {/* Decorative background elements */}
@@ -185,7 +185,7 @@ function ServiceListingPageInner({ type, title, fetchFn, filters = [] }: Service
         {/* Search bar and controls */}
         <div className="flex flex-col gap-4 mb-6 -mt-6 relative z-10">
           {/* Search bar card */}
-          <div className="bg-white dark:bg-[#1e1e1e] rounded-2xl shadow-lg shadow-black/5 dark:shadow-black/20 border border-gray-100 dark:border-gray-700 p-3 sm:p-4">
+          <div className="bg-white dark:bg-[#1A1210] rounded-2xl shadow-lg shadow-black/5 dark:shadow-black/20 border border-gray-100 dark:border-gray-700 p-3 sm:p-4">
             <div className="flex flex-col sm:flex-row gap-3">
               <form onSubmit={handleSearch} className="flex-1 flex gap-2">
                 <div className="relative flex-1">
@@ -195,10 +195,10 @@ function ServiceListingPageInner({ type, title, fetchFn, filters = [] }: Service
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder={`Search ${type}s by name, location...`}
-                    className="w-full pl-12 pr-4 py-3 bg-cream border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-saffron/30 focus:border-saffron transition-all placeholder:text-gray-400 dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white dark:placeholder:text-gray-500"
+                    className="w-full pl-12 pr-4 py-3 bg-cream border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-saffron/30 focus:border-saffron transition-all placeholder:text-gray-400 dark:bg-[#241C16] dark:border-gray-600 dark:text-white dark:placeholder:text-gray-500"
                   />
                 </div>
-                <Button type="submit" variant="primary" size="md" className="rounded-xl px-6 bg-saffron hover:bg-[#c96a2e] shadow-md shadow-saffron/20">
+                <Button type="submit" variant="primary" size="md" className="rounded-xl px-6 bg-saffron hover:bg-[#E05E00] shadow-md shadow-saffron/20">
                   Search
                 </Button>
               </form>
@@ -257,7 +257,7 @@ function ServiceListingPageInner({ type, title, fetchFn, filters = [] }: Service
           {/* Desktop filters sidebar */}
           {filters.length > 0 && (
             <aside className="hidden md:block w-64 shrink-0">
-              <div className="bg-white dark:bg-[#1e1e1e] rounded-xl border border-gray-200 dark:border-gray-700 p-4 sticky top-24">
+              <div className="bg-white dark:bg-[#1A1210] rounded-xl border border-gray-200 dark:border-gray-700 p-4 sticky top-24">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-gray-900 dark:text-white">Filters</h3>
                   {hasActiveFilters && (
@@ -276,7 +276,7 @@ function ServiceListingPageInner({ type, title, fetchFn, filters = [] }: Service
                         <select
                           value={filterValues[filter.key] || ''}
                           onChange={(e) => handleFilterChange(filter.key, e.target.value)}
-                          className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/20 focus:border-saffron dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white"
+                          className="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-saffron/20 focus:border-saffron dark:bg-[#241C16] dark:border-gray-600 dark:text-white"
                         >
                           <option value="">All</option>
                           {filter.options.map((opt) => (
@@ -311,7 +311,7 @@ function ServiceListingPageInner({ type, title, fetchFn, filters = [] }: Service
           {showMobileFilters && filters.length > 0 && (
             <div className="fixed inset-0 z-50 md:hidden">
               <div className="absolute inset-0 bg-black/50" onClick={() => setShowMobileFilters(false)} />
-              <div className="absolute bottom-0 left-0 right-0 bg-white dark:bg-[#1e1e1e] rounded-t-2xl p-6 max-h-[70vh] overflow-y-auto">
+              <div className="absolute bottom-0 left-0 right-0 bg-white dark:bg-[#1A1210] rounded-t-2xl p-6 max-h-[70vh] overflow-y-auto">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-semibold text-gray-900 dark:text-white">Filters</h3>
                   <button onClick={() => setShowMobileFilters(false)}>
@@ -376,7 +376,7 @@ function ServiceListingPageInner({ type, title, fetchFn, filters = [] }: Service
                 ))}
               </div>
             ) : items.length === 0 ? (
-              <div className="bg-white dark:bg-[#1e1e1e] rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-8 sm:p-16 text-center">
+              <div className="bg-white dark:bg-[#1A1210] rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm p-8 sm:p-16 text-center">
                 <div className="inline-flex items-center justify-center w-20 h-20 bg-cream rounded-full mb-5">
                   <Search className="h-9 w-9 text-saffron" />
                 </div>
@@ -411,7 +411,7 @@ function ServiceListingPageInner({ type, title, fetchFn, filters = [] }: Service
                 {/* Pagination */}
                 {totalPages > 1 && (
                   <div className="flex items-center justify-center mt-10 mb-4">
-                    <div className="inline-flex items-center gap-1.5 bg-white dark:bg-[#1e1e1e] rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 px-2 py-2">
+                    <div className="inline-flex items-center gap-1.5 bg-white dark:bg-[#1A1210] rounded-2xl shadow-sm border border-gray-100 dark:border-gray-700 px-2 py-2">
                       <button
                         disabled={currentPage === 0}
                         onClick={() => setCurrentPage((p) => Math.max(0, p - 1))}
@@ -438,7 +438,7 @@ function ServiceListingPageInner({ type, title, fetchFn, filters = [] }: Service
                             className={`flex items-center justify-center min-w-10 h-10 rounded-xl text-sm font-semibold transition-all ${
                               pageNum === currentPage
                                 ? 'bg-saffron text-white shadow-md shadow-saffron/25'
-                                : 'text-gray-600 dark:text-gray-400 hover:bg-cream hover:text-saffron dark:hover:text-[#D4A017]'
+                                : 'text-gray-600 dark:text-gray-400 hover:bg-cream hover:text-saffron dark:hover:text-[#D4AF37]'
                             }`}
                           >
                             {pageNum + 1}
@@ -468,7 +468,7 @@ function ServiceListingPageInner({ type, title, fetchFn, filters = [] }: Service
 export function ServiceListingPage(props: ServiceListingPageProps) {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-cream dark:bg-[#121212]">
+      <div className="min-h-screen bg-cream dark:bg-[#0D0907]">
         <div className={`relative bg-linear-to-r ${heroConfig[props.type].gradient} overflow-hidden`}>
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full -translate-y-1/2 translate-x-1/3" />
@@ -488,7 +488,7 @@ export function ServiceListingPage(props: ServiceListingPageProps) {
           </div>
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="bg-white dark:bg-[#1e1e1e] rounded-2xl shadow-lg shadow-black/5 border border-gray-100 dark:border-gray-700 p-4 -mt-6 relative z-10 mb-6">
+          <div className="bg-white dark:bg-[#1A1210] rounded-2xl shadow-lg shadow-black/5 border border-gray-100 dark:border-gray-700 p-4 -mt-6 relative z-10 mb-6">
             <div className="h-12 bg-gray-100 dark:bg-gray-700 rounded-xl animate-pulse" />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">

@@ -203,12 +203,12 @@ export default function GreetingsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#121212]">
-      <div className="bg-gradient-to-r from-[#E07B39]/10 to-[#D4A017]/10 dark:from-[#E07B39]/5 dark:to-[#D4A017]/5 border-b border-gray-200 dark:border-gray-700">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0D0907]">
+      <div className="bg-gradient-to-r from-[#FF6B00]/10 to-[#D4AF37]/10 dark:from-[#FF6B00]/5 dark:to-[#D4AF37]/5 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <PartyPopper className="h-8 w-8 text-[#D4A017]" />
+              <PartyPopper className="h-8 w-8 text-[#D4AF37]" />
               <div>
                 <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Festival Greetings</h1>
                 <p className="text-gray-500 dark:text-gray-400 mt-1">Share beautiful greetings for Hindu festivals</p>
@@ -229,7 +229,7 @@ export default function GreetingsPage() {
             <h2 className="text-xl font-bold text-gray-900 mb-4">Upcoming Festivals</h2>
             <div className="flex gap-3 overflow-x-auto pb-2">
               {festivals.map((festival) => (
-                <div key={festival.id} className="flex-shrink-0 bg-white dark:bg-[#1e1e1e] rounded-xl border border-gray-200 dark:border-gray-700 p-4 min-w-[200px]">
+                <div key={festival.id} className="flex-shrink-0 bg-white dark:bg-[#1A1210] rounded-xl border border-gray-200 dark:border-gray-700 p-4 min-w-[200px]">
                   {festival.image && <img src={festival.image} alt={festival.name} className="h-24 w-full object-cover rounded-lg mb-3" />}
                   <h3 className="font-semibold text-gray-900 dark:text-white text-sm">{festival.name}</h3>
                   <div className="flex items-center gap-1.5 mt-1 text-xs text-gray-500 dark:text-gray-400">
@@ -247,10 +247,10 @@ export default function GreetingsPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {STATIC_GREETINGS.map((greeting) => (
             <Card key={greeting.id} className={`overflow-hidden ${greeting.color}`}>
-              <div className="h-48 bg-gradient-to-br from-[#E07B39]/20 to-[#D4A017]/20 flex items-center justify-center">
+              <div className="h-48 bg-gradient-to-br from-[#FF6B00]/20 to-[#D4AF37]/20 flex items-center justify-center">
                 <div className="text-center">
-                  <PartyPopper className="h-12 w-12 text-[#E07B39] mx-auto mb-2" />
-                  <p className="text-lg font-bold text-[#E07B39]">{greeting.festival}</p>
+                  <PartyPopper className="h-12 w-12 text-[#FF6B00] mx-auto mb-2" />
+                  <p className="text-lg font-bold text-[#FF6B00]">{greeting.festival}</p>
                 </div>
               </div>
               <CardContent className="p-4">
@@ -274,8 +274,8 @@ export default function GreetingsPage() {
           <div className="mt-12">
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-3">
-                <div className="h-10 w-10 rounded-xl bg-[#D4A017]/10 flex items-center justify-center">
-                  <Send className="h-5 w-5 text-[#D4A017]" />
+                <div className="h-10 w-10 rounded-xl bg-[#D4AF37]/10 flex items-center justify-center">
+                  <Send className="h-5 w-5 text-[#D4AF37]" />
                 </div>
                 <div>
                   <h2 className="text-xl font-bold text-gray-900 dark:text-white">My Greeting Subscriptions</h2>
@@ -308,7 +308,7 @@ export default function GreetingsPage() {
 
             {/* Add subscription form */}
             {showAddForm && (
-              <Card className="mb-6 border-[#E07B39]/20">
+              <Card className="mb-6 border-[#FF6B00]/20">
                 <CardContent className="p-5">
                   <h3 className="font-semibold text-gray-900 dark:text-white mb-4">New Greeting Subscription</h3>
                   <form onSubmit={handleAddSubscription} className="space-y-4">
@@ -344,7 +344,7 @@ export default function GreetingsPage() {
                         <select
                           value={formGreetingType}
                           onChange={(e) => setFormGreetingType(e.target.value)}
-                          className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39] dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white"
+                          className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:bg-[#241C16] dark:border-gray-600 dark:text-white"
                         >
                           <option value="">Select type</option>
                           {GREETING_TYPES.map((type) => (
@@ -372,7 +372,7 @@ export default function GreetingsPage() {
                         onChange={(e) => setFormMessage(e.target.value)}
                         rows={3}
                         placeholder="Your greeting message..."
-                        className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39] dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white"
+                        className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:bg-[#241C16] dark:border-gray-600 dark:text-white"
                       />
                     </div>
 
@@ -383,7 +383,7 @@ export default function GreetingsPage() {
                         className="flex items-center gap-2 text-sm text-gray-700 dark:text-gray-300"
                       >
                         {formIsRecurring ? (
-                          <ToggleRight className="h-6 w-6 text-[#E07B39]" />
+                          <ToggleRight className="h-6 w-6 text-[#FF6B00]" />
                         ) : (
                           <ToggleLeft className="h-6 w-6 text-gray-400" />
                         )}

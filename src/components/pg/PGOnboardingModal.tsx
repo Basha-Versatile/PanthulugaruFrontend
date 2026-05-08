@@ -214,7 +214,7 @@ export function PGOnboardingModal({ isOpen, onClose }: PGOnboardingModalProps) {
               <div key={step.id} className="flex-1 flex items-center gap-1">
                 <div
                   className={`h-2 flex-1 rounded-full transition-colors ${
-                    step.id <= currentStep ? 'bg-[#E07B39]' : 'bg-gray-200'
+                    step.id <= currentStep ? 'bg-[#FF6B00]' : 'bg-gray-200'
                   }`}
                 />
               </div>
@@ -225,7 +225,7 @@ export function PGOnboardingModal({ isOpen, onClose }: PGOnboardingModalProps) {
               <div
                 key={step.id}
                 className={`flex items-center gap-1 text-xs ${
-                  step.id === currentStep ? 'text-[#E07B39] font-medium' : 'text-gray-400'
+                  step.id === currentStep ? 'text-[#FF6B00] font-medium' : 'text-gray-400'
                 }`}
               >
                 <step.icon className="h-3 w-3" />
@@ -248,7 +248,7 @@ export function PGOnboardingModal({ isOpen, onClose }: PGOnboardingModalProps) {
               <Input label="Qualification" value={qualification} onChange={(e) => setQualification(e.target.value)} placeholder="e.g., Vedic Studies, Sanskrit Scholar" />
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">Gender</label>
-                <select value={gender} onChange={(e) => setGender(e.target.value)} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]">
+                <select value={gender} onChange={(e) => setGender(e.target.value)} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]">
                   <option value="">Select gender</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -265,7 +265,7 @@ export function PGOnboardingModal({ isOpen, onClose }: PGOnboardingModalProps) {
                       onClick={() => toggleLanguage(lang)}
                       className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
                         languages.includes(lang)
-                          ? 'border-[#E07B39] bg-[#E07B39]/10 text-[#E07B39]'
+                          ? 'border-[#FF6B00] bg-[#FF6B00]/10 text-[#FF6B00]'
                           : 'border-gray-200 text-gray-600 hover:border-gray-300'
                       }`}
                     >
@@ -281,7 +281,7 @@ export function PGOnboardingModal({ isOpen, onClose }: PGOnboardingModalProps) {
                   onChange={(e) => setAboutMe(e.target.value)}
                   placeholder="Tell us about yourself..."
                   rows={3}
-                  className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                  className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
                 />
               </div>
             </div>
@@ -299,7 +299,7 @@ export function PGOnboardingModal({ isOpen, onClose }: PGOnboardingModalProps) {
                   onChange={(e) => setAddress(e.target.value)}
                   placeholder="Enter your address"
                   rows={3}
-                  className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                  className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
                 />
               </div>
             </div>
@@ -320,14 +320,14 @@ export function PGOnboardingModal({ isOpen, onClose }: PGOnboardingModalProps) {
                       onClick={() => toggleRitual(ritual.id)}
                       className={`p-3 rounded-lg border text-left text-sm transition-colors ${
                         selectedRitualIds.includes(ritual.id)
-                          ? 'border-[#E07B39] bg-[#E07B39]/5 text-[#E07B39]'
+                          ? 'border-[#FF6B00] bg-[#FF6B00]/5 text-[#FF6B00]'
                           : 'border-gray-200 text-gray-700 hover:border-gray-300'
                       }`}
                     >
                       <div className="flex items-start gap-2">
                         <div className={`w-4 h-4 rounded border flex-shrink-0 mt-0.5 flex items-center justify-center ${
                           selectedRitualIds.includes(ritual.id)
-                            ? 'bg-[#E07B39] border-[#E07B39]'
+                            ? 'bg-[#FF6B00] border-[#FF6B00]'
                             : 'border-gray-300'
                         }`}>
                           {selectedRitualIds.includes(ritual.id) && (
@@ -341,7 +341,7 @@ export function PGOnboardingModal({ isOpen, onClose }: PGOnboardingModalProps) {
                 </div>
               )}
               {selectedRitualIds.length > 0 && (
-                <p className="text-sm text-[#E07B39] font-medium">{selectedRitualIds.length} rituals selected</p>
+                <p className="text-sm text-[#FF6B00] font-medium">{selectedRitualIds.length} rituals selected</p>
               )}
             </div>
           )}
@@ -380,7 +380,7 @@ export function PGOnboardingModal({ isOpen, onClose }: PGOnboardingModalProps) {
           {currentStep === 5 && (
             <div className="space-y-4">
               <p className="text-sm text-gray-500">Upload proof documents (optional for now):</p>
-              <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-[#E07B39] transition-colors cursor-pointer">
+              <div className="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center hover:border-[#FF6B00] transition-colors cursor-pointer">
                 <Upload className="h-10 w-10 text-gray-400 mx-auto mb-3" />
                 <p className="text-sm text-gray-600 font-medium">Click to upload documents</p>
                 <p className="text-xs text-gray-400 mt-1">PDF, JPG, PNG (max 5MB)</p>

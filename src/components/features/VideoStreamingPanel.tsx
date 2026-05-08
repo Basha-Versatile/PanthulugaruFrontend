@@ -160,7 +160,7 @@ export function VideoStreamingPanel({ bookingId, role, onEnd }: VideoStreamingPa
       case 'not_created':
         return { color: 'text-gray-500', bg: 'bg-gray-100', label: 'Room not created', icon: VideoOff };
       case 'waiting_to_join':
-        return { color: 'text-[#E07B39]', bg: 'bg-[#E07B39]/10', label: 'Ready to join', icon: Video };
+        return { color: 'text-[#FF6B00]', bg: 'bg-[#FF6B00]/10', label: 'Ready to join', icon: Video };
       case 'joining':
         return { color: 'text-blue-500', bg: 'bg-blue-100', label: 'Joining...', icon: Loader2 };
       case 'connected':

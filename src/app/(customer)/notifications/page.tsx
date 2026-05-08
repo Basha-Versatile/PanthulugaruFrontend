@@ -112,7 +112,7 @@ export default function NotificationsPage() {
       case 'review':
         return <Star className="h-5 w-5 text-yellow-500" />;
       default:
-        return <Bell className="h-5 w-5 text-[#E07B39]" />;
+        return <Bell className="h-5 w-5 text-[#FF6B00]" />;
     }
   };
 
@@ -131,8 +131,8 @@ export default function NotificationsPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-xl bg-[#E07B39]/10 flex items-center justify-center">
-                <Bell className="h-5 w-5 text-[#E07B39]" />
+              <div className="h-10 w-10 rounded-xl bg-[#FF6B00]/10 flex items-center justify-center">
+                <Bell className="h-5 w-5 text-[#FF6B00]" />
               </div>
               <div>
                 <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Notifications</h1>
@@ -165,7 +165,7 @@ export default function NotificationsPage() {
                 onClick={() => setFilter(f)}
                 className={`px-3 py-1.5 text-sm rounded-lg font-medium transition-colors ${
                   filter === f
-                    ? 'bg-[#E07B39] text-white'
+                    ? 'bg-[#FF6B00] text-white'
                     : 'text-gray-600 hover:bg-gray-100'
                 }`}
               >
@@ -214,7 +214,7 @@ export default function NotificationsPage() {
                 key={notification.id}
                 className={`transition-colors ${
                   notification.status === 'unread'
-                    ? 'border-l-4 border-l-[#E07B39] bg-[#E07B39]/[0.02]'
+                    ? 'border-l-4 border-l-[#FF6B00] bg-[#FF6B00]/[0.02]'
                     : ''
                 }`}
               >
@@ -253,7 +253,7 @@ export default function NotificationsPage() {
                           {notification.status === 'unread' && (
                             <button
                               onClick={() => handleMarkAsRead(notification.id)}
-                              className="p-1.5 text-gray-400 hover:text-[#E07B39] rounded-lg hover:bg-gray-100 transition-colors"
+                              className="p-1.5 text-gray-400 hover:text-[#FF6B00] rounded-lg hover:bg-gray-100 transition-colors"
                               title="Mark as read"
                             >
                               <CheckCheck className="h-4 w-4" />

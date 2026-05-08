@@ -59,17 +59,17 @@ function ArticlesPageInner() {
   const remainingArticles = articles.length > 1 ? articles.slice(1) : [];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#121212]">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0D0907]">
       {/* Premium Hero */}
-      <div className="bg-gradient-to-br from-[#8B1A1A] via-[#6B1414] to-[#4a0e0e] text-white relative overflow-hidden">
+      <div className="bg-gradient-to-br from-[#361E1E] via-[#6B1414] to-[#4a0e0e] text-white relative overflow-hidden">
         <div className="absolute inset-0 pattern-bg opacity-5" />
-        <div className="absolute top-0 right-0 w-80 h-80 bg-[#E07B39]/10 rounded-full blur-3xl -translate-y-1/2" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-[#FF6B00]/10 rounded-full blur-3xl -translate-y-1/2" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 relative z-10">
           <div className="flex items-center gap-3 mb-3">
             <div className="h-10 w-10 rounded-xl bg-white/10 flex items-center justify-center">
-              <BookOpen className="h-5 w-5 text-[#D4A017]" />
+              <BookOpen className="h-5 w-5 text-[#D4AF37]" />
             </div>
-            <Badge className="bg-[#D4A017] text-white border-none">Knowledge Hub</Badge>
+            <Badge className="bg-[#D4AF37] text-white border-none">Knowledge Hub</Badge>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold">Articles & Insights</h1>
           <p className="text-white/70 mt-2 max-w-xl">
@@ -85,8 +85,8 @@ function ArticlesPageInner() {
             onClick={() => { setCategory(''); setCurrentPage(0); }}
             className={`px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap border transition-all ${
               !category
-                ? 'bg-gradient-to-r from-[#E07B39] to-[#D4A017] text-white border-transparent shadow-lg shadow-[#E07B39]/20'
-                : 'border-gray-200 text-gray-600 bg-white hover:border-[#E07B39]/30 hover:text-[#E07B39] dark:border-gray-600 dark:text-gray-300 dark:bg-[#1e1e1e]'
+                ? 'bg-gradient-to-r from-[#FF6B00] to-[#D4AF37] text-white border-transparent shadow-lg shadow-[#FF6B00]/20'
+                : 'border-gray-200 text-gray-600 bg-white hover:border-[#FF6B00]/30 hover:text-[#FF6B00] dark:border-gray-600 dark:text-gray-300 dark:bg-[#1A1210]'
             }`}
           >
             All Articles
@@ -97,8 +97,8 @@ function ArticlesPageInner() {
               onClick={() => { setCategory(cat); setCurrentPage(0); }}
               className={`px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap border transition-all ${
                 category === cat
-                  ? 'bg-gradient-to-r from-[#E07B39] to-[#D4A017] text-white border-transparent shadow-lg shadow-[#E07B39]/20'
-                  : 'border-gray-200 text-gray-600 bg-white hover:border-[#E07B39]/30 hover:text-[#E07B39] dark:border-gray-600 dark:text-gray-300 dark:bg-[#1e1e1e]'
+                  ? 'bg-gradient-to-r from-[#FF6B00] to-[#D4AF37] text-white border-transparent shadow-lg shadow-[#FF6B00]/20'
+                  : 'border-gray-200 text-gray-600 bg-white hover:border-[#FF6B00]/30 hover:text-[#FF6B00] dark:border-gray-600 dark:text-gray-300 dark:bg-[#1A1210]'
               }`}
             >
               {cat}
@@ -132,9 +132,9 @@ function ArticlesPageInner() {
             </div>
           </div>
         ) : articles.length === 0 ? (
-          <div className="bg-white rounded-2xl border border-gray-200 p-16 text-center dark:bg-[#1e1e1e] dark:border-gray-700">
-            <div className="h-20 w-20 rounded-2xl bg-[#E07B39]/10 flex items-center justify-center mx-auto mb-4">
-              <BookOpen className="h-10 w-10 text-[#E07B39]" />
+          <div className="bg-white rounded-2xl border border-gray-200 p-16 text-center dark:bg-[#1A1210] dark:border-gray-700">
+            <div className="h-20 w-20 rounded-2xl bg-[#FF6B00]/10 flex items-center justify-center mx-auto mb-4">
+              <BookOpen className="h-10 w-10 text-[#FF6B00]" />
             </div>
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">No articles found</h3>
             <p className="text-gray-500 dark:text-gray-400 mb-4">Try a different category or check back later for new content</p>
@@ -150,7 +150,7 @@ function ArticlesPageInner() {
             {featuredArticle && currentPage === 0 && (
               <div className="mb-10">
                 <Link href={`/articles/${featuredArticle.slug}`}>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-2xl border border-gray-200 overflow-hidden card-premium cursor-pointer group dark:bg-[#1e1e1e] dark:border-gray-700">
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 bg-white rounded-2xl border border-gray-200 overflow-hidden card-premium cursor-pointer group dark:bg-[#1A1210] dark:border-gray-700">
                     {/* Image */}
                     <div className="h-64 lg:h-auto bg-gray-100 dark:bg-gray-700 relative overflow-hidden">
                       {featuredArticle.coverImage ? (
@@ -160,13 +160,13 @@ function ArticlesPageInner() {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
                       ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-[#E07B39]/20 to-[#8B1A1A]/20 flex items-center justify-center">
-                          <BookOpen className="h-20 w-20 text-[#E07B39]/30" />
+                        <div className="w-full h-full bg-gradient-to-br from-[#FF6B00]/20 to-[#361E1E]/20 flex items-center justify-center">
+                          <BookOpen className="h-20 w-20 text-[#FF6B00]/30" />
                         </div>
                       )}
                       <div className="absolute inset-0 bg-gradient-to-r from-black/10 to-transparent" />
                       <div className="absolute top-4 left-4">
-                        <Badge className="bg-[#D4A017] text-white border-none shadow-lg">
+                        <Badge className="bg-[#D4AF37] text-white border-none shadow-lg">
                           <TrendingUp className="h-3 w-3 mr-1" />
                           Featured
                         </Badge>
@@ -184,7 +184,7 @@ function ArticlesPageInner() {
                         ))}
                       </div>
 
-                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white group-hover:text-[#E07B39] transition-colors leading-tight">
+                      <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white group-hover:text-[#FF6B00] transition-colors leading-tight">
                         {featuredArticle.title}
                       </h2>
 
@@ -213,7 +213,7 @@ function ArticlesPageInner() {
                       </div>
 
                       <div className="mt-6">
-                        <span className="inline-flex items-center gap-1.5 text-[#E07B39] font-semibold group-hover:gap-2.5 transition-all">
+                        <span className="inline-flex items-center gap-1.5 text-[#FF6B00] font-semibold group-hover:gap-2.5 transition-all">
                           Read Full Article <ArrowRight className="h-4 w-4" />
                         </span>
                       </div>
@@ -238,15 +238,15 @@ function ArticlesPageInner() {
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                         {article.category && (
                           <div className="absolute top-3 left-3">
-                            <Badge variant="saffron" className="bg-[#E07B39] text-white border-none shadow-md">
+                            <Badge variant="saffron" className="bg-[#FF6B00] text-white border-none shadow-md">
                               {article.category}
                             </Badge>
                           </div>
                         )}
                       </div>
                     ) : (
-                      <div className="h-52 bg-gradient-to-br from-[#E07B39]/15 to-[#8B1A1A]/15 flex items-center justify-center relative">
-                        <BookOpen className="h-14 w-14 text-[#E07B39]/25" />
+                      <div className="h-52 bg-gradient-to-br from-[#FF6B00]/15 to-[#361E1E]/15 flex items-center justify-center relative">
+                        <BookOpen className="h-14 w-14 text-[#FF6B00]/25" />
                         {article.category && (
                           <div className="absolute top-3 left-3">
                             <Badge variant="saffron">{article.category}</Badge>
@@ -262,7 +262,7 @@ function ArticlesPageInner() {
                           </span>
                         ))}
                       </div>
-                      <h3 className="font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-[#E07B39] transition-colors">
+                      <h3 className="font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-[#FF6B00] transition-colors">
                         {article.title}
                       </h3>
                       {article.excerpt && (
@@ -337,9 +337,9 @@ function ArticlesPageInner() {
 export default function ArticlesPage() {
   return (
     <Suspense fallback={
-      <div className="min-h-screen bg-gray-50 dark:bg-[#121212]">
+      <div className="min-h-screen bg-gray-50 dark:bg-[#0D0907]">
         {/* Hero skeleton */}
-        <div className="bg-gradient-to-br from-[#8B1A1A] to-[#4a0e0e] h-40" />
+        <div className="bg-gradient-to-br from-[#361E1E] to-[#4a0e0e] h-40" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex gap-2 mb-6">
             {Array.from({ length: 5 }).map((_, i) => <Skeleton key={i} className="h-10 w-24 rounded-full" />)}

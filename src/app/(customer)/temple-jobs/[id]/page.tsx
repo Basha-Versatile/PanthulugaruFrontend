@@ -104,7 +104,7 @@ export default function TempleJobDetailPage({ params }: Props) {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <Link href="/temple-jobs" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#E07B39]">
+          <Link href="/temple-jobs" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#FF6B00]">
             <ArrowLeft className="h-4 w-4" />
             Back to Jobs
           </Link>
@@ -119,7 +119,7 @@ export default function TempleJobDetailPage({ params }: Props) {
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <h1 className="text-2xl font-bold text-gray-900">{job.jobTitle}</h1>
-                    <p className="text-lg text-[#E07B39] font-medium mt-1">{job.templeName}</p>
+                    <p className="text-lg text-[#FF6B00] font-medium mt-1">{job.templeName}</p>
                   </div>
                   <Badge variant={job.isActive ? 'green' : 'red'} className="flex-shrink-0">
                     {job.isActive ? 'Active' : 'Closed'}
@@ -181,7 +181,7 @@ export default function TempleJobDetailPage({ params }: Props) {
                     </div>
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-1.5">Cover Letter</label>
-                      <textarea value={coverLetter} onChange={(e) => setCoverLetter(e.target.value)} placeholder="Why are you suitable for this role?" rows={4} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]" />
+                      <textarea value={coverLetter} onChange={(e) => setCoverLetter(e.target.value)} placeholder="Why are you suitable for this role?" rows={4} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]" />
                     </div>
                     <div className="flex gap-3">
                       <Button type="submit" variant="primary" isLoading={submitting}><Send className="h-4 w-4 mr-1.5" />Submit Application</Button>
@@ -199,7 +199,7 @@ export default function TempleJobDetailPage({ params }: Props) {
               <CardContent className="p-6 space-y-4">
                 {job.salary && (
                   <div className="flex items-center gap-2">
-                    <IndianRupee className="h-5 w-5 text-[#E07B39]" />
+                    <IndianRupee className="h-5 w-5 text-[#FF6B00]" />
                     <div>
                       <p className="text-xs text-gray-500">Salary</p>
                       <p className="font-semibold text-gray-900">{job.salary}</p>
@@ -208,7 +208,7 @@ export default function TempleJobDetailPage({ params }: Props) {
                 )}
                 {job.salaryRange && (
                   <div className="flex items-center gap-2">
-                    <IndianRupee className="h-5 w-5 text-[#E07B39]" />
+                    <IndianRupee className="h-5 w-5 text-[#FF6B00]" />
                     <div>
                       <p className="text-xs text-gray-500">Salary Range</p>
                       <p className="font-semibold text-gray-900">&#8377;{job.salaryRange.min.toLocaleString()} - &#8377;{job.salaryRange.max.toLocaleString()}</p>

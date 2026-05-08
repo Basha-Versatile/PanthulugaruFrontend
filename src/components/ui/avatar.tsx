@@ -36,7 +36,7 @@ function Avatar({ src, alt = "", fallback, size = "md", className }: AvatarProps
   return (
     <div
       className={cn(
-        "relative inline-flex items-center justify-center rounded-full overflow-hidden bg-[#E07B39]/10 text-[#E07B39] font-semibold flex-shrink-0",
+        "relative inline-flex items-center justify-center rounded-full overflow-hidden bg-[#FF6B00]/10 text-[#FF6B00] font-semibold flex-shrink-0",
         sizes[size],
         className
       )}

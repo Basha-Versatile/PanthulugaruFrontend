@@ -137,7 +137,7 @@ export default function HoroscopePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF8F0] dark:bg-[#121212]">
+    <div className="min-h-screen bg-[#FDF8F0] dark:bg-[#0D0907]">
       {/* ═══════════════════════════════════════════════════════════════
           HERO SECTION
       ═══════════════════════════════════════════════════════════════ */}
@@ -154,7 +154,7 @@ export default function HoroscopePage() {
           <Star className="absolute bottom-16 left-[30%] h-3.5 w-3.5 text-yellow-300/25 animate-pulse [animation-delay:1s]" />
           <Star className="absolute top-32 left-[55%] h-2.5 w-2.5 text-white/20 animate-pulse [animation-delay:1.5s]" />
           <Star className="absolute bottom-24 right-[25%] h-3 w-3 text-yellow-200/30 animate-pulse [animation-delay:0.8s]" />
-          <Sparkles className="absolute top-16 right-[40%] h-5 w-5 text-[#D4A017]/30 animate-pulse [animation-delay:0.3s]" />
+          <Sparkles className="absolute top-16 right-[40%] h-5 w-5 text-[#D4AF37]/30 animate-pulse [animation-delay:0.3s]" />
           <Moon className="absolute bottom-10 right-[10%] h-8 w-8 text-purple-300/20 rotate-[-30deg]" />
           {/* thin decorative ring */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full border border-white/5" />
@@ -164,15 +164,15 @@ export default function HoroscopePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 text-center">
           {/* icon cluster */}
           <div className="flex items-center justify-center gap-3 mb-6">
-            <Sun className="h-7 w-7 text-[#D4A017]" />
-            <div className="h-10 w-10 rounded-full bg-[#D4A017]/20 flex items-center justify-center ring-2 ring-[#D4A017]/30">
-              <Star className="h-5 w-5 text-[#D4A017]" />
+            <Sun className="h-7 w-7 text-[#D4AF37]" />
+            <div className="h-10 w-10 rounded-full bg-[#D4AF37]/20 flex items-center justify-center ring-2 ring-[#D4AF37]/30">
+              <Star className="h-5 w-5 text-[#D4AF37]" />
             </div>
             <Moon className="h-7 w-7 text-purple-300" />
           </div>
 
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white tracking-tight">
-            Vedic Horoscope &amp; <span className="text-[#D4A017]">Jyotish</span>
+            Vedic Horoscope &amp; <span className="text-[#D4AF37]">Jyotish</span>
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-base sm:text-lg text-indigo-200 leading-relaxed">
             Unlock the wisdom of Vedic astrology. Discover your Nakshatra, Rashi, Lagna, and
@@ -182,7 +182,7 @@ export default function HoroscopePage() {
           {/* quick stat pills */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-sm px-4 py-1.5 text-sm text-white/90 border border-white/10">
-              <Star className="h-3.5 w-3.5 text-[#D4A017]" /> 12 Rashis
+              <Star className="h-3.5 w-3.5 text-[#D4AF37]" /> 12 Rashis
             </span>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-sm px-4 py-1.5 text-sm text-white/90 border border-white/10">
               <Moon className="h-3.5 w-3.5 text-purple-300" /> 27 Nakshatras
@@ -204,8 +204,8 @@ export default function HoroscopePage() {
             {/* section heading */}
             <div>
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                <Sparkles className="h-6 w-6 text-[#D4A017]" />
-                Dwadasha Rashi <span className="text-[#8B1A1A]">- 12 Zodiac Signs</span>
+                <Sparkles className="h-6 w-6 text-[#D4AF37]" />
+                Dwadasha Rashi <span className="text-[#361E1E]">- 12 Zodiac Signs</span>
               </h2>
               <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
                 Explore the twelve Vedic zodiac signs, their ruling elements, and date ranges.
@@ -219,7 +219,7 @@ export default function HoroscopePage() {
                 return (
                   <div
                     key={sign.name}
-                    className="group relative bg-white dark:bg-[#1e1e1e] rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg hover:border-[#D4A017]/40 transition-all duration-300 p-4 text-center cursor-default"
+                    className="group relative bg-white dark:bg-[#1A1210] rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-lg hover:border-[#D4AF37]/40 transition-all duration-300 p-4 text-center cursor-default"
                   >
                     {/* element badge top-right */}
                     <span
@@ -237,7 +237,7 @@ export default function HoroscopePage() {
                     {/* sanskrit name */}
                     <p className="text-sm font-semibold text-gray-900 dark:text-white">{sign.name}</p>
                     {/* english name */}
-                    <p className="text-xs text-[#8B1A1A] font-medium">{sign.english}</p>
+                    <p className="text-xs text-[#361E1E] font-medium">{sign.english}</p>
                     {/* date range */}
                     <p className="mt-1.5 text-[11px] text-gray-400 dark:text-gray-500 flex items-center justify-center gap-1">
                       <Calendar className="h-3 w-3" />
@@ -252,9 +252,9 @@ export default function HoroscopePage() {
           {/* ── RIGHT: Form card (2 cols) ──────────────────────────── */}
           <div className="lg:col-span-2 space-y-6">
             {/* premium form card */}
-            <div className="bg-white dark:bg-[#1e1e1e] rounded-2xl border border-gray-100 dark:border-gray-700 shadow-lg overflow-hidden">
+            <div className="bg-white dark:bg-[#1A1210] rounded-2xl border border-gray-100 dark:border-gray-700 shadow-lg overflow-hidden">
               {/* card accent bar */}
-              <div className="h-1.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-[#D4A017]" />
+              <div className="h-1.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-[#D4AF37]" />
 
               <div className="p-6">
                 <div className="flex items-center gap-2.5 mb-5">
@@ -302,7 +302,7 @@ export default function HoroscopePage() {
                     <select
                       value={gender}
                       onChange={(e) => setGender(e.target.value)}
-                      className="w-full rounded-lg border border-gray-300 dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                      className="w-full rounded-lg border border-gray-300 dark:bg-[#241C16] dark:border-gray-600 dark:text-white px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
                       required
                     >
                       <option value="">Select gender</option>
@@ -344,24 +344,24 @@ export default function HoroscopePage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Sparkles className="h-5 w-5 text-[#D4A017]" />
+                    <Sparkles className="h-5 w-5 text-[#D4AF37]" />
                     Quick Lookup Result
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="grid grid-cols-3 gap-4">
-                    <div className="text-center p-4 bg-[#E07B39]/5 rounded-xl">
-                      <Moon className="h-6 w-6 text-[#E07B39] mx-auto mb-2" />
+                    <div className="text-center p-4 bg-[#FF6B00]/5 rounded-xl">
+                      <Moon className="h-6 w-6 text-[#FF6B00] mx-auto mb-2" />
                       <p className="text-xs text-gray-500">Nakshatra</p>
                       <p className="font-semibold text-gray-900 mt-1">{quickResult.nakshatra || 'N/A'}</p>
                     </div>
-                    <div className="text-center p-4 bg-[#8B1A1A]/5 rounded-xl">
-                      <Sun className="h-6 w-6 text-[#8B1A1A] mx-auto mb-2" />
+                    <div className="text-center p-4 bg-[#361E1E]/5 rounded-xl">
+                      <Sun className="h-6 w-6 text-[#361E1E] mx-auto mb-2" />
                       <p className="text-xs text-gray-500">Rashi</p>
                       <p className="font-semibold text-gray-900 mt-1">{quickResult.rashi || 'N/A'}</p>
                     </div>
-                    <div className="text-center p-4 bg-[#D4A017]/10 rounded-xl">
-                      <Star className="h-6 w-6 text-[#D4A017] mx-auto mb-2" />
+                    <div className="text-center p-4 bg-[#D4AF37]/10 rounded-xl">
+                      <Star className="h-6 w-6 text-[#D4AF37] mx-auto mb-2" />
                       <p className="text-xs text-gray-500">Lagna</p>
                       <p className="font-semibold text-gray-900 mt-1">{quickResult.lagna || 'N/A'}</p>
                     </div>
@@ -375,25 +375,25 @@ export default function HoroscopePage() {
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
-                    <Star className="h-5 w-5 text-[#D4A017]" />
+                    <Star className="h-5 w-5 text-[#D4AF37]" />
                     Full Horoscope Profile
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-gray-50 dark:bg-[#2a2a2a] rounded-lg p-3">
+                    <div className="bg-gray-50 dark:bg-[#241C16] rounded-lg p-3">
                       <p className="text-xs text-gray-500">Nakshatra</p>
                       <p className="font-medium">{result.nakshatra || 'N/A'}</p>
                     </div>
-                    <div className="bg-gray-50 dark:bg-[#2a2a2a] rounded-lg p-3">
+                    <div className="bg-gray-50 dark:bg-[#241C16] rounded-lg p-3">
                       <p className="text-xs text-gray-500">Rashi</p>
                       <p className="font-medium">{result.rashi || 'N/A'}</p>
                     </div>
-                    <div className="bg-gray-50 dark:bg-[#2a2a2a] rounded-lg p-3">
+                    <div className="bg-gray-50 dark:bg-[#241C16] rounded-lg p-3">
                       <p className="text-xs text-gray-500">Lagna</p>
                       <p className="font-medium">{result.lagna || 'N/A'}</p>
                     </div>
-                    <div className="bg-gray-50 dark:bg-[#2a2a2a] rounded-lg p-3">
+                    <div className="bg-gray-50 dark:bg-[#241C16] rounded-lg p-3">
                       <p className="text-xs text-gray-500">Gothram</p>
                       <p className="font-medium">{result.gothram || 'N/A'}</p>
                     </div>
@@ -417,7 +417,7 @@ export default function HoroscopePage() {
                       <p className="text-sm font-medium text-gray-700 mb-2">Predictions</p>
                       <div className="space-y-2">
                         {Object.entries(result.predictions).map(([key, value]) => (
-                          <div key={key} className="bg-gray-50 dark:bg-[#2a2a2a] rounded-lg p-3">
+                          <div key={key} className="bg-gray-50 dark:bg-[#241C16] rounded-lg p-3">
                             <p className="text-xs text-gray-500 capitalize">{key}</p>
                             <p className="text-sm text-gray-700">{value}</p>
                           </div>
@@ -431,9 +431,9 @@ export default function HoroscopePage() {
                       <p className="text-sm font-medium text-gray-700 mb-2">Planetary Positions</p>
                       <div className="grid grid-cols-3 gap-2">
                         {Object.entries(result.planetaryPositions).map(([planet, position]) => (
-                          <div key={planet} className="bg-[#E07B39]/5 rounded-lg p-2 text-center">
+                          <div key={planet} className="bg-[#FF6B00]/5 rounded-lg p-2 text-center">
                             <p className="text-xs text-gray-500 capitalize">{planet}</p>
-                            <p className="text-sm font-medium text-[#E07B39]">{position}</p>
+                            <p className="text-sm font-medium text-[#FF6B00]">{position}</p>
                           </div>
                         ))}
                       </div>
@@ -445,7 +445,7 @@ export default function HoroscopePage() {
 
             {/* empty state */}
             {!quickResult && !result && (
-              <div className="bg-white dark:bg-[#1e1e1e] rounded-2xl border border-dashed border-gray-200 dark:border-gray-600 p-8 text-center">
+              <div className="bg-white dark:bg-[#1A1210] rounded-2xl border border-dashed border-gray-200 dark:border-gray-600 p-8 text-center">
                 <div className="mx-auto mb-4 h-14 w-14 rounded-full bg-gradient-to-br from-indigo-100 to-purple-100 flex items-center justify-center">
                   <Eye className="h-6 w-6 text-indigo-500" />
                 </div>
@@ -462,16 +462,16 @@ export default function HoroscopePage() {
       {/* ═══════════════════════════════════════════════════════════════
           DAILY HOROSCOPE TEASERS
       ═══════════════════════════════════════════════════════════════ */}
-      <section className="bg-gradient-to-b from-[#FFF8F0] to-white dark:from-[#1a1a1a] dark:to-[#121212] border-t border-gray-100 dark:border-gray-700">
+      <section className="bg-gradient-to-b from-[#FDF8F0] to-white dark:from-[#0D0907] dark:to-[#0D0907] border-t border-gray-100 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
           {/* section header */}
           <div className="text-center mb-10">
-            <div className="inline-flex items-center gap-2 bg-[#D4A017]/10 text-[#D4A017] text-xs font-semibold px-3 py-1 rounded-full mb-3">
+            <div className="inline-flex items-center gap-2 bg-[#D4AF37]/10 text-[#D4AF37] text-xs font-semibold px-3 py-1 rounded-full mb-3">
               <Sun className="h-3.5 w-3.5" />
               TODAY&apos;S INSIGHTS
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
-              Daily Horoscope <span className="text-[#8B1A1A]">Highlights</span>
+              Daily Horoscope <span className="text-[#361E1E]">Highlights</span>
             </h2>
             <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 max-w-lg mx-auto">
               A glimpse into what the stars have in store. Generate your full profile for personalized Vedic predictions.
@@ -483,23 +483,23 @@ export default function HoroscopePage() {
             {DAILY_TEASERS.map((t) => (
               <div
                 key={t.sign}
-                className="bg-white dark:bg-[#1e1e1e] rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
+                className="bg-white dark:bg-[#1A1210] rounded-2xl border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden"
               >
                 {/* top accent */}
-                <div className="h-1 bg-gradient-to-r from-[#D4A017] via-[#E07B39] to-[#8B1A1A]" />
+                <div className="h-1 bg-gradient-to-r from-[#D4AF37] via-[#FF6B00] to-[#361E1E]" />
 
                 <div className="p-5">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-3xl">{t.symbol}</span>
                     <div>
                       <p className="font-semibold text-gray-900 dark:text-white text-sm">{t.sign}</p>
-                      <p className="text-xs text-[#8B1A1A]">{t.english}</p>
+                      <p className="text-xs text-[#361E1E]">{t.english}</p>
                     </div>
                   </div>
 
                   <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed line-clamp-4">{t.prediction}</p>
 
-                  <div className="mt-4 flex items-center text-xs font-medium text-[#E07B39] cursor-pointer group">
+                  <div className="mt-4 flex items-center text-xs font-medium text-[#FF6B00] cursor-pointer group">
                     <Clock className="h-3.5 w-3.5 mr-1" />
                     Today&apos;s Reading
                     <ArrowRight className="h-3.5 w-3.5 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" />

@@ -161,7 +161,7 @@ function BookingPageContent({ panthulugaruId }: { panthulugaruId: string }) {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <Link href={`/pandits/${pandit.slug}`} className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#E07B39]">
+          <Link href={`/pandits/${pandit.slug}`} className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#FF6B00]">
             <ArrowLeft className="h-4 w-4" />
             Back to Profile
           </Link>
@@ -177,16 +177,16 @@ function BookingPageContent({ panthulugaruId }: { panthulugaruId: string }) {
         <div className="flex items-center gap-2 mb-8">
           {STEPS.map((s, i) => (
             <React.Fragment key={s.id}>
-              <div className={`flex items-center gap-1.5 ${s.id <= step ? 'text-[#E07B39]' : 'text-gray-400'}`}>
+              <div className={`flex items-center gap-1.5 ${s.id <= step ? 'text-[#FF6B00]' : 'text-gray-400'}`}>
                 <div className={`h-7 w-7 rounded-full flex items-center justify-center text-xs font-medium border-2 ${
-                  s.id < step ? 'bg-[#E07B39] border-[#E07B39] text-white' :
-                  s.id === step ? 'border-[#E07B39] text-[#E07B39]' : 'border-gray-300 text-gray-400'
+                  s.id < step ? 'bg-[#FF6B00] border-[#FF6B00] text-white' :
+                  s.id === step ? 'border-[#FF6B00] text-[#FF6B00]' : 'border-gray-300 text-gray-400'
                 }`}>
                   {s.id < step ? <Check className="h-3.5 w-3.5" /> : s.id}
                 </div>
                 <span className="text-xs font-medium hidden sm:inline">{s.label}</span>
               </div>
-              {i < STEPS.length - 1 && <div className={`flex-1 h-0.5 ${s.id < step ? 'bg-[#E07B39]' : 'bg-gray-200'}`} />}
+              {i < STEPS.length - 1 && <div className={`flex-1 h-0.5 ${s.id < step ? 'bg-[#FF6B00]' : 'bg-gray-200'}`} />}
             </React.Fragment>
           ))}
         </div>
@@ -196,7 +196,7 @@ function BookingPageContent({ panthulugaruId }: { panthulugaruId: string }) {
           <Card>
             <CardContent className="p-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                <BookOpen className="h-5 w-5 inline mr-2 text-[#E07B39]" />
+                <BookOpen className="h-5 w-5 inline mr-2 text-[#FF6B00]" />
                 Select a Ritual
               </h2>
               <div className="space-y-2 max-h-96 overflow-y-auto">
@@ -205,7 +205,7 @@ function BookingPageContent({ panthulugaruId }: { panthulugaruId: string }) {
                     key={ritual.id}
                     onClick={() => { setSelectedRitualId(ritual.id); setSelectedSubRitualId(''); }}
                     className={`w-full text-left p-3 rounded-lg border transition-colors ${
-                      selectedRitualId === ritual.id ? 'border-[#E07B39] bg-[#E07B39]/5' : 'border-gray-200 hover:border-gray-300'
+                      selectedRitualId === ritual.id ? 'border-[#FF6B00] bg-[#FF6B00]/5' : 'border-gray-200 hover:border-gray-300'
                     }`}
                   >
                     <div className="font-medium text-gray-900">{ritual.name}</div>
@@ -223,7 +223,7 @@ function BookingPageContent({ panthulugaruId }: { panthulugaruId: string }) {
                         key={sub.id}
                         onClick={() => setSelectedSubRitualId(sub.id === selectedSubRitualId ? '' : sub.id)}
                         className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
-                          selectedSubRitualId === sub.id ? 'border-[#E07B39] bg-[#E07B39]/10 text-[#E07B39]' : 'border-gray-200 text-gray-600'
+                          selectedSubRitualId === sub.id ? 'border-[#FF6B00] bg-[#FF6B00]/10 text-[#FF6B00]' : 'border-gray-200 text-gray-600'
                         }`}
                       >
                         {sub.name}
@@ -242,8 +242,8 @@ function BookingPageContent({ panthulugaruId }: { panthulugaruId: string }) {
             <CardContent className="p-6">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Select Mode</h2>
               <div className="grid grid-cols-2 gap-4">
-                <button className="p-6 rounded-xl border-2 border-[#E07B39] bg-[#E07B39]/5 text-center">
-                  <MapPin className="h-8 w-8 text-[#E07B39] mx-auto mb-2" />
+                <button className="p-6 rounded-xl border-2 border-[#FF6B00] bg-[#FF6B00]/5 text-center">
+                  <MapPin className="h-8 w-8 text-[#FF6B00] mx-auto mb-2" />
                   <p className="font-medium text-gray-900">In Person</p>
                   <p className="text-xs text-gray-500 mt-1">Pandit visits your location</p>
                 </button>
@@ -262,7 +262,7 @@ function BookingPageContent({ panthulugaruId }: { panthulugaruId: string }) {
           <Card>
             <CardContent className="p-6 space-y-4">
               <h2 className="text-lg font-semibold text-gray-900 mb-4">
-                <Calendar className="h-5 w-5 inline mr-2 text-[#E07B39]" />
+                <Calendar className="h-5 w-5 inline mr-2 text-[#FF6B00]" />
                 Date, Time & Location
               </h2>
               <div className="grid grid-cols-2 gap-4">
@@ -282,7 +282,7 @@ function BookingPageContent({ panthulugaruId }: { panthulugaruId: string }) {
                     <select
                       value={bookingTime}
                       onChange={(e) => setBookingTime(e.target.value)}
-                      className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                      className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
                     >
                       <option value="">Select time</option>
                       {timeSlots.filter((s) => s.isAvailable).map((slot) => (
@@ -314,7 +314,7 @@ function BookingPageContent({ panthulugaruId }: { panthulugaruId: string }) {
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="Any special requirements..."
                   rows={3}
-                  className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                  className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
                 />
               </div>
             </CardContent>

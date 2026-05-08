@@ -175,12 +175,15 @@ export function LoginModal({ isOpen, onClose, role = 'customer', redirectPath }:
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={handleClose} />
-      <div className="relative bg-white rounded-2xl shadow-xl w-full max-w-md mx-4 max-h-[90vh] overflow-y-auto">
+      <div className="absolute inset-0 bg-[#361E1E]/60 backdrop-blur-sm" onClick={handleClose} />
+      <div className="relative bg-white dark:bg-[#1A1210] rounded-2xl shadow-2xl shadow-[#361E1E]/20 dark:shadow-black/40 w-full max-w-md mx-4 max-h-[90vh] overflow-y-auto border border-[#D4AF37]/15 dark:border-[#D4AF37]/10">
+        {/* Sacred top accent */}
+        <div className="h-1 w-full bg-gradient-to-r from-[#D4AF37] via-[#FF6B00] to-[#D4AF37] rounded-t-2xl" />
+
         {/* Close button */}
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10"
+          className="absolute top-5 right-4 text-[#8B4513]/50 hover:text-[#361E1E] dark:text-[#E8DDD0]/50 dark:hover:text-[#E8DDD0] transition-colors z-10"
         >
           <X className="h-5 w-5" />
         </button>
@@ -188,32 +191,33 @@ export function LoginModal({ isOpen, onClose, role = 'customer', redirectPath }:
         <div className="p-6">
           {/* Header */}
           <div className="text-center mb-6">
-            <h2 className="text-xl font-bold text-gray-900">
+            <img src="/logo-full.png" alt="Panthulu Garu" className="h-12 w-12 rounded-full object-cover mb-3 mx-auto" />
+            <h2 className="text-xl font-heading font-bold text-[#361E1E] dark:text-[#E8DDD0]">
               {role === 'customer' ? 'Welcome to Panthulu Garu' : 'PG Portal'}
             </h2>
-            <p className="text-sm text-gray-500 mt-1">
+            <p className="text-sm text-[#8B4513]/70 dark:text-[#E8DDD0]/60 mt-1">
               {activeTab === 'login' ? 'Sign in to your account' : 'Create a new account'}
             </p>
           </div>
 
           {/* Tab switcher */}
-          <div className="flex bg-gray-100 rounded-lg p-1 mb-6">
+          <div className="flex bg-[#FDF8F0] dark:bg-[#241C16] rounded-xl p-1 mb-6 border border-[#D4AF37]/10 dark:border-[#D4AF37]/5">
             <button
               onClick={() => setActiveTab('login')}
-              className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`flex-1 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${
                 activeTab === 'login'
-                  ? 'bg-white text-[#E07B39] shadow-sm'
-                  : 'text-gray-500 hover:text-gray-700'
+                  ? 'bg-white dark:bg-[#1A1210] text-[#FF6B00] shadow-sm shadow-[#D4AF37]/10 border border-[#D4AF37]/10 dark:border-[#D4AF37]/10'
+                  : 'text-[#8B4513]/60 dark:text-[#E8DDD0]/50 hover:text-[#8B4513] dark:hover:text-[#E8DDD0]/80'
               }`}
             >
               Login
             </button>
             <button
               onClick={() => setActiveTab('signup')}
-              className={`flex-1 py-2 text-sm font-medium rounded-md transition-colors ${
+              className={`flex-1 py-2.5 text-sm font-medium rounded-lg transition-all duration-200 ${
                 activeTab === 'signup'
-                  ? 'bg-white text-[#E07B39] shadow-sm'
-                  : 'text-gray-500 hover:text-gray-700'
+                  ? 'bg-white dark:bg-[#1A1210] text-[#FF6B00] shadow-sm shadow-[#D4AF37]/10 border border-[#D4AF37]/10 dark:border-[#D4AF37]/10'
+                  : 'text-[#8B4513]/60 dark:text-[#E8DDD0]/50 hover:text-[#8B4513] dark:hover:text-[#E8DDD0]/80'
               }`}
             >
               Sign Up
@@ -228,10 +232,10 @@ export function LoginModal({ isOpen, onClose, role = 'customer', redirectPath }:
                 <div className="flex gap-2 mb-4">
                   <button
                     onClick={() => setAuthMethod('email')}
-                    className={`flex-1 py-2 text-xs font-medium rounded-md border transition-colors ${
+                    className={`flex-1 py-2 text-xs font-medium rounded-lg border transition-all duration-200 ${
                       authMethod === 'email'
-                        ? 'border-[#E07B39] text-[#E07B39] bg-[#E07B39]/5'
-                        : 'border-gray-200 text-gray-500'
+                        ? 'border-[#FF6B00] text-[#FF6B00] bg-[#FF6B00]/5 dark:bg-[#FF6B00]/10'
+                        : 'border-[#D4AF37]/20 dark:border-[#D4AF37]/10 text-[#8B4513]/60 dark:text-[#E8DDD0]/50 hover:border-[#D4AF37]/40'
                     }`}
                   >
                     <Mail className="h-3.5 w-3.5 inline mr-1" />
@@ -239,10 +243,10 @@ export function LoginModal({ isOpen, onClose, role = 'customer', redirectPath }:
                   </button>
                   <button
                     onClick={() => setAuthMethod('otp')}
-                    className={`flex-1 py-2 text-xs font-medium rounded-md border transition-colors ${
+                    className={`flex-1 py-2 text-xs font-medium rounded-lg border transition-all duration-200 ${
                       authMethod === 'otp'
-                        ? 'border-[#E07B39] text-[#E07B39] bg-[#E07B39]/5'
-                        : 'border-gray-200 text-gray-500'
+                        ? 'border-[#FF6B00] text-[#FF6B00] bg-[#FF6B00]/5 dark:bg-[#FF6B00]/10'
+                        : 'border-[#D4AF37]/20 dark:border-[#D4AF37]/10 text-[#8B4513]/60 dark:text-[#E8DDD0]/50 hover:border-[#D4AF37]/40'
                     }`}
                   >
                     <Phone className="h-3.5 w-3.5 inline mr-1" />
@@ -273,12 +277,12 @@ export function LoginModal({ isOpen, onClose, role = 'customer', redirectPath }:
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="absolute right-3 top-[38px] text-gray-400 hover:text-gray-600"
+                      className="absolute right-3 top-[38px] text-[#8B4513]/40 hover:text-[#361E1E] dark:text-[#E8DDD0]/40 dark:hover:text-[#E8DDD0] transition-colors"
                     >
                       {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                     </button>
                   </div>
-                  <Button type="submit" variant="primary" className="w-full" isLoading={isSubmitting}>
+                  <Button type="submit" variant="sacred" className="w-full" isLoading={isSubmitting}>
                     Sign In
                   </Button>
                 </form>
@@ -320,7 +324,7 @@ export function LoginModal({ isOpen, onClose, role = 'customer', redirectPath }:
                     />
                   )}
                   {otpSent && (
-                    <Button type="submit" variant="primary" className="w-full" isLoading={isSubmitting}>
+                    <Button type="submit" variant="sacred" className="w-full" isLoading={isSubmitting}>
                       Verify OTP
                     </Button>
                   )}
@@ -332,10 +336,10 @@ export function LoginModal({ isOpen, onClose, role = 'customer', redirectPath }:
                 <>
                   <div className="relative my-6">
                     <div className="absolute inset-0 flex items-center">
-                      <div className="w-full border-t border-gray-200" />
+                      <div className="w-full border-t border-[#D4AF37]/15 dark:border-[#D4AF37]/10" />
                     </div>
                     <div className="relative flex justify-center">
-                      <span className="bg-white px-3 text-sm text-gray-500">or</span>
+                      <span className="bg-white dark:bg-[#1A1210] px-3 text-sm text-[#8B4513]/50 dark:text-[#E8DDD0]/40">or</span>
                     </div>
                   </div>
                   <Button
@@ -403,7 +407,7 @@ export function LoginModal({ isOpen, onClose, role = 'customer', redirectPath }:
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-[38px] text-gray-400 hover:text-gray-600"
+                  className="absolute right-3 top-[38px] text-[#8B4513]/40 hover:text-[#361E1E] dark:text-[#E8DDD0]/40 dark:hover:text-[#E8DDD0] transition-colors"
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -416,7 +420,7 @@ export function LoginModal({ isOpen, onClose, role = 'customer', redirectPath }:
                 placeholder="Confirm your password"
                 required
               />
-              <Button type="submit" variant="primary" className="w-full" isLoading={isSubmitting}>
+              <Button type="submit" variant="sacred" className="w-full" isLoading={isSubmitting}>
                 Create Account
               </Button>
             </form>

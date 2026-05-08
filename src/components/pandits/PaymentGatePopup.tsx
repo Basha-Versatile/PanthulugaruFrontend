@@ -88,9 +88,9 @@ export function PaymentGatePopup({
           </div>
 
           {/* Amount display */}
-          <div className="bg-[#E07B39]/5 border border-[#E07B39]/20 rounded-xl p-4 mb-6 text-center">
+          <div className="bg-[#FF6B00]/5 border border-[#FF6B00]/20 rounded-xl p-4 mb-6 text-center">
             <p className="text-sm text-gray-600">Amount to pay</p>
-            <p className="text-3xl font-bold text-[#E07B39]">
+            <p className="text-3xl font-bold text-[#FF6B00]">
               &#8377;{UNLOCK_AMOUNT}
             </p>
             <p className="text-xs text-gray-500 mt-1">One-time payment for 30 days access</p>
@@ -105,20 +105,20 @@ export function PaymentGatePopup({
                 onClick={() => setSelectedMethod(method.id)}
                 className={`w-full flex items-center gap-3 p-3 rounded-lg border transition-colors ${
                   selectedMethod === method.id
-                    ? 'border-[#E07B39] bg-[#E07B39]/5'
+                    ? 'border-[#FF6B00] bg-[#FF6B00]/5'
                     : 'border-gray-200 hover:border-gray-300'
                 }`}
               >
                 <div className={`h-10 w-10 rounded-lg flex items-center justify-center ${
-                  selectedMethod === method.id ? 'bg-[#E07B39]/10' : 'bg-gray-100'
+                  selectedMethod === method.id ? 'bg-[#FF6B00]/10' : 'bg-gray-100'
                 }`}>
                   <method.icon className={`h-5 w-5 ${
-                    selectedMethod === method.id ? 'text-[#E07B39]' : 'text-gray-500'
+                    selectedMethod === method.id ? 'text-[#FF6B00]' : 'text-gray-500'
                   }`} />
                 </div>
                 <div className="text-left">
                   <p className={`text-sm font-medium ${
-                    selectedMethod === method.id ? 'text-[#E07B39]' : 'text-gray-900'
+                    selectedMethod === method.id ? 'text-[#FF6B00]' : 'text-gray-900'
                   }`}>
                     {method.label}
                   </p>

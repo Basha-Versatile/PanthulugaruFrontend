@@ -51,19 +51,19 @@ const TODAY_PANCHANGAM = {
 
 export default function PanchangamPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#121212]">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0D0907]">
       {/* Header */}
-      <div className="bg-gradient-to-r from-[#8B1A1A] to-[#6B1414] text-white">
+      <div className="bg-gradient-to-r from-[#361E1E] to-[#6B1414] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex items-center gap-3 mb-2">
-            <Calendar className="h-8 w-8 text-[#D4A017]" />
+            <Calendar className="h-8 w-8 text-[#D4AF37]" />
             <h1 className="text-2xl sm:text-3xl font-bold">Daily Panchangam</h1>
           </div>
           <p className="text-white/80">{TODAY_PANCHANGAM.date}</p>
           <div className="flex gap-2 mt-3">
             <Badge className="bg-white/20 text-white border-white/30">{TODAY_PANCHANGAM.hinduDate.month}</Badge>
             <Badge className="bg-white/20 text-white border-white/30">{TODAY_PANCHANGAM.hinduDate.paksham}</Badge>
-            <Badge className="bg-[#D4A017] text-white border-[#D4A017]">{TODAY_PANCHANGAM.hinduDate.tithi}</Badge>
+            <Badge className="bg-[#D4AF37] text-white border-[#D4AF37]">{TODAY_PANCHANGAM.hinduDate.tithi}</Badge>
           </div>
         </div>
       </div>
@@ -74,21 +74,21 @@ export default function PanchangamPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Moon className="h-5 w-5 text-[#E07B39]" />
+                <Moon className="h-5 w-5 text-[#FF6B00]" />
                 Today&apos;s Tithi
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <div className="bg-[#E07B39]/5 rounded-lg p-4 text-center">
-                <p className="text-2xl font-bold text-[#E07B39]">{TODAY_PANCHANGAM.hinduDate.tithi}</p>
+              <div className="bg-[#FF6B00]/5 rounded-lg p-4 text-center">
+                <p className="text-2xl font-bold text-[#FF6B00]">{TODAY_PANCHANGAM.hinduDate.tithi}</p>
                 <p className="text-sm text-gray-500 mt-1">{TODAY_PANCHANGAM.hinduDate.paksham}</p>
               </div>
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-gray-50 dark:bg-[#2a2a2a] rounded-lg p-3">
+                <div className="bg-gray-50 dark:bg-[#241C16] rounded-lg p-3">
                   <p className="text-xs text-gray-500">Hindu Month</p>
                   <p className="font-medium text-sm">{TODAY_PANCHANGAM.hinduDate.month}</p>
                 </div>
-                <div className="bg-gray-50 dark:bg-[#2a2a2a] rounded-lg p-3">
+                <div className="bg-gray-50 dark:bg-[#241C16] rounded-lg p-3">
                   <p className="text-xs text-gray-500">Samvatsara</p>
                   <p className="font-medium text-sm">{TODAY_PANCHANGAM.hinduDate.samvatsara}</p>
                 </div>
@@ -100,22 +100,22 @@ export default function PanchangamPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Star className="h-5 w-5 text-[#D4A017]" />
+                <Star className="h-5 w-5 text-[#D4AF37]" />
                 Nakshatra & Yoga
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
-              <div className="bg-[#D4A017]/10 rounded-lg p-4">
+              <div className="bg-[#D4AF37]/10 rounded-lg p-4">
                 <p className="text-sm text-gray-500">Nakshatra</p>
                 <p className="font-semibold text-gray-900 dark:text-white">{TODAY_PANCHANGAM.nakshatra.name}</p>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">{TODAY_PANCHANGAM.nakshatra.startTime} - {TODAY_PANCHANGAM.nakshatra.endTime}</p>
               </div>
-              <div className="bg-gray-50 dark:bg-[#2a2a2a] rounded-lg p-4">
+              <div className="bg-gray-50 dark:bg-[#241C16] rounded-lg p-4">
                 <p className="text-sm text-gray-500">Yoga</p>
                 <p className="font-semibold text-gray-900 dark:text-white">{TODAY_PANCHANGAM.yoga.name}</p>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">{TODAY_PANCHANGAM.yoga.startTime} - {TODAY_PANCHANGAM.yoga.endTime}</p>
               </div>
-              <div className="bg-gray-50 dark:bg-[#2a2a2a] rounded-lg p-4">
+              <div className="bg-gray-50 dark:bg-[#241C16] rounded-lg p-4">
                 <p className="text-sm text-gray-500">Karana</p>
                 <p className="font-semibold text-gray-900 dark:text-white">{TODAY_PANCHANGAM.karana.name}</p>
                 <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">{TODAY_PANCHANGAM.karana.startTime} - {TODAY_PANCHANGAM.karana.endTime}</p>
@@ -127,28 +127,28 @@ export default function PanchangamPage() {
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
-                <Sun className="h-5 w-5 text-[#E07B39]" />
+                <Sun className="h-5 w-5 text-[#FF6B00]" />
                 Sun & Moon
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
-                <div className="bg-amber-50 dark:bg-[#2a2a2a] rounded-lg p-4 text-center">
+                <div className="bg-amber-50 dark:bg-[#241C16] rounded-lg p-4 text-center">
                   <Sunrise className="h-6 w-6 text-amber-500 mx-auto mb-1" />
                   <p className="text-xs text-gray-500">Sunrise</p>
                   <p className="font-semibold text-sm">{TODAY_PANCHANGAM.timings.sunrise}</p>
                 </div>
-                <div className="bg-orange-50 dark:bg-[#2a2a2a] rounded-lg p-4 text-center">
+                <div className="bg-orange-50 dark:bg-[#241C16] rounded-lg p-4 text-center">
                   <Sunset className="h-6 w-6 text-orange-500 mx-auto mb-1" />
                   <p className="text-xs text-gray-500">Sunset</p>
                   <p className="font-semibold text-sm">{TODAY_PANCHANGAM.timings.sunset}</p>
                 </div>
-                <div className="bg-indigo-50 dark:bg-[#2a2a2a] rounded-lg p-4 text-center">
+                <div className="bg-indigo-50 dark:bg-[#241C16] rounded-lg p-4 text-center">
                   <Moon className="h-6 w-6 text-indigo-500 mx-auto mb-1" />
                   <p className="text-xs text-gray-500">Moonrise</p>
                   <p className="font-semibold text-sm">{TODAY_PANCHANGAM.timings.moonrise}</p>
                 </div>
-                <div className="bg-gray-100 dark:bg-[#2a2a2a] rounded-lg p-4 text-center">
+                <div className="bg-gray-100 dark:bg-[#241C16] rounded-lg p-4 text-center">
                   <Moon className="h-6 w-6 text-gray-400 mx-auto mb-1" />
                   <p className="text-xs text-gray-500">Moonset</p>
                   <p className="font-semibold text-sm">{TODAY_PANCHANGAM.timings.moonset}</p>

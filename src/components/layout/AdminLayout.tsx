@@ -36,7 +36,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
                   value={globalSearch}
                   onChange={(e) => setGlobalSearch(e.target.value)}
                   placeholder="Search..."
-                  className="w-64 lg:w-80 pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                  className="w-64 lg:w-80 pl-10 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
                 />
               </div>
             </div>
@@ -49,7 +49,7 @@ export function AdminLayout({ children }: AdminLayoutProps) {
 
               {user && (
                 <div className="flex items-center gap-2 pl-3 border-l border-gray-200">
-                  <div className="h-8 w-8 rounded-full bg-[#E07B39]/10 text-[#E07B39] flex items-center justify-center text-sm font-semibold">
+                  <div className="h-8 w-8 rounded-full bg-[#FF6B00]/10 text-[#FF6B00] flex items-center justify-center text-sm font-semibold">
                     {user.name?.[0]?.toUpperCase() || "A"}
                   </div>
                   <div className="hidden sm:block">

@@ -2,31 +2,54 @@
 
 @custom-variant dark (&:is(.dark, .dark *));
 
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── SACRED MODERNISM — Design Foundation ───────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
+
 :root {
-  --color-saffron: #E07B39;
-  --color-saffron-light: #F4A261;
-  --color-saffron-dark: #C96A2E;
-  --color-maroon: #8B1A1A;
-  --color-maroon-light: #A52A2A;
-  --color-maroon-dark: #6B0F0F;
-  --color-gold: #D4A017;
-  --color-gold-light: #F0C040;
-  --color-cream: #FFF8F0;
+  /* ── Primary Sacred Palette ── */
+  --color-saffron: #FF6B00;
+  --color-saffron-light: #FF8A33;
+  --color-saffron-dark: #E05E00;
+  --color-sandalwood: #8B4513;
+  --color-sandalwood-light: #A0522D;
+  --color-sandalwood-dark: #6B3410;
+  --color-maroon: #361E1E;
+  --color-maroon-light: #4A2828;
+  --color-maroon-dark: #1F0F0F;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E8C84A;
+  --color-gold-dark: #B8962E;
+  --color-cream: #FDF8F0;
   --color-temple-red: #CC3333;
 
-  --font-sans: "Lato", system-ui, -apple-system, sans-serif;
+  /* ── Semantic tokens ── */
+  --background: #FDF8F0;
+  --foreground: #361E1E;
+  --surface: #FFFFFF;
+  --surface-elevated: #FFFFFF;
+  --border-subtle: rgba(212, 175, 55, 0.12);
+  --border-accent: rgba(212, 175, 55, 0.25);
 
-  --background: #ffffff;
-  --foreground: #1a1a1a;
+  /* ── Typography ── */
+  --font-heading: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+
+  /* ── Spacing rhythm ── */
+  --section-gap: 5rem;
 }
 
 @theme inline {
-  --color-saffron: #E07B39;
-  --color-saffron-light: #F4A261;
-  --color-saffron-dark: #C96A2E;
-  --color-maroon: #8B1A1A;
-  --color-gold: #D4A017;
-  --color-cream: #FFF8F0;
+  --color-saffron: #FF6B00;
+  --color-saffron-light: #FF8A33;
+  --color-saffron-dark: #E05E00;
+  --color-sandalwood: #8B4513;
+  --color-maroon: #361E1E;
+  --color-maroon-light: #4A2828;
+  --color-gold: #D4AF37;
+  --color-gold-light: #E8C84A;
+  --color-cream: #FDF8F0;
+  --color-temple-red: #CC3333;
 }
 
 * {
@@ -51,9 +74,21 @@ body {
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
-/* Custom scrollbar */
+/* ─── Heading Typography ────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6,
+.font-heading {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* ─── Custom Scrollbar ──────────────────────────────────────── */
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -64,32 +99,37 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d1d5db;
+  background: rgba(212, 175, 55, 0.25);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
+  background: rgba(212, 175, 55, 0.4);
 }
 
-/* Focus visible styles */
+/* ─── Focus visible styles ──────────────────────────────────── */
+
 :focus-visible {
-  outline: 2px solid var(--color-saffron);
+  outline: 2px solid var(--color-gold);
   outline-offset: 2px;
 }
 
-/* Smooth scroll */
+/* ─── Smooth scroll ─────────────────────────────────────────── */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Selection color */
+/* ─── Selection color ───────────────────────────────────────── */
+
 ::selection {
-  background: rgba(224, 123, 57, 0.2);
+  background: rgba(212, 175, 55, 0.2);
   color: inherit;
 }
 
-/* ─── Premium Animations ──────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── SACRED ANIMATIONS ─────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
 
 @keyframes fade-in-up {
   from {
@@ -129,8 +169,8 @@ html {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(224, 123, 57, 0.3); }
-  50% { box-shadow: 0 0 20px 4px rgba(224, 123, 57, 0.15); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.3); }
+  50% { box-shadow: 0 0 24px 4px rgba(212, 175, 55, 0.12); }
 }
 
 @keyframes gradient-shift {
@@ -142,6 +182,23 @@ html {
 @keyframes count-up {
   from { opacity: 0; transform: scale(0.5); }
   to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes sacred-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes breathe {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.05); }
+}
+
+@keyframes diya-flicker {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  25% { opacity: 1; transform: scale(1.02); }
+  50% { opacity: 0.9; transform: scale(0.98); }
+  75% { opacity: 1; transform: scale(1.01); }
 }
 
 .animate-fade-in-up {
@@ -179,7 +236,20 @@ html {
   animation: count-up 0.5s ease-out forwards;
 }
 
-/* Stagger animation delays */
+.animate-sacred-rotate {
+  animation: sacred-rotate 60s linear infinite;
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-diya {
+  animation: diya-flicker 2s ease-in-out infinite;
+}
+
+/* ─── Stagger animation delays ──────────────────────────────── */
+
 .stagger-1 { animation-delay: 0.1s; }
 .stagger-2 { animation-delay: 0.2s; }
 .stagger-3 { animation-delay: 0.3s; }
@@ -187,25 +257,29 @@ html {
 .stagger-5 { animation-delay: 0.5s; }
 .stagger-6 { animation-delay: 0.6s; }
 
-/* ─── Premium Glass Effects ──────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── GLASS EFFECTS ─────────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
 
 .glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(253, 248, 240, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 .glass-dark {
   background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
 }
 
-/* ─── Premium Gradient Text ──────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── SACRED GRADIENT TEXT ──────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
 
 .gradient-text {
-  background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-gold) 50%, var(--color-maroon) 100%);
+  background: linear-gradient(135deg, var(--color-saffron) 0%, var(--color-gold) 50%, var(--color-sandalwood) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -218,7 +292,16 @@ html {
   background-clip: text;
 }
 
-/* ─── Premium Section Divider ────────────────────── */
+.gradient-text-sacred {
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-saffron) 35%, var(--color-gold) 70%, var(--color-sandalwood) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── SECTION DIVIDERS ──────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
 
 .section-divider {
   position: relative;
@@ -232,44 +315,84 @@ html {
   left: 50%;
   transform: translateX(-50%);
   width: 80px;
-  height: 3px;
+  height: 2px;
   background: linear-gradient(90deg, var(--color-saffron), var(--color-gold), var(--color-saffron));
   border-radius: 2px;
 }
 
-/* ─── Decorative Pattern Background ──────────────── */
+/* ─── Sacred lotus section divider ──────────────────────────── */
 
+.section-lotus-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+
+.section-lotus-divider::before,
+.section-lotus-divider::after {
+  content: '';
+  flex: 1;
+  max-width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+.section-lotus-divider .lotus-icon {
+  margin: 0 16px;
+  color: var(--color-gold);
+  opacity: 0.6;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── SACRED GEOMETRY PATTERNS ──────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
+
+/* Cross pattern (subtle) */
 .pattern-bg {
-  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23E07B39' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
+/* Mandala circles (background) */
 .mandala-bg {
-  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle stroke='%23D4A017' stroke-opacity='0.06' cx='40' cy='40' r='20' stroke-width='1'/%3E%3Ccircle stroke='%23E07B39' stroke-opacity='0.04' cx='40' cy='40' r='35' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Ccircle stroke='%23D4AF37' stroke-opacity='0.06' cx='40' cy='40' r='20' stroke-width='1'/%3E%3Ccircle stroke='%23FF6B00' stroke-opacity='0.04' cx='40' cy='40' r='35' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* ─── Carousel / Horizontal Scroll ───────────────── */
-
-.hide-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+/* Sacred geometry — interlocking circles (Flower of Life motif) */
+.sacred-geometry-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23D4AF37' stroke-opacity='0.05' stroke-width='0.5'%3E%3Ccircle cx='50' cy='50' r='25'/%3E%3Ccircle cx='50' cy='25' r='25'/%3E%3Ccircle cx='50' cy='75' r='25'/%3E%3Ccircle cx='25' cy='37.5' r='25'/%3E%3Ccircle cx='75' cy='37.5' r='25'/%3E%3Ccircle cx='25' cy='62.5' r='25'/%3E%3Ccircle cx='75' cy='62.5' r='25'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-.hide-scrollbar::-webkit-scrollbar {
-  display: none;
+/* Kolam / Rangoli dot-grid pattern */
+.kolam-bg {
+  background-image: radial-gradient(circle, rgba(212, 175, 55, 0.08) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
-/* ─── Premium Card Hover ─────────────────────────── */
+/* Temple arch pattern */
+.temple-arch-bg {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='60' viewBox='0 0 120 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 60 Q30 0 60 60 Q90 0 120 60' fill='none' stroke='%23D4AF37' stroke-opacity='0.06' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── PREMIUM CARD HOVER ────────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
 
 .card-premium {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .card-premium:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-6px);
+  box-shadow:
+    0 20px 40px -12px rgba(54, 30, 30, 0.1),
+    0 0 0 1px rgba(212, 175, 55, 0.1);
 }
 
-/* ─── Offer Banner Shine Effect ──────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── OFFER BANNER SHINE EFFECT ─────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
 
 .shine-effect {
   position: relative;
@@ -283,7 +406,7 @@ html {
   left: -100%;
   width: 50%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
   animation: shine 3s ease-in-out infinite;
 }
 
@@ -292,7 +415,9 @@ html {
   50%, 100% { left: 150%; }
 }
 
-/* ─── Testimonial Marquee Scroll ────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── MARQUEE / TESTIMONIALS SCROLL ─────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
 
 @keyframes scroll-left {
   0% { transform: translateX(0); }
@@ -321,61 +446,100 @@ html {
   animation-play-state: paused;
 }
 
-/* ─── Lotus Section Divider ─────────────────────── */
+/* ─── Hide Scrollbar ────────────────────────────────────────── */
 
-.section-lotus-divider {
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── SACRED BORDER ORNAMENTS ───────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
+
+.sacred-border-top {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem 0;
 }
 
-.section-lotus-divider::before,
-.section-lotus-divider::after {
+.sacred-border-top::before {
   content: '';
-  flex: 1;
-  max-width: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--color-gold) 15%,
+    var(--color-saffron) 30%,
+    var(--color-gold) 50%,
+    var(--color-saffron) 70%,
+    var(--color-gold) 85%,
+    transparent 100%
+  );
+}
+
+.sacred-border-bottom {
+  position: relative;
+}
+
+.sacred-border-bottom::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    transparent
+  );
+  opacity: 0.3;
 }
 
-.section-lotus-divider .lotus-icon {
-  margin: 0 16px;
-  color: var(--color-gold);
-  opacity: 0.6;
-}
-
-/* ═══════════════════════════════════════════════════ */
-/* ─── DARK MODE OVERRIDES ────────────────────────── */
-/* ═══════════════════════════════════════════════════ */
+/* ═══════════════════════════════════════════════════════════════ */
+/* ─── DARK MODE OVERRIDES ───────────────────────────────────── */
+/* ═══════════════════════════════════════════════════════════════ */
 
 .dark {
-  --background: #121212;
-  --foreground: #e5e5e5;
+  --background: #0D0907;
+  --foreground: #E8DDD0;
+  --surface: #1A1210;
+  --surface-elevated: #241C16;
+  --border-subtle: rgba(212, 175, 55, 0.08);
+  --border-accent: rgba(212, 175, 55, 0.15);
   color-scheme: dark;
 }
 
 /* Scrollbar in dark */
 .dark ::-webkit-scrollbar-thumb {
-  background: #444;
+  background: rgba(212, 175, 55, 0.15);
 }
 .dark ::-webkit-scrollbar-thumb:hover {
-  background: #666;
+  background: rgba(212, 175, 55, 0.3);
 }
 
 /* Glass in dark */
 .dark .glass {
-  background: rgba(30, 30, 30, 0.85);
-  border-color: rgba(255, 255, 255, 0.08);
+  background: rgba(26, 18, 16, 0.85);
+  border-color: rgba(212, 175, 55, 0.08);
 }
 
 /* Card hover in dark */
 .dark .card-premium:hover {
-  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    0 20px 40px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(212, 175, 55, 0.08);
 }
 
 /* Selection in dark */
 .dark ::selection {
-  background: rgba(224, 123, 57, 0.35);
+  background: rgba(212, 175, 55, 0.3);
 }

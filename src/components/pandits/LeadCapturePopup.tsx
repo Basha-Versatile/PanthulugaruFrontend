@@ -99,7 +99,7 @@ export function LeadCapturePopup({ isOpen, onClose, panthulugaruId, panthulugaru
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="What service are you looking for?"
                 rows={3}
-                className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
               />
             </div>
 

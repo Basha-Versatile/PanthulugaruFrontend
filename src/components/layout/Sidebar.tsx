@@ -49,8 +49,8 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
       )}>
         <div className="flex items-center justify-between p-4 border-b border-gray-200">
           <Link href="/admin" className="flex items-center gap-2">
-            <span className="text-lg text-[#E07B39] font-bold">Om</span>
-            <span className="font-bold text-gray-900">PG <span className="text-[#E07B39]">Admin</span></span>
+            <img src="/logo-full.png" alt="Panthulu Garu" className="h-8 w-8 rounded-full object-cover" />
+            <span className="font-bold text-gray-900">PG <span className="text-[#FF6B00]">Admin</span></span>
           </Link>
           <button onClick={onToggle} className="lg:hidden p-1 text-gray-400 hover:text-gray-600">
             <ChevronLeft className="h-5 w-5" />
@@ -68,7 +68,7 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
                 onClick={() => { if (window.innerWidth < 1024) onToggle(); }}
                 className={cn(
                   "flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors",
-                  isActive ? "text-[#E07B39] bg-[#E07B39]/5" : "text-gray-600 hover:text-[#E07B39] hover:bg-gray-50"
+                  isActive ? "text-[#FF6B00] bg-[#FF6B00]/5" : "text-gray-600 hover:text-[#FF6B00] hover:bg-gray-50"
                 )}
               >
                 <Icon className="h-4.5 w-4.5 flex-shrink-0" />
@@ -81,7 +81,7 @@ export function Sidebar({ isOpen, onToggle }: SidebarProps) {
         <div className="p-4 border-t border-gray-200">
           {user && (
             <div className="flex items-center gap-3 mb-3">
-              <div className="h-9 w-9 rounded-full bg-[#E07B39]/10 text-[#E07B39] flex items-center justify-center text-sm font-semibold">
+              <div className="h-9 w-9 rounded-full bg-[#FF6B00]/10 text-[#FF6B00] flex items-center justify-center text-sm font-semibold">
                 {user.name?.[0]?.toUpperCase() || "A"}
               </div>
               <div className="flex-1 min-w-0">

@@ -102,7 +102,7 @@ function PaymentPageInner() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-lg mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <button onClick={() => router.back()} className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#E07B39]">
+          <button onClick={() => router.back()} className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#FF6B00]">
             <ArrowLeft className="h-4 w-4" />
             Back
           </button>
@@ -126,7 +126,7 @@ function PaymentPageInner() {
             <div className="mt-4 pt-3 border-t border-gray-200">
               <div className="flex justify-between text-lg font-bold">
                 <span>Total</span>
-                <span className="text-[#E07B39]">&#8377;{booking.totalAmount || booking.amount || 0}</span>
+                <span className="text-[#FF6B00]">&#8377;{booking.totalAmount || booking.amount || 0}</span>
               </div>
             </div>
           </CardContent>
@@ -140,13 +140,13 @@ function PaymentPageInner() {
               key={m.id}
               onClick={() => setPaymentMethod(m.id)}
               className={`w-full flex items-center gap-3 p-3 rounded-lg border transition-colors ${
-                paymentMethod === m.id ? 'border-[#E07B39] bg-[#E07B39]/5' : 'border-gray-200'
+                paymentMethod === m.id ? 'border-[#FF6B00] bg-[#FF6B00]/5' : 'border-gray-200'
               }`}
             >
               <div className={`h-10 w-10 rounded-lg flex items-center justify-center ${
-                paymentMethod === m.id ? 'bg-[#E07B39]/10' : 'bg-gray-100'
+                paymentMethod === m.id ? 'bg-[#FF6B00]/10' : 'bg-gray-100'
               }`}>
-                <m.icon className={`h-5 w-5 ${paymentMethod === m.id ? 'text-[#E07B39]' : 'text-gray-500'}`} />
+                <m.icon className={`h-5 w-5 ${paymentMethod === m.id ? 'text-[#FF6B00]' : 'text-gray-500'}`} />
               </div>
               <div className="text-left">
                 <p className="text-sm font-medium">{m.label}</p>

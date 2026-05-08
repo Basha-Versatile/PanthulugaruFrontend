@@ -54,9 +54,9 @@ export default function VaahanPujaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#121212]">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0D0907]">
       {/* Hero */}
-      <div className="bg-gradient-to-br from-[#E07B39] to-[#c96a2e] text-white">
+      <div className="bg-gradient-to-br from-[#FF6B00] to-[#E05E00] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
           <div className="max-w-3xl">
             <div className="flex items-center gap-3 mb-4">
@@ -81,8 +81,8 @@ export default function VaahanPujaPage() {
                 {SERVICES.map((service) => (
                   <Card key={service.title}>
                     <CardContent className="p-5 flex gap-4">
-                      <div className="h-12 w-12 rounded-xl bg-[#E07B39]/10 flex items-center justify-center flex-shrink-0">
-                        <service.icon className="h-6 w-6 text-[#E07B39]" />
+                      <div className="h-12 w-12 rounded-xl bg-[#FF6B00]/10 flex items-center justify-center flex-shrink-0">
+                        <service.icon className="h-6 w-6 text-[#FF6B00]" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900 dark:text-white">{service.title}</h3>
@@ -120,7 +120,7 @@ export default function VaahanPujaPage() {
                   <Input label="Email" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email address" />
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Vehicle Type</label>
-                    <select value={vehicleType} onChange={(e) => setVehicleType(e.target.value)} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39] dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white">
+                    <select value={vehicleType} onChange={(e) => setVehicleType(e.target.value)} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:bg-[#241C16] dark:border-gray-600 dark:text-white">
                       <option value="">Select vehicle type</option>
                       <option value="Car">Car</option>
                       <option value="Bike">Bike / Scooter</option>
@@ -133,7 +133,7 @@ export default function VaahanPujaPage() {
                   <Input label="Preferred Date" type="date" value={preferredDate} onChange={(e) => setPreferredDate(e.target.value)} min={new Date().toISOString().split('T')[0]} />
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Message</label>
-                    <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Any special requirements..." rows={3} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39] dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white" />
+                    <textarea value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Any special requirements..." rows={3} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:bg-[#241C16] dark:border-gray-600 dark:text-white" />
                   </div>
                   <Button type="submit" variant="primary" className="w-full" isLoading={submitting}>
                     Submit Inquiry

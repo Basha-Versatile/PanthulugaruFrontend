@@ -16,8 +16,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Avatar } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Skeleton } from '@/components/ui/skeleton';
-import { LoginModal } from '@/components/auth/LoginModal';
-import { useAuth } from '@/contexts/AuthContext';
 import { getAllPandits } from '@/lib/api/pandits';
 import { getArticles } from '@/lib/api/articles';
 import {
@@ -27,7 +25,7 @@ import {
 import type { Panthulugaru, Article } from '@/types';
 
 const CATEGORIES = [
-  { href: '/pandits', label: 'Pandits', icon: Users, gradient: 'from-[#E07B39] to-[#D4A017]', desc: 'Find verified & experienced priests for all ceremonies' },
+  { href: '/pandits', label: 'Pandits', icon: Users, gradient: 'from-[#FF6B00] to-[#D4AF37]', desc: 'Find verified & experienced priests for all ceremonies' },
   { href: '/photographers', label: 'Photographers', icon: Camera, gradient: 'from-blue-500 to-indigo-600', desc: 'Professional ceremony & event photographers' },
   { href: '/caterers', label: 'Caterers', icon: UtensilsCrossed, gradient: 'from-emerald-500 to-teal-600', desc: 'Pure sattvic food for pujas & celebrations' },
   { href: '/rituals', label: 'Rituals', icon: BookOpen, gradient: 'from-purple-500 to-violet-600', desc: 'Browse all Hindu ceremonies & poojas' },
@@ -44,7 +42,6 @@ const STEP_ICONS: Record<string, React.ElementType> = {
 
 export default function HomePage() {
   const router = useRouter();
-  const { isLoginModalOpen, closeLoginModal, loginRedirectPath } = useAuth();
   const [searchQuery, setSearchQuery] = useState('');
   const [featuredPandits, setFeaturedPandits] = useState<Panthulugaru[]>([]);
   const [recentArticles, setRecentArticles] = useState<Article[]>([]);
@@ -100,30 +97,30 @@ export default function HomePage() {
       <main className="min-h-screen">
 
         {/* ══════════════ HERO SECTION ══════════════ */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-[#1a0a00] via-[#2d1508] to-[#3d1c0a] min-h-[85vh] flex items-center">
+        <section className="relative overflow-hidden bg-gradient-to-b from-[#0D0907] via-[#1A1210] to-[#241C16] min-h-[85vh] flex items-center">
           {/* Decorative background elements */}
           <div className="absolute inset-0 mandala-bg opacity-30" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-radial from-[#E07B39]/15 via-transparent to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-tl from-[#D4A017]/10 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-[#8B1A1A]/15 to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-radial from-[#FF6B00]/15 via-transparent to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gradient-to-tl from-[#D4AF37]/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-gradient-to-tr from-[#361E1E]/15 to-transparent rounded-full blur-3xl" />
           {/* Floating Om watermark */}
-          <div className="absolute top-20 left-12 text-[#E07B39]/[0.06] text-[200px] font-bold leading-none select-none animate-float hidden xl:block">ॐ</div>
-          <div className="absolute bottom-16 right-16 text-[#D4A017]/[0.05] text-[140px] font-bold leading-none select-none hidden xl:block">श्री</div>
+          <div className="absolute top-20 left-12 text-[#FF6B00]/[0.06] text-[200px] font-bold leading-none select-none animate-float hidden xl:block">ॐ</div>
+          <div className="absolute bottom-16 right-16 text-[#D4AF37]/[0.05] text-[140px] font-bold leading-none select-none hidden xl:block">श्री</div>
           {/* Decorative border lines */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4A017]/40 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4A017]/20 to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent" />
+          <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#D4AF37]/20 to-transparent" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 relative z-10 w-full">
             <div className="text-center max-w-4xl mx-auto">
               {/* Trust badge */}
-              <div className="inline-flex items-center flex-wrap justify-center gap-2 sm:gap-2.5 px-4 sm:px-5 py-2.5 rounded-full bg-white/[0.08] border border-[#D4A017]/30 backdrop-blur-sm mb-8 animate-fade-in-up">
-                <div className="h-5 w-5 rounded-full bg-gradient-to-br from-[#D4A017] to-[#E07B39] flex items-center justify-center">
+              <div className="inline-flex items-center flex-wrap justify-center gap-2 sm:gap-2.5 px-4 sm:px-5 py-2.5 rounded-full bg-white/[0.08] border border-[#D4AF37]/30 backdrop-blur-sm mb-8 animate-fade-in-up">
+                <div className="h-5 w-5 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#FF6B00] flex items-center justify-center">
                   <Shield className="h-3 w-3 text-white" />
                 </div>
-                <span className="text-xs sm:text-sm font-medium text-[#F0C040]">Trusted by {PLATFORM_STATS.totalCeremonies.toLocaleString()}+ families</span>
+                <span className="text-xs sm:text-sm font-medium text-[#E8C84A]">Trusted by {PLATFORM_STATS.totalCeremonies.toLocaleString()}+ families</span>
                 <div className="flex -space-x-0.5">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-3 w-3 text-[#F0C040] fill-[#F0C040]" />
+                    <Star key={i} className="h-3 w-3 text-[#E8C84A] fill-[#E8C84A]" />
                   ))}
                 </div>
               </div>
@@ -131,10 +128,10 @@ export default function HomePage() {
               {/* Main heading */}
               <h1 className="text-3xl sm:text-5xl lg:text-7xl font-bold leading-[1.1] animate-fade-in-up stagger-1">
                 <span className="text-white">Find Trusted </span>
-                <span className="bg-gradient-to-r from-[#F0C040] via-[#E07B39] to-[#D4A017] bg-clip-text text-transparent">Pandits</span>
+                <span className="bg-gradient-to-r from-[#E8C84A] via-[#FF6B00] to-[#D4AF37] bg-clip-text text-transparent">Pandits</span>
                 <br className="hidden sm:block" />
                 <span className="text-white"> for Your </span>
-                <span className="bg-gradient-to-r from-[#E07B39] to-[#CC3333] bg-clip-text text-transparent">Sacred Ceremonies</span>
+                <span className="bg-gradient-to-r from-[#FF6B00] to-[#8B4513] bg-clip-text text-transparent">Sacred Ceremonies</span>
               </h1>
 
               {/* Subtitle */}
@@ -156,7 +153,7 @@ export default function HomePage() {
                       className="w-full pl-12 pr-4 py-4 text-base bg-transparent text-white focus:outline-none placeholder:text-white/30 rounded-xl"
                     />
                   </div>
-                  <button type="submit" className="flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#E07B39] to-[#D4A017] hover:from-[#c96a2e] hover:to-[#b8901a] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-[#E07B39]/20 hover:shadow-[#E07B39]/40 hover:scale-[1.02] active:scale-[0.98]">
+                  <button type="submit" className="flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#FF6B00] to-[#D4AF37] hover:from-[#E05E00] hover:to-[#b8901a] text-white font-semibold rounded-xl transition-all duration-300 shadow-lg shadow-[#FF6B00]/20 hover:shadow-[#FF6B00]/40 hover:scale-[1.02] active:scale-[0.98]">
                     <Search className="h-4 w-4" />
                     <span className="hidden sm:inline">Search</span>
                   </button>
@@ -170,7 +167,7 @@ export default function HomePage() {
                   <button
                     key={term}
                     onClick={() => { setSearchQuery(term); router.push(`/pandits?search=${encodeURIComponent(term)}`); }}
-                    className="text-sm text-[#F0C040]/70 hover:text-[#F0C040] transition-colors hover:underline underline-offset-2"
+                    className="text-sm text-[#E8C84A]/70 hover:text-[#E8C84A] transition-colors hover:underline underline-offset-2"
                   >
                     {term}
                   </button>
@@ -187,13 +184,13 @@ export default function HomePage() {
                     { value: `${PLATFORM_STATS.customerRating}`, label: 'Rating', icon: Star, isStar: true },
                   ].map((stat) => (
                     <div key={stat.label} className="flex items-center gap-3 px-4 sm:px-8 py-3 sm:py-4">
-                      <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-[#E07B39]/20 to-[#D4A017]/10 flex items-center justify-center hidden sm:flex">
-                        <stat.icon className={`h-4 w-4 ${stat.isStar ? 'text-[#F0C040] fill-[#F0C040]' : 'text-[#E07B39]'}`} />
+                      <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-[#FF6B00]/20 to-[#D4AF37]/10 flex items-center justify-center hidden sm:flex">
+                        <stat.icon className={`h-4 w-4 ${stat.isStar ? 'text-[#E8C84A] fill-[#E8C84A]' : 'text-[#FF6B00]'}`} />
                       </div>
                       <div className="text-center sm:text-left">
                         <p className="text-lg sm:text-2xl font-bold text-white">
                           {stat.value}
-                          {stat.isStar && <Star className="inline h-3.5 w-3.5 text-[#F0C040] fill-[#F0C040] ml-0.5 -mt-1" />}
+                          {stat.isStar && <Star className="inline h-3.5 w-3.5 text-[#E8C84A] fill-[#E8C84A] ml-0.5 -mt-1" />}
                         </p>
                         <p className="text-[10px] sm:text-xs text-white/40 font-medium uppercase tracking-wider">{stat.label}</p>
                       </div>
@@ -206,7 +203,7 @@ export default function HomePage() {
         </section>
 
         {/* ══════════════ SERVICES - Carousel with Prev/Next ══════════════ */}
-        <section className="py-10 sm:py-14 bg-gradient-to-b from-[#FFF8F0]/60 to-white dark:from-[#1a1a1a] dark:to-[#121212]">
+        <section className="py-10 sm:py-14 bg-gradient-to-b from-[#FDF8F0]/60 to-white dark:from-[#0D0907] dark:to-[#0D0907]">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">
@@ -218,7 +215,7 @@ export default function HomePage() {
                     const el = document.getElementById('services-carousel');
                     if (el) el.scrollBy({ left: -300, behavior: 'smooth' });
                   }}
-                  className="h-9 w-9 rounded-full border-2 border-[#E07B39]/20 bg-white dark:bg-[#1e1e1e] flex items-center justify-center text-[#E07B39] hover:border-[#E07B39] hover:bg-[#E07B39] hover:text-white shadow-sm hover:shadow-md transition-all"
+                  className="h-9 w-9 rounded-full border-2 border-[#FF6B00]/20 bg-white dark:bg-[#1A1210] flex items-center justify-center text-[#FF6B00] hover:border-[#FF6B00] hover:bg-[#FF6B00] hover:text-white shadow-sm hover:shadow-md transition-all"
                   aria-label="Previous services"
                 >
                   <ChevronLeft className="h-4 w-4" />
@@ -228,7 +225,7 @@ export default function HomePage() {
                     const el = document.getElementById('services-carousel');
                     if (el) el.scrollBy({ left: 300, behavior: 'smooth' });
                   }}
-                  className="h-9 w-9 rounded-full border-2 border-[#E07B39]/20 bg-white dark:bg-[#1e1e1e] flex items-center justify-center text-[#E07B39] hover:border-[#E07B39] hover:bg-[#E07B39] hover:text-white shadow-sm hover:shadow-md transition-all"
+                  className="h-9 w-9 rounded-full border-2 border-[#FF6B00]/20 bg-white dark:bg-[#1A1210] flex items-center justify-center text-[#FF6B00] hover:border-[#FF6B00] hover:bg-[#FF6B00] hover:text-white shadow-sm hover:shadow-md transition-all"
                   aria-label="Next services"
                 >
                   <ChevronRight className="h-4 w-4" />
@@ -242,13 +239,13 @@ export default function HomePage() {
             >
               {CATEGORIES.map((cat) => (
                 <Link key={cat.href} href={cat.href} className="flex-shrink-0 w-[220px] sm:w-[250px]">
-                  <div className="group flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-[#E07B39]/40 shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(224,123,57,0.15)] hover:-translate-y-1.5 transition-all duration-300 bg-white dark:bg-[#1e1e1e] h-full relative overflow-hidden">
+                  <div className="group flex flex-col items-center text-center p-5 sm:p-6 rounded-2xl border-2 border-gray-200 dark:border-gray-700 hover:border-[#FF6B00]/40 shadow-[0_2px_12px_rgba(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgba(224,123,57,0.15)] hover:-translate-y-1.5 transition-all duration-300 bg-white dark:bg-[#1A1210] h-full relative overflow-hidden">
                     {/* Subtle top accent bar */}
                     <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${cat.gradient} opacity-60 group-hover:opacity-100 transition-opacity`} />
                     <div className={`h-16 w-16 rounded-2xl bg-gradient-to-br ${cat.gradient} flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:shadow-xl group-hover:rotate-3 transition-all duration-300 mt-1`}>
                       <cat.icon className="h-7 w-7 text-white" />
                     </div>
-                    <h3 className="text-sm font-bold text-gray-900 dark:text-white mt-3.5 group-hover:text-[#E07B39] transition-colors">
+                    <h3 className="text-sm font-bold text-gray-900 dark:text-white mt-3.5 group-hover:text-[#FF6B00] transition-colors">
                       {cat.label}
                     </h3>
                     <p className="text-[11px] text-gray-500 dark:text-gray-400 mt-1.5 leading-relaxed line-clamp-2">
@@ -267,7 +264,7 @@ export default function HomePage() {
         </div>
 
         {/* ══════════════ FEATURED PANDITS ══════════════ */}
-        <section className="py-14 sm:py-20 bg-gradient-to-b from-gray-50 to-white dark:from-[#161616] dark:to-[#121212] mandala-bg">
+        <section className="py-14 sm:py-20 bg-gradient-to-b from-gray-50 to-white dark:from-[#0D0907] dark:to-[#0D0907] mandala-bg">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-10">
               <div>
@@ -275,7 +272,7 @@ export default function HomePage() {
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Featured Pandits</h2>
                 <p className="text-gray-500 dark:text-gray-400 mt-1">Verified and highly rated by thousands of devotees</p>
               </div>
-              <Link href="/pandits" className="hidden sm:flex items-center gap-1.5 text-[#E07B39] font-semibold hover:gap-2.5 transition-all">
+              <Link href="/pandits" className="hidden sm:flex items-center gap-1.5 text-[#FF6B00] font-semibold hover:gap-2.5 transition-all">
                 View All <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -290,20 +287,20 @@ export default function HomePage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {featuredPandits.map((pandit) => (
                   <Link key={pandit.id} href={`/pandits/${pandit.slug}`}>
-                    <Card className="h-full overflow-hidden card-premium cursor-pointer group border-gray-200/80 dark:border-gray-700 dark:bg-[#1e1e1e]">
-                      <div className="h-1 bg-gradient-to-r from-[#E07B39] via-[#D4A017] to-[#8B1A1A]" />
+                    <Card className="h-full overflow-hidden card-premium cursor-pointer group border-gray-200/80 dark:border-gray-700 dark:bg-[#1A1210]">
+                      <div className="h-1 bg-gradient-to-r from-[#FF6B00] via-[#D4AF37] to-[#361E1E]" />
                       <CardContent className="p-5">
                         <div className="flex items-start gap-4">
                           <div className="relative">
                             <Avatar src={pandit.profileImage} alt={`${pandit.firstName} ${pandit.lastName}`} fallback={`${pandit.firstName} ${pandit.lastName}`} size="lg" />
                             {pandit.isVerified && (
-                              <div className="absolute -bottom-1 -right-1 h-5 w-5 bg-[#E07B39] rounded-full flex items-center justify-center">
+                              <div className="absolute -bottom-1 -right-1 h-5 w-5 bg-[#FF6B00] rounded-full flex items-center justify-center">
                                 <CheckCircle className="h-3 w-3 text-white" />
                               </div>
                             )}
                           </div>
                           <div className="flex-1 min-w-0">
-                            <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-[#E07B39] transition-colors">{pandit.firstName} {pandit.lastName}</h3>
+                            <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-[#FF6B00] transition-colors">{pandit.firstName} {pandit.lastName}</h3>
                             <div className="flex items-center gap-1.5 mt-1 text-sm text-gray-500">
                               <MapPin className="h-3.5 w-3.5 flex-shrink-0" />
                               <span className="truncate">{pandit.primaryCity || 'India'}</span>
@@ -311,7 +308,7 @@ export default function HomePage() {
                             <div className="flex items-center gap-3 mt-2">
                               {pandit.rating > 0 && (
                                 <div className="flex items-center gap-1">
-                                  <Star className="h-3.5 w-3.5 text-[#D4A017] fill-[#D4A017]" />
+                                  <Star className="h-3.5 w-3.5 text-[#D4AF37] fill-[#D4AF37]" />
                                   <span className="text-sm font-semibold text-gray-800">{pandit.rating.toFixed(1)}</span>
                                   <span className="text-xs text-gray-400">({pandit.reviewCount})</span>
                                 </div>
@@ -325,15 +322,15 @@ export default function HomePage() {
                         </div>
                         <div className="flex flex-wrap gap-1.5 mt-3">
                           {pandit.specializations?.slice(0, 3).map((spec) => (
-                            <span key={spec} className="px-2 py-0.5 text-[10px] font-medium bg-[#E07B39]/5 text-[#E07B39] rounded-full">{spec}</span>
+                            <span key={spec} className="px-2 py-0.5 text-[10px] font-medium bg-[#FF6B00]/5 text-[#FF6B00] rounded-full">{spec}</span>
                           ))}
                         </div>
                         <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100">
                           <div className="flex gap-1.5">
                             {pandit.isAvailable && <Badge variant="green" className="text-[10px]">Available</Badge>}
-                            {pandit.minimumPricing && <span className="text-sm font-semibold text-[#E07B39]">From &#8377;{pandit.minimumPricing?.toLocaleString()}</span>}
+                            {pandit.minimumPricing && <span className="text-sm font-semibold text-[#FF6B00]">From &#8377;{pandit.minimumPricing?.toLocaleString()}</span>}
                           </div>
-                          <span className="text-xs text-[#E07B39] font-medium group-hover:underline flex items-center gap-1">View Profile <ArrowRight className="h-3 w-3" /></span>
+                          <span className="text-xs text-[#FF6B00] font-medium group-hover:underline flex items-center gap-1">View Profile <ArrowRight className="h-3 w-3" /></span>
                         </div>
                       </CardContent>
                     </Card>
@@ -349,21 +346,21 @@ export default function HomePage() {
         </section>
 
         {/* ── Lotus Divider ── */}
-        <div className="section-lotus-divider bg-gradient-to-br from-[#1a0a0a] via-[#2d1515] to-[#1a0a0a]">
+        <div className="section-lotus-divider bg-gradient-to-br from-[#0D0907] via-[#1A1210] to-[#0D0907]">
           <Flower2 className="lotus-icon h-5 w-5" />
         </div>
 
         {/* ══════════════ HOW IT WORKS ══════════════ */}
-        <section className="py-16 sm:py-24 bg-gradient-to-br from-[#1a0a0a] via-[#2d1515] to-[#1a0a0a] relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-gradient-to-br from-[#0D0907] via-[#1A1210] to-[#0D0907] relative overflow-hidden">
           {/* Decorative elements */}
           <div className="absolute inset-0 mandala-bg opacity-10" />
-          <div className="absolute top-0 left-1/3 w-96 h-96 bg-[#E07B39]/8 rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#D4A017]/8 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/3 w-96 h-96 bg-[#FF6B00]/8 rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-72 h-72 bg-[#D4AF37]/8 rounded-full blur-3xl" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-14">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 mb-5">
-                <Sparkles className="h-4 w-4 text-[#D4A017]" />
+                <Sparkles className="h-4 w-4 text-[#D4AF37]" />
                 <span className="text-sm font-medium text-white/80">Simple 4-Step Process</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
@@ -380,14 +377,14 @@ export default function HomePage() {
                     {/* Connector line between steps - desktop only */}
                     {index < HOW_IT_WORKS.length - 1 && (
                       <div className="hidden lg:block absolute top-14 left-[65%] w-[70%] z-0">
-                        <div className="h-[2px] bg-gradient-to-r from-[#D4A017]/40 to-[#E07B39]/20 relative">
-                          <div className="absolute right-0 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-[#D4A017]/40" />
+                        <div className="h-[2px] bg-gradient-to-r from-[#D4AF37]/40 to-[#FF6B00]/20 relative">
+                          <div className="absolute right-0 top-1/2 -translate-y-1/2 h-2 w-2 rounded-full bg-[#D4AF37]/40" />
                         </div>
                       </div>
                     )}
 
                     {/* Card */}
-                    <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-7 hover:bg-white/10 hover:border-[#D4A017]/30 transition-all duration-500 h-full group-hover:-translate-y-1">
+                    <div className="relative bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-7 hover:bg-white/10 hover:border-[#D4AF37]/30 transition-all duration-500 h-full group-hover:-translate-y-1">
                       {/* Step number - large watermark */}
                       <div className="absolute top-4 right-5 text-[56px] font-black text-white/[0.04] leading-none select-none">
                         0{step.step}
@@ -395,16 +392,16 @@ export default function HomePage() {
 
                       {/* Icon container */}
                       <div className="relative mb-5">
-                        <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-[#E07B39] to-[#D4A017] flex items-center justify-center shadow-lg shadow-[#E07B39]/20 group-hover:shadow-[#E07B39]/40 group-hover:scale-110 transition-all duration-300">
+                        <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-[#FF6B00] to-[#D4AF37] flex items-center justify-center shadow-lg shadow-[#FF6B00]/20 group-hover:shadow-[#FF6B00]/40 group-hover:scale-110 transition-all duration-300">
                           <IconComponent className="h-6 w-6 text-white" />
                         </div>
                         <div className="absolute -top-1.5 -left-1.5 h-6 w-6 bg-white rounded-full flex items-center justify-center shadow-md">
-                          <span className="text-[11px] font-black text-[#E07B39]">{step.step}</span>
+                          <span className="text-[11px] font-black text-[#FF6B00]">{step.step}</span>
                         </div>
                       </div>
 
                       {/* Content */}
-                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D4A017] transition-colors">
+                      <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#D4AF37] transition-colors">
                         {step.title}
                       </h3>
                       <p className="text-sm text-white/50 leading-relaxed group-hover:text-white/70 transition-colors">
@@ -413,7 +410,7 @@ export default function HomePage() {
 
                       {/* Bottom accent */}
                       <div className="mt-5 pt-4 border-t border-white/5">
-                        <div className="flex items-center gap-1.5 text-xs font-medium text-[#D4A017]/70 group-hover:text-[#D4A017] transition-colors">
+                        <div className="flex items-center gap-1.5 text-xs font-medium text-[#D4AF37]/70 group-hover:text-[#D4AF37] transition-colors">
                           <CheckCircle className="h-3.5 w-3.5" />
                           <span>{['Browse & Search', 'Compare Profiles', 'Instant Booking', 'Verified Service'][index]}</span>
                         </div>
@@ -427,15 +424,15 @@ export default function HomePage() {
             {/* Bottom trust bar */}
             <div className="mt-12 flex flex-wrap justify-center gap-6 sm:gap-10 text-white/40 text-sm">
               <div className="flex items-center gap-2">
-                <Shield className="h-4 w-4 text-[#D4A017]/60" />
+                <Shield className="h-4 w-4 text-[#D4AF37]/60" />
                 <span>100% Verified Pandits</span>
               </div>
               <div className="flex items-center gap-2">
-                <Star className="h-4 w-4 text-[#D4A017]/60 fill-[#D4A017]/60" />
+                <Star className="h-4 w-4 text-[#D4AF37]/60 fill-[#D4AF37]/60" />
                 <span>{PLATFORM_STATS.customerRating} Avg Rating</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="h-4 w-4 text-[#D4A017]/60" />
+                <Users className="h-4 w-4 text-[#D4AF37]/60" />
                 <span>{(PLATFORM_STATS.totalCeremonies / 1000).toFixed(0)}K+ Happy Families</span>
               </div>
             </div>
@@ -448,7 +445,7 @@ export default function HomePage() {
         </div>
 
         {/* ══════════════ POPULAR POOJAS ══════════════ */}
-        <section className="py-12 sm:py-16 bg-gradient-to-b from-[#FFF8F0] to-white dark:from-[#1a1a1a] dark:to-[#121212]">
+        <section className="py-12 sm:py-16 bg-gradient-to-b from-[#FDF8F0] to-white dark:from-[#0D0907] dark:to-[#0D0907]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-8">
               <div>
@@ -458,7 +455,7 @@ export default function HomePage() {
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Popular Poojas</h2>
                 <p className="text-gray-500 dark:text-gray-400 mt-1">Book from our most sought-after sacred ceremonies</p>
               </div>
-              <Link href="/rituals" className="hidden sm:flex items-center gap-1.5 text-[#E07B39] font-semibold hover:gap-2.5 transition-all">
+              <Link href="/rituals" className="hidden sm:flex items-center gap-1.5 text-[#FF6B00] font-semibold hover:gap-2.5 transition-all">
                 View All <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -466,7 +463,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {DUMMY_POOJAS.map((pooja) => (
                 <Link key={pooja.id} href="/rituals">
-                  <Card className="h-full overflow-hidden card-premium cursor-pointer group dark:bg-[#1e1e1e] dark:border-gray-700">
+                  <Card className="h-full overflow-hidden card-premium cursor-pointer group dark:bg-[#1A1210] dark:border-gray-700">
                     {/* Image */}
                     <div className="h-40 bg-gray-100 relative overflow-hidden">
                       <img
@@ -476,20 +473,20 @@ export default function HomePage() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                       <div className="absolute top-3 left-3">
-                        <Badge className="bg-white/90 text-[#8B1A1A] border-none text-[10px] font-semibold shadow-sm">
+                        <Badge className="bg-white/90 text-[#361E1E] border-none text-[10px] font-semibold shadow-sm">
                           {pooja.category}
                         </Badge>
                       </div>
                       <div className="absolute bottom-3 right-3 flex items-center gap-1 bg-black/40 backdrop-blur-sm text-white text-xs px-2 py-1 rounded-full">
-                        <Star className="h-3 w-3 text-[#D4A017] fill-[#D4A017]" />
+                        <Star className="h-3 w-3 text-[#D4AF37] fill-[#D4AF37]" />
                         <span className="font-semibold">{pooja.rating}</span>
                       </div>
                     </div>
                     <CardContent className="p-4">
-                      <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-[#E07B39] transition-colors">{pooja.name}</h3>
+                      <h3 className="font-bold text-gray-900 dark:text-white group-hover:text-[#FF6B00] transition-colors">{pooja.name}</h3>
                       <p className="text-xs text-gray-500 dark:text-gray-400 mt-1.5 line-clamp-2 leading-relaxed">{pooja.description}</p>
                       <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100 dark:border-gray-700">
-                        <div className="flex items-center gap-1 text-[#E07B39] font-bold text-sm">
+                        <div className="flex items-center gap-1 text-[#FF6B00] font-bold text-sm">
                           <IndianRupee className="h-3.5 w-3.5" />
                           {pooja.price.toLocaleString()}
                         </div>
@@ -511,17 +508,17 @@ export default function HomePage() {
         </section>
 
         {/* ══════════════ TESTIMONIALS - Auto Scroll Marquee ══════════════ */}
-        <section className="py-16 sm:py-24 bg-gradient-to-br from-[#8B1A1A] via-[#6B1414] to-[#4a0e0e] text-white relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-gradient-to-br from-[#361E1E] via-[#1F0F0F] to-[#1F0F0F] text-white relative overflow-hidden">
           {/* Decorative background */}
           <div className="absolute inset-0 mandala-bg opacity-10" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4A017]/8 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#E07B39]/8 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/8 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#FF6B00]/8 rounded-full blur-3xl translate-y-1/2 -translate-x-1/3" />
 
           <div className="relative z-10">
             {/* Header */}
             <div className="text-center mb-12 px-4">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/15 mb-5">
-                <Heart className="h-4 w-4 text-[#D4A017]" />
+                <Heart className="h-4 w-4 text-[#D4AF37]" />
                 <span className="text-sm font-medium text-white/80">Loved by {(PLATFORM_STATS.totalCeremonies / 1000).toFixed(0)}K+ families</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
@@ -538,16 +535,16 @@ export default function HomePage() {
                   <div key={`row1-${i}`} className="flex-shrink-0 w-[280px] sm:w-[400px] mx-2.5">
                     <div className="bg-white/8 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/12 transition-all duration-300 h-full">
                       <div className="flex items-start gap-3 mb-3">
-                        <Quote className="h-6 w-6 text-[#D4A017]/40 flex-shrink-0 mt-0.5" />
+                        <Quote className="h-6 w-6 text-[#D4AF37]/40 flex-shrink-0 mt-0.5" />
                         <div className="flex items-center gap-1">
                           {[...Array(5)].map((_, si) => (
-                            <Star key={si} className={`h-3 w-3 ${si < testimonial.rating ? 'text-[#D4A017] fill-[#D4A017]' : 'text-white/20'}`} />
+                            <Star key={si} className={`h-3 w-3 ${si < testimonial.rating ? 'text-[#D4AF37] fill-[#D4AF37]' : 'text-white/20'}`} />
                           ))}
                         </div>
                       </div>
                       <p className="text-white/85 text-sm leading-relaxed line-clamp-3">&quot;{testimonial.text}&quot;</p>
                       <div className="flex items-center gap-3 mt-4 pt-4 border-t border-white/8">
-                        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#E07B39] to-[#D4A017] flex items-center justify-center text-xs font-bold flex-shrink-0 shadow-lg shadow-[#E07B39]/20">
+                        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#FF6B00] to-[#D4AF37] flex items-center justify-center text-xs font-bold flex-shrink-0 shadow-lg shadow-[#FF6B00]/20">
                           {testimonial.avatar}
                         </div>
                         <div className="min-w-0">
@@ -568,16 +565,16 @@ export default function HomePage() {
                   <div key={`row2-${i}`} className="flex-shrink-0 w-[280px] sm:w-[400px] mx-2.5">
                     <div className="bg-white/8 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:bg-white/12 transition-all duration-300 h-full">
                       <div className="flex items-start gap-3 mb-3">
-                        <Quote className="h-6 w-6 text-[#D4A017]/40 flex-shrink-0 mt-0.5" />
+                        <Quote className="h-6 w-6 text-[#D4AF37]/40 flex-shrink-0 mt-0.5" />
                         <div className="flex items-center gap-1">
                           {[...Array(5)].map((_, si) => (
-                            <Star key={si} className={`h-3 w-3 ${si < testimonial.rating ? 'text-[#D4A017] fill-[#D4A017]' : 'text-white/20'}`} />
+                            <Star key={si} className={`h-3 w-3 ${si < testimonial.rating ? 'text-[#D4AF37] fill-[#D4AF37]' : 'text-white/20'}`} />
                           ))}
                         </div>
                       </div>
                       <p className="text-white/85 text-sm leading-relaxed line-clamp-3">&quot;{testimonial.text}&quot;</p>
                       <div className="flex items-center gap-3 mt-4 pt-4 border-t border-white/8">
-                        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#E07B39] to-[#D4A017] flex items-center justify-center text-xs font-bold flex-shrink-0 shadow-lg shadow-[#E07B39]/20">
+                        <div className="h-10 w-10 rounded-full bg-gradient-to-br from-[#FF6B00] to-[#D4AF37] flex items-center justify-center text-xs font-bold flex-shrink-0 shadow-lg shadow-[#FF6B00]/20">
                           {testimonial.avatar}
                         </div>
                         <div className="min-w-0">
@@ -597,7 +594,7 @@ export default function HomePage() {
                 <div className="flex items-center gap-2">
                   <div className="flex items-center gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-[#D4A017] fill-[#D4A017]" />
+                      <Star key={i} className="h-4 w-4 text-[#D4AF37] fill-[#D4AF37]" />
                     ))}
                   </div>
                   <span className="font-semibold text-white">{PLATFORM_STATS.customerRating}</span>
@@ -605,12 +602,12 @@ export default function HomePage() {
                 </div>
                 <div className="h-4 w-px bg-white/20 hidden sm:block" />
                 <div className="flex items-center gap-1.5">
-                  <Users className="h-4 w-4 text-[#D4A017]/60" />
+                  <Users className="h-4 w-4 text-[#D4AF37]/60" />
                   <span>{(PLATFORM_STATS.totalReviews / 1000).toFixed(1)}K+ verified reviews</span>
                 </div>
                 <div className="h-4 w-px bg-white/20 hidden sm:block" />
                 <div className="flex items-center gap-1.5">
-                  <Shield className="h-4 w-4 text-[#D4A017]/60" />
+                  <Shield className="h-4 w-4 text-[#D4AF37]/60" />
                   <span>All reviews verified</span>
                 </div>
               </div>
@@ -624,7 +621,7 @@ export default function HomePage() {
         </div>
 
         {/* ══════════════ ARTICLES ══════════════ */}
-        <section className="py-14 sm:py-20 bg-gray-50 dark:bg-[#161616]">
+        <section className="py-14 sm:py-20 bg-gray-50 dark:bg-[#0D0907]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex items-end justify-between mb-10">
               <div>
@@ -632,7 +629,7 @@ export default function HomePage() {
                 <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Articles & Insights</h2>
                 <p className="text-gray-500 dark:text-gray-400 mt-1">Learn about Hindu traditions, rituals, and spirituality</p>
               </div>
-              <Link href="/articles" className="hidden sm:flex items-center gap-1.5 text-[#E07B39] font-semibold hover:gap-2.5 transition-all">View All <ArrowRight className="h-4 w-4" /></Link>
+              <Link href="/articles" className="hidden sm:flex items-center gap-1.5 text-[#FF6B00] font-semibold hover:gap-2.5 transition-all">View All <ArrowRight className="h-4 w-4" /></Link>
             </div>
             {loadingArticles ? (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -644,21 +641,21 @@ export default function HomePage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {recentArticles.map((article) => (
                   <Link key={article.id} href={`/articles/${article.slug}`}>
-                    <Card className="h-full overflow-hidden card-premium cursor-pointer group dark:bg-[#1e1e1e] dark:border-gray-700">
+                    <Card className="h-full overflow-hidden card-premium cursor-pointer group dark:bg-[#1A1210] dark:border-gray-700">
                       {article.coverImage ? (
                         <div className="h-52 bg-gray-100 relative overflow-hidden">
                           <img src={article.coverImage} alt={article.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                          {article.category && <div className="absolute top-3 left-3"><Badge variant="saffron" className="bg-[#E07B39] text-white border-none shadow-lg">{article.category}</Badge></div>}
+                          {article.category && <div className="absolute top-3 left-3"><Badge variant="saffron" className="bg-[#FF6B00] text-white border-none shadow-lg">{article.category}</Badge></div>}
                         </div>
                       ) : (
-                        <div className="h-52 bg-gradient-to-br from-[#E07B39]/20 to-[#8B1A1A]/20 flex items-center justify-center relative">
-                          <BookOpen className="h-16 w-16 text-[#E07B39]/30" />
+                        <div className="h-52 bg-gradient-to-br from-[#FF6B00]/20 to-[#361E1E]/20 flex items-center justify-center relative">
+                          <BookOpen className="h-16 w-16 text-[#FF6B00]/30" />
                           {article.category && <div className="absolute top-3 left-3"><Badge variant="saffron">{article.category}</Badge></div>}
                         </div>
                       )}
                       <CardContent className="p-5">
-                        <h3 className="font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-[#E07B39] transition-colors">{article.title}</h3>
+                        <h3 className="font-bold text-gray-900 dark:text-white line-clamp-2 group-hover:text-[#FF6B00] transition-colors">{article.title}</h3>
                         {article.excerpt && <p className="text-sm text-gray-500 mt-2 line-clamp-2">{article.excerpt}</p>}
                         <div className="flex items-center gap-3 mt-4 text-xs text-gray-400">
                           {article.author && <span className="font-medium text-gray-600">By {article.author}</span>}
@@ -678,7 +675,7 @@ export default function HomePage() {
         </section>
 
         {/* ══════════════ FAQ ══════════════ */}
-        <section className="py-14 sm:py-20 bg-white dark:bg-[#121212]">
+        <section className="py-14 sm:py-20 bg-white dark:bg-[#0D0907]">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <Badge variant="saffron" className="mb-3">FAQ</Badge>
@@ -687,10 +684,10 @@ export default function HomePage() {
             </div>
             <div className="space-y-3">
               {FAQ_DATA.map((faq, index) => (
-                <div key={index} className={`rounded-xl border transition-all ${openFaq === index ? 'border-[#E07B39]/30 bg-[#FFF8F0] dark:bg-[#2a1a0a] shadow-sm' : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1e1e1e]'}`}>
+                <div key={index} className={`rounded-xl border transition-all ${openFaq === index ? 'border-[#FF6B00]/30 bg-[#FDF8F0] dark:bg-[#2a1a0a] shadow-sm' : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-[#1A1210]'}`}>
                   <button onClick={() => setOpenFaq(openFaq === index ? null : index)} className="w-full flex items-center justify-between p-5 text-left">
-                    <span className={`font-semibold text-sm sm:text-base ${openFaq === index ? 'text-[#E07B39]' : 'text-gray-900 dark:text-white'}`}>{faq.question}</span>
-                    <ChevronRight className={`h-5 w-5 flex-shrink-0 ml-3 transition-transform duration-200 ${openFaq === index ? 'rotate-90 text-[#E07B39]' : 'text-gray-400'}`} />
+                    <span className={`font-semibold text-sm sm:text-base ${openFaq === index ? 'text-[#FF6B00]' : 'text-gray-900 dark:text-white'}`}>{faq.question}</span>
+                    <ChevronRight className={`h-5 w-5 flex-shrink-0 ml-3 transition-transform duration-200 ${openFaq === index ? 'rotate-90 text-[#FF6B00]' : 'text-gray-400'}`} />
                   </button>
                   {openFaq === index && (
                     <div className="px-5 pb-5 -mt-1">
@@ -704,7 +701,7 @@ export default function HomePage() {
         </section>
 
         {/* ══════════════ CTA - JOIN AS PANDIT ══════════════ */}
-        <section className="py-16 sm:py-20 bg-gradient-to-r from-[#E07B39] via-[#D4A017] to-[#E07B39] animate-gradient relative overflow-hidden">
+        <section className="py-16 sm:py-20 bg-gradient-to-r from-[#FF6B00] via-[#D4AF37] to-[#FF6B00] animate-gradient relative overflow-hidden">
           <div className="absolute inset-0 pattern-bg opacity-10" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 border border-white/30 mb-6">
@@ -714,7 +711,7 @@ export default function HomePage() {
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4">Are you a Pandit? Join our platform</h2>
             <p className="text-white/80 max-w-2xl mx-auto mb-8 text-base sm:text-lg">Register as a Panthulugaru and reach thousands of devotees looking for trusted pandits for their ceremonies.</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/pg/signup"><Button variant="secondary" size="lg" className="bg-white text-[#E07B39] hover:bg-gray-100 shadow-xl px-8">Register as Panthulugaru</Button></Link>
+              <Link href="/pg/signup"><Button variant="secondary" size="lg" className="bg-white text-[#FF6B00] hover:bg-gray-100 shadow-xl px-8">Register as Panthulugaru</Button></Link>
               <Link href="/pg/login"><Button variant="ghost" size="lg" className="text-white border-2 border-white/40 hover:bg-white/10 px-8">Already registered? Login</Button></Link>
             </div>
             <div className="flex flex-wrap justify-center gap-6 sm:gap-8 mt-10 text-white/60 text-sm">
@@ -727,7 +724,6 @@ export default function HomePage() {
       </main>
       <Footer />
 
-      <LoginModal isOpen={isLoginModalOpen} onClose={closeLoginModal} role="customer" redirectPath={loginRedirectPath} />
     </>
   );
 }

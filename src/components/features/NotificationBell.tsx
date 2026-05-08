@@ -110,7 +110,7 @@ export function NotificationBell() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative p-2 text-gray-500 hover:text-[#E07B39] transition-colors rounded-lg hover:bg-gray-50"
+        className="relative p-2 text-gray-500 hover:text-[#FF6B00] transition-colors rounded-lg hover:bg-gray-50"
         aria-label="Notifications"
       >
         <Bell className="h-5 w-5" />
@@ -129,7 +129,7 @@ export function NotificationBell() {
               {unreadCount > 0 && (
                 <button
                   onClick={handleMarkAllAsRead}
-                  className="flex items-center gap-1 text-xs text-[#E07B39] hover:text-[#c96a2e] font-medium"
+                  className="flex items-center gap-1 text-xs text-[#FF6B00] hover:text-[#E05E00] font-medium"
                 >
                   <CheckCheck className="h-3.5 w-3.5" />
                   Mark all read
@@ -172,7 +172,7 @@ export function NotificationBell() {
                     }
                   }}
                   className={`w-full text-left px-4 py-3 border-b border-gray-50 hover:bg-gray-50 transition-colors ${
-                    notification.status === 'unread' ? 'bg-[#E07B39]/5' : ''
+                    notification.status === 'unread' ? 'bg-[#FF6B00]/5' : ''
                   }`}
                 >
                   <div className="flex gap-3">
@@ -185,7 +185,7 @@ export function NotificationBell() {
                           {notification.title}
                         </p>
                         {notification.status === 'unread' && (
-                          <span className="flex-shrink-0 h-2 w-2 rounded-full bg-[#E07B39] mt-1.5" />
+                          <span className="flex-shrink-0 h-2 w-2 rounded-full bg-[#FF6B00] mt-1.5" />
                         )}
                       </div>
                       <p className="text-xs text-gray-500 mt-0.5 line-clamp-2">
@@ -205,7 +205,7 @@ export function NotificationBell() {
             <Link
               href="/notifications"
               onClick={() => setIsOpen(false)}
-              className="block w-full text-center py-2 text-sm font-medium text-[#E07B39] hover:bg-[#E07B39]/5 rounded-lg transition-colors"
+              className="block w-full text-center py-2 text-sm font-medium text-[#FF6B00] hover:bg-[#FF6B00]/5 rounded-lg transition-colors"
             >
               View all notifications
             </Link>

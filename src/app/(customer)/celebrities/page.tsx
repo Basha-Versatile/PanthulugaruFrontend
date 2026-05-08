@@ -62,16 +62,16 @@ const ENDORSEMENTS = [
 
 export default function CelebritiesPage() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#121212]">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0D0907]">
       {/* Premium Hero */}
       <div className="bg-gradient-to-br from-[#1a0a0a] via-[#2d1515] to-[#3d1a1a] text-white relative overflow-hidden">
         <div className="absolute inset-0 mandala-bg opacity-20" />
-        <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4A017]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#E07B39]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-[#FF6B00]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 text-center relative z-10">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 mb-6">
-            <Award className="h-4 w-4 text-[#D4A017]" />
+            <Award className="h-4 w-4 text-[#D4AF37]" />
             <span className="text-sm font-medium text-white/90">Trusted Voices</span>
           </div>
           <h1 className="text-3xl sm:text-5xl font-bold mb-4 leading-tight">
@@ -91,7 +91,7 @@ export default function CelebritiesPage() {
               { value: `${(PLATFORM_STATS.totalReviews / 1000).toFixed(1)}K+`, label: 'Reviews' },
             ].map((stat) => (
               <div key={stat.label} className="text-center">
-                <p className="text-2xl sm:text-3xl font-bold text-[#D4A017]">{stat.value}</p>
+                <p className="text-2xl sm:text-3xl font-bold text-[#D4AF37]">{stat.value}</p>
                 <p className="text-xs text-white/40 mt-1">{stat.label}</p>
               </div>
             ))}
@@ -111,24 +111,24 @@ export default function CelebritiesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {ENDORSEMENTS.map((endorsement) => (
             <Card key={endorsement.id} className="h-full card-premium overflow-hidden">
-              <div className="h-1 bg-gradient-to-r from-[#E07B39] via-[#D4A017] to-[#8B1A1A]" />
+              <div className="h-1 bg-gradient-to-r from-[#FF6B00] via-[#D4AF37] to-[#361E1E]" />
               <CardContent className="p-6">
-                <Quote className="h-8 w-8 text-[#D4A017]/20 mb-3" />
+                <Quote className="h-8 w-8 text-[#D4AF37]/20 mb-3" />
                 <p className="text-gray-600 dark:text-gray-400 leading-relaxed italic text-sm">
                   &quot;{endorsement.quote}&quot;
                 </p>
                 <div className="flex items-center gap-1 mt-4">
                   {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className={`h-4 w-4 ${i < endorsement.rating ? 'text-[#D4A017] fill-[#D4A017]' : 'text-gray-200'}`} />
+                    <Star key={i} className={`h-4 w-4 ${i < endorsement.rating ? 'text-[#D4AF37] fill-[#D4AF37]' : 'text-gray-200'}`} />
                   ))}
                 </div>
                 <div className="flex items-center gap-3 mt-4 pt-4 border-t border-gray-100 dark:border-gray-700">
-                  <div className="h-11 w-11 rounded-full bg-gradient-to-br from-[#E07B39] to-[#D4A017] flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
+                  <div className="h-11 w-11 rounded-full bg-gradient-to-br from-[#FF6B00] to-[#D4AF37] flex items-center justify-center text-white text-sm font-bold flex-shrink-0">
                     {endorsement.name.split(' ').map(n => n[0]).join('')}
                   </div>
                   <div>
                     <p className="font-bold text-gray-900 dark:text-white text-sm">{endorsement.name}</p>
-                    <p className="text-xs text-[#E07B39]">{endorsement.title}</p>
+                    <p className="text-xs text-[#FF6B00]">{endorsement.title}</p>
                   </div>
                 </div>
               </CardContent>
@@ -137,7 +137,7 @@ export default function CelebritiesPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 bg-gradient-to-r from-[#E07B39] via-[#D4A017] to-[#E07B39] animate-gradient rounded-2xl p-8 sm:p-12 text-center text-white relative overflow-hidden">
+        <div className="mt-16 bg-gradient-to-r from-[#FF6B00] via-[#D4AF37] to-[#FF6B00] animate-gradient rounded-2xl p-8 sm:p-12 text-center text-white relative overflow-hidden">
           <div className="absolute inset-0 pattern-bg opacity-10" />
           <div className="relative z-10">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/20 border border-white/30 mb-4">
@@ -150,7 +150,7 @@ export default function CelebritiesPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/pandits">
-                <Button variant="secondary" size="lg" className="bg-white text-[#E07B39] hover:bg-gray-100 shadow-xl px-8">
+                <Button variant="secondary" size="lg" className="bg-white text-[#FF6B00] hover:bg-gray-100 shadow-xl px-8">
                   Find a Pandit
                 </Button>
               </Link>

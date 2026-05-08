@@ -178,7 +178,7 @@ function ProfileEditContent() {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-          <Link href="/pg/dashboard" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#E07B39]">
+          <Link href="/pg/dashboard" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#FF6B00]">
             <ArrowLeft className="h-4 w-4" />
             Back to Dashboard
           </Link>
@@ -191,7 +191,7 @@ function ProfileEditContent() {
         <Card>
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="flex items-center gap-2"><User className="h-5 w-5 text-[#E07B39]" />Personal Information</CardTitle>
+              <CardTitle className="flex items-center gap-2"><User className="h-5 w-5 text-[#FF6B00]" />Personal Information</CardTitle>
               <Button variant="primary" size="sm" onClick={() => saveSection('personal')} isLoading={saving === 'personal'}>
                 <Save className="h-4 w-4 mr-1" />Save
               </Button>
@@ -206,7 +206,7 @@ function ProfileEditContent() {
               <Input label="Experience (years)" type="number" value={experience} onChange={(e) => setExperience(e.target.value)} />
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">Gender</label>
-                <select value={gender} onChange={(e) => setGender(e.target.value)} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]">
+                <select value={gender} onChange={(e) => setGender(e.target.value)} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]">
                   <option value="">Select</option>
                   <option value="Male">Male</option>
                   <option value="Female">Female</option>
@@ -221,7 +221,7 @@ function ProfileEditContent() {
                 {LANGUAGE_OPTIONS.map((lang) => (
                   <button key={lang} type="button" onClick={() => toggleLanguage(lang)}
                     className={`px-3 py-1.5 text-sm rounded-full border transition-colors ${
-                      languages.includes(lang) ? 'border-[#E07B39] bg-[#E07B39]/10 text-[#E07B39]' : 'border-gray-200 text-gray-600'
+                      languages.includes(lang) ? 'border-[#FF6B00] bg-[#FF6B00]/10 text-[#FF6B00]' : 'border-gray-200 text-gray-600'
                     }`}
                   >{lang}</button>
                 ))}
@@ -230,7 +230,7 @@ function ProfileEditContent() {
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">About Me</label>
               <textarea value={aboutMe} onChange={(e) => setAboutMe(e.target.value)} rows={3}
-                className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
               />
             </div>
           </CardContent>
@@ -240,7 +240,7 @@ function ProfileEditContent() {
         <Card>
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="flex items-center gap-2"><Phone className="h-5 w-5 text-[#E07B39]" />Contact Details</CardTitle>
+              <CardTitle className="flex items-center gap-2"><Phone className="h-5 w-5 text-[#FF6B00]" />Contact Details</CardTitle>
               <Button variant="primary" size="sm" onClick={() => saveSection('contact')} isLoading={saving === 'contact'}>
                 <Save className="h-4 w-4 mr-1" />Save
               </Button>
@@ -256,7 +256,7 @@ function ProfileEditContent() {
         <Card>
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="flex items-center gap-2"><BookOpen className="h-5 w-5 text-[#E07B39]" />Rituals ({selectedRitualIds.length} selected)</CardTitle>
+              <CardTitle className="flex items-center gap-2"><BookOpen className="h-5 w-5 text-[#FF6B00]" />Rituals ({selectedRitualIds.length} selected)</CardTitle>
               <Button variant="primary" size="sm" onClick={() => saveSection('rituals')} isLoading={saving === 'rituals'}>
                 <Save className="h-4 w-4 mr-1" />Save
               </Button>
@@ -267,12 +267,12 @@ function ProfileEditContent() {
               {availableRituals.map((ritual) => (
                 <button key={ritual.id} type="button" onClick={() => toggleRitual(ritual.id)}
                   className={`p-2 rounded-lg border text-left text-sm transition-colors ${
-                    selectedRitualIds.includes(ritual.id) ? 'border-[#E07B39] bg-[#E07B39]/5 text-[#E07B39]' : 'border-gray-200 text-gray-700'
+                    selectedRitualIds.includes(ritual.id) ? 'border-[#FF6B00] bg-[#FF6B00]/5 text-[#FF6B00]' : 'border-gray-200 text-gray-700'
                   }`}
                 >
                   <div className="flex items-center gap-2">
                     <div className={`w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center ${
-                      selectedRitualIds.includes(ritual.id) ? 'bg-[#E07B39] border-[#E07B39]' : 'border-gray-300'
+                      selectedRitualIds.includes(ritual.id) ? 'bg-[#FF6B00] border-[#FF6B00]' : 'border-gray-300'
                     }`}>
                       {selectedRitualIds.includes(ritual.id) && <Check className="h-3 w-3 text-white" />}
                     </div>
@@ -288,7 +288,7 @@ function ProfileEditContent() {
         <Card>
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="flex items-center gap-2"><MapPin className="h-5 w-5 text-[#E07B39]" />Service Areas</CardTitle>
+              <CardTitle className="flex items-center gap-2"><MapPin className="h-5 w-5 text-[#FF6B00]" />Service Areas</CardTitle>
               <Button variant="primary" size="sm" onClick={() => saveSection('areas')} isLoading={saving === 'areas'}>
                 <Save className="h-4 w-4 mr-1" />Save
               </Button>
@@ -320,7 +320,7 @@ function ProfileEditContent() {
         <Card>
           <CardHeader>
             <div className="flex items-center justify-between">
-              <CardTitle className="flex items-center gap-2"><Building2 className="h-5 w-5 text-[#E07B39]" />Bank Details</CardTitle>
+              <CardTitle className="flex items-center gap-2"><Building2 className="h-5 w-5 text-[#FF6B00]" />Bank Details</CardTitle>
               <Button variant="primary" size="sm" onClick={() => saveSection('bank')} isLoading={saving === 'bank'}>
                 <Save className="h-4 w-4 mr-1" />Save
               </Button>

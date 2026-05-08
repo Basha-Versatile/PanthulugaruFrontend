@@ -6,7 +6,7 @@ export default function CustomerLayout({ children }: { children: React.ReactNode
   return (
     <>
       <Header />
-      <main className="min-h-screen dark:bg-[#121212]">{children}</main>
+      <main className="min-h-screen bg-[#FDF8F0] dark:bg-[#0D0907]">{children}</main>
       <Footer />
     </>
   );

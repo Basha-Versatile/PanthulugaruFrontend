@@ -90,7 +90,7 @@ function StreamingPageContent() {
               <ArrowLeft className="h-5 w-5" />
             </Link>
             <div className="flex items-center gap-2">
-              <Video className="h-5 w-5 text-[#E07B39]" />
+              <Video className="h-5 w-5 text-[#FF6B00]" />
               <h1 className="text-lg sm:text-xl font-bold text-gray-900">
                 Online Ceremony
               </h1>
@@ -118,7 +118,7 @@ function StreamingPageContent() {
             <Card>
               <CardContent className="p-5">
                 <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <BookOpen className="h-4 w-4 text-[#E07B39]" />
+                  <BookOpen className="h-4 w-4 text-[#FF6B00]" />
                   Ceremony Details
                 </h3>
                 <div className="space-y-3">
@@ -187,13 +187,13 @@ function StreamingPageContent() {
             <Card>
               <CardContent className="p-5">
                 <h3 className="font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <User className="h-4 w-4 text-[#E07B39]" />
+                  <User className="h-4 w-4 text-[#FF6B00]" />
                   Participants
                 </h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="h-8 w-8 rounded-full bg-[#E07B39]/10 flex items-center justify-center text-[#E07B39] text-xs font-bold">
+                      <div className="h-8 w-8 rounded-full bg-[#FF6B00]/10 flex items-center justify-center text-[#FF6B00] text-xs font-bold">
                         PG
                       </div>
                       <span className="text-sm text-gray-700">Panthulugaru</span>

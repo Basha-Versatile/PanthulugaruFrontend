@@ -141,14 +141,14 @@ export default function MuhurthamPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero section */}
-      <div className="bg-gradient-to-br from-[#E07B39]/10 via-[#D4A017]/5 to-[#8B1A1A]/10 border-b border-gray-200">
+      <div className="bg-gradient-to-br from-[#FF6B00]/10 via-[#D4AF37]/5 to-[#361E1E]/10 border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
           <div className="text-center max-w-2xl mx-auto">
-            <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-[#E07B39]/10 mb-4">
-              <Sparkles className="h-7 w-7 text-[#E07B39]" />
+            <div className="inline-flex items-center justify-center h-14 w-14 rounded-2xl bg-[#FF6B00]/10 mb-4">
+              <Sparkles className="h-7 w-7 text-[#FF6B00]" />
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">
-              Muhurtham <span className="text-[#E07B39]">Services</span>
+              Muhurtham <span className="text-[#FF6B00]">Services</span>
             </h1>
             <p className="text-gray-600 mt-3 text-lg">
               Find the most auspicious date and time for your important events.
@@ -157,15 +157,15 @@ export default function MuhurthamPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Star className="h-4 w-4 text-[#D4A017]" />
+                <Star className="h-4 w-4 text-[#D4AF37]" />
                 <span>Expert Astrologers</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Calendar className="h-4 w-4 text-[#E07B39]" />
+                <Calendar className="h-4 w-4 text-[#FF6B00]" />
                 <span>Vedic Calculations</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-gray-600">
-                <Clock className="h-4 w-4 text-[#8B1A1A]" />
+                <Clock className="h-4 w-4 text-[#361E1E]" />
                 <span>Quick Response</span>
               </div>
             </div>
@@ -180,7 +180,7 @@ export default function MuhurthamPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <FileText className="h-5 w-5 text-[#E07B39]" />
+                  <FileText className="h-5 w-5 text-[#FF6B00]" />
                   Request Muhurtham
                 </CardTitle>
               </CardHeader>
@@ -193,7 +193,7 @@ export default function MuhurthamPage() {
                     <select
                       value={eventType}
                       onChange={(e) => setEventType(e.target.value)}
-                      className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                      className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
                     >
                       <option value="">Select event type</option>
                       {EVENT_TYPES.map((type) => (
@@ -213,7 +213,7 @@ export default function MuhurthamPage() {
                       onChange={(e) => setEventDescription(e.target.value)}
                       rows={3}
                       placeholder="Describe your event, any specific requirements, rashi/nakshatra details..."
-                      className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                      className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
                     />
                   </div>
 
@@ -272,7 +272,7 @@ export default function MuhurthamPage() {
 
           {/* Info sidebar */}
           <div className="lg:col-span-2 space-y-4">
-            <Card className="bg-gradient-to-br from-[#E07B39]/5 to-[#D4A017]/5">
+            <Card className="bg-gradient-to-br from-[#FF6B00]/5 to-[#D4AF37]/5">
               <CardContent className="p-5">
                 <h3 className="font-semibold text-gray-900 mb-3">How It Works</h3>
                 <div className="space-y-3">
@@ -283,7 +283,7 @@ export default function MuhurthamPage() {
                     'Book the Panthulugaru for your ceremony',
                   ].map((step, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <div className="h-6 w-6 rounded-full bg-[#E07B39] text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
+                      <div className="h-6 w-6 rounded-full bg-[#FF6B00] text-white flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">
                         {i + 1}
                       </div>
                       <p className="text-sm text-gray-600">{step}</p>
@@ -300,7 +300,7 @@ export default function MuhurthamPage() {
                   Muhurtham consultation fees vary based on complexity. You will
                   receive a quote after our Panthulugaru reviews your request.
                 </p>
-                <div className="flex items-center gap-1 text-[#E07B39] font-semibold">
+                <div className="flex items-center gap-1 text-[#FF6B00] font-semibold">
                   <IndianRupee className="h-4 w-4" />
                   <span>Starting from 501</span>
                 </div>

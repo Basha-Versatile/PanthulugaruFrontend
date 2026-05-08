@@ -155,8 +155,8 @@ function WalletPageContent() {
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-[#E07B39]/10 flex items-center justify-center">
-              <WalletIcon className="h-5 w-5 text-[#E07B39]" />
+            <div className="h-10 w-10 rounded-xl bg-[#FF6B00]/10 flex items-center justify-center">
+              <WalletIcon className="h-5 w-5 text-[#FF6B00]" />
             </div>
             <div>
               <h1 className="text-xl sm:text-2xl font-bold text-gray-900">My Wallet</h1>
@@ -176,7 +176,7 @@ function WalletPageContent() {
           </div>
         ) : wallet ? (
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            <Card className="border-l-4 border-l-[#E07B39]">
+            <Card className="border-l-4 border-l-[#FF6B00]">
               <CardContent className="p-5">
                 <div className="flex items-center justify-between">
                   <div>
@@ -186,8 +186,8 @@ function WalletPageContent() {
                       {wallet.amount.toLocaleString('en-IN')}
                     </p>
                   </div>
-                  <div className="h-12 w-12 rounded-full bg-[#E07B39]/10 flex items-center justify-center">
-                    <WalletIcon className="h-6 w-6 text-[#E07B39]" />
+                  <div className="h-12 w-12 rounded-full bg-[#FF6B00]/10 flex items-center justify-center">
+                    <WalletIcon className="h-6 w-6 text-[#FF6B00]" />
                   </div>
                 </div>
                 <Button
@@ -462,7 +462,7 @@ function WalletPageContent() {
                 <select
                   value={bankDetailsId}
                   onChange={(e) => setBankDetailsId(e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                  className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00]"
                 >
                   <option value="default">Primary Bank Account</option>
                 </select>

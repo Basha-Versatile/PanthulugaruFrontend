@@ -93,7 +93,7 @@ export function ProfilePageClient({ pandit }: ProfilePageClientProps) {
         {/* Breadcrumb */}
         <div className="bg-white border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <Link href="/pandits" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#E07B39] transition-colors">
+            <Link href="/pandits" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">
               <ArrowLeft className="h-4 w-4" />
               Back to Pandits
             </Link>
@@ -102,7 +102,7 @@ export function ProfilePageClient({ pandit }: ProfilePageClientProps) {
 
         {/* Banner */}
         {pandit.bannerImage && (
-          <div className="w-full h-48 sm:h-64 bg-gradient-to-r from-[#E07B39]/20 to-[#8B1A1A]/20 relative">
+          <div className="w-full h-48 sm:h-64 bg-gradient-to-r from-[#FF6B00]/20 to-[#361E1E]/20 relative">
             <img src={pandit.bannerImage} alt="" className="w-full h-full object-cover" />
           </div>
         )}
@@ -123,7 +123,7 @@ export function ProfilePageClient({ pandit }: ProfilePageClientProps) {
                 <div className="flex items-center gap-2 flex-wrap">
                   <h1 className="text-2xl font-bold text-gray-900">{fullName}</h1>
                   {pandit.isVerified && (
-                    <BadgeCheck className="h-6 w-6 text-[#E07B39]" />
+                    <BadgeCheck className="h-6 w-6 text-[#FF6B00]" />
                   )}
                 </div>
 
@@ -140,7 +140,7 @@ export function ProfilePageClient({ pandit }: ProfilePageClientProps) {
                   )}
                   {pandit.rating > 0 && (
                     <div className="flex items-center gap-1">
-                      <Star className="h-4 w-4 text-[#D4A017] fill-[#D4A017]" />
+                      <Star className="h-4 w-4 text-[#D4AF37] fill-[#D4AF37]" />
                       <span className="font-medium">{pandit.rating.toFixed(1)}</span>
                       <span className="text-gray-400">({pandit.reviewCount} reviews)</span>
                     </div>
@@ -197,7 +197,7 @@ export function ProfilePageClient({ pandit }: ProfilePageClientProps) {
                 <Card>
                   <CardContent className="p-6">
                     <h2 className="text-lg font-semibold text-gray-900 mb-3">
-                      <BookOpen className="h-5 w-5 inline mr-2 text-[#E07B39]" />
+                      <BookOpen className="h-5 w-5 inline mr-2 text-[#FF6B00]" />
                       Rituals & Services
                     </h2>
                     <div className="space-y-3">
@@ -245,7 +245,7 @@ export function ProfilePageClient({ pandit }: ProfilePageClientProps) {
                 <Card>
                   <CardContent className="p-6">
                     <h2 className="text-lg font-semibold text-gray-900 mb-3">
-                      <Globe className="h-5 w-5 inline mr-2 text-[#E07B39]" />
+                      <Globe className="h-5 w-5 inline mr-2 text-[#FF6B00]" />
                       Service Areas
                     </h2>
                     <div className="space-y-2">
@@ -296,7 +296,7 @@ export function ProfilePageClient({ pandit }: ProfilePageClientProps) {
                     {pandit.minimumPricing && (
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-500">Starting from</span>
-                        <span className="font-medium text-[#E07B39]">&#8377;{pandit.minimumPricing}</span>
+                        <span className="font-medium text-[#FF6B00]">&#8377;{pandit.minimumPricing}</span>
                       </div>
                     )}
                   </div>

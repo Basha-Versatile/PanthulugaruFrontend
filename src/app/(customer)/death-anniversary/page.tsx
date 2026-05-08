@@ -118,8 +118,8 @@ function DeathAnniversaryContent() {
   const RELATIONSHIPS = ['Father', 'Mother', 'Grandfather', 'Grandmother', 'Spouse', 'Sibling', 'Child', 'Uncle', 'Aunt', 'Other'];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#121212]">
-      <div className="bg-white border-b border-gray-200 dark:bg-[#1e1e1e] dark:border-gray-700">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0D0907]">
+      <div className="bg-white border-b border-gray-200 dark:bg-[#1A1210] dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Death Anniversary Calculator</h1>
           <p className="text-gray-500 dark:text-gray-400 mt-1">Calculate tithi dates and set reminders for death anniversaries</p>
@@ -146,7 +146,7 @@ function DeathAnniversaryContent() {
                   <Input label="Name of Deceased *" value={deceasedName} onChange={(e) => setDeceasedName(e.target.value)} placeholder="Full name" required />
                   <div>
                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Relationship *</label>
-                    <select value={relationship} onChange={(e) => setRelationship(e.target.value)} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39] dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white" required>
+                    <select value={relationship} onChange={(e) => setRelationship(e.target.value)} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:bg-[#241C16] dark:border-gray-600 dark:text-white" required>
                       <option value="">Select relationship</option>
                       {RELATIONSHIPS.map((r) => <option key={r} value={r}>{r}</option>)}
                     </select>
@@ -166,7 +166,7 @@ function DeathAnniversaryContent() {
                 </div>
 
                 {tithiResult && (
-                  <div className="bg-[#E07B39]/5 border border-[#E07B39]/20 rounded-lg p-4 dark:bg-[#E07B39]/10 dark:border-[#E07B39]/30">
+                  <div className="bg-[#FF6B00]/5 border border-[#FF6B00]/20 rounded-lg p-4 dark:bg-[#FF6B00]/10 dark:border-[#FF6B00]/30">
                     <h4 className="font-medium text-gray-900 dark:text-white mb-2">Tithi Information</h4>
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-sm">
                       {tithiResult.tithiName && (
@@ -187,7 +187,7 @@ function DeathAnniversaryContent() {
                         <h5 className="text-sm font-medium text-gray-700 mb-1.5">Upcoming 10 Anniversary Dates</h5>
                         <div className="grid grid-cols-2 sm:grid-cols-5 gap-2">
                           {tithiResult.upcomingDates.slice(0, 10).map((d: any, i: number) => (
-                            <div key={i} className="bg-white rounded-md p-2 text-center border border-gray-100 dark:bg-[#2a2a2a] dark:border-gray-700">
+                            <div key={i} className="bg-white rounded-md p-2 text-center border border-gray-100 dark:bg-[#241C16] dark:border-gray-700">
                               <p className="text-xs text-gray-400 dark:text-gray-500">{d.year}</p>
                               <p className="text-sm font-medium">{d.gregorianDate}</p>
                               <p className="text-xs text-gray-500 dark:text-gray-400">{d.dayOfWeek}</p>
@@ -206,12 +206,12 @@ function DeathAnniversaryContent() {
 
                 <div>
                   <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5">Notes</label>
-                  <textarea value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Additional notes..." rows={2} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39] dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white" />
+                  <textarea value={notes} onChange={(e) => setNotes(e.target.value)} placeholder="Additional notes..." rows={2} className="w-full rounded-lg border border-gray-300 px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:bg-[#241C16] dark:border-gray-600 dark:text-white" />
                 </div>
 
                 <div className="flex items-center gap-4">
                   <label className="flex items-center gap-2 cursor-pointer">
-                    <input type="checkbox" checked={reminderEnabled} onChange={(e) => setReminderEnabled(e.target.checked)} className="w-4 h-4 text-[#E07B39] border-gray-300 rounded focus:ring-[#E07B39]" />
+                    <input type="checkbox" checked={reminderEnabled} onChange={(e) => setReminderEnabled(e.target.checked)} className="w-4 h-4 text-[#FF6B00] border-gray-300 rounded focus:ring-[#FF6B00]" />
                     <span className="text-sm text-gray-700 dark:text-gray-300">Enable reminders</span>
                   </label>
                   {reminderEnabled && (
@@ -235,7 +235,7 @@ function DeathAnniversaryContent() {
             {Array.from({ length: 3 }).map((_, i) => <Skeleton key={i} className="h-32 rounded-xl" />)}
           </div>
         ) : anniversaries.length === 0 && !showForm ? (
-          <div className="bg-white rounded-xl border border-gray-200 p-12 text-center dark:bg-[#1e1e1e] dark:border-gray-700">
+          <div className="bg-white rounded-xl border border-gray-200 p-12 text-center dark:bg-[#1A1210] dark:border-gray-700">
             <Moon className="h-12 w-12 text-gray-400 mx-auto mb-3" />
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">No death anniversaries saved</h3>
             <p className="text-gray-500 dark:text-gray-400">Add a death anniversary to calculate tithi dates and set reminders</p>
@@ -267,7 +267,7 @@ function DeathAnniversaryContent() {
                       <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Upcoming Dates</p>
                       <div className="flex gap-2 overflow-x-auto pb-1">
                         {ann.upcomingAnniversaries.slice(0, 5).map((ua, i) => (
-                          <div key={i} className="flex-shrink-0 bg-gray-50 rounded-lg px-3 py-2 text-center min-w-[80px] dark:bg-[#2a2a2a]">
+                          <div key={i} className="flex-shrink-0 bg-gray-50 rounded-lg px-3 py-2 text-center min-w-[80px] dark:bg-[#241C16]">
                             <p className="text-xs text-gray-400 dark:text-gray-500">{ua.year}</p>
                             <p className="text-sm font-medium">{new Date(ua.gregorianDate).toLocaleDateString('en-IN', { month: 'short', day: 'numeric' })}</p>
                             <p className="text-xs text-gray-500 dark:text-gray-400">{ua.dayOfWeek}</p>

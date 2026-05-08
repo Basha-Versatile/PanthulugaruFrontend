@@ -18,7 +18,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1.5"
+            className="block text-sm font-medium text-[#361E1E] dark:text-[#E8DDD0]/80 mb-1.5"
           >
             {label}
           </label>
@@ -28,22 +28,23 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           id={inputId}
           type={type}
           className={cn(
-            "w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 dark:bg-[#2a2a2a] dark:text-white dark:placeholder:text-gray-500",
+            "w-full rounded-lg border bg-white px-3.5 py-2.5 text-sm text-[#361E1E] placeholder:text-[#8B4513]/40",
+            "dark:bg-[#241C16] dark:text-[#E8DDD0] dark:placeholder:text-[#E8DDD0]/30",
             "transition-colors duration-200",
             "focus:outline-none focus:ring-2 focus:ring-offset-0",
             error
-              ? "border-red-500 focus:border-red-500 focus:ring-red-200"
-              : "border-gray-300 dark:border-gray-600 focus:border-[#E07B39] focus:ring-[#E07B39]/20",
-            "disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500",
+              ? "border-red-500 focus:border-red-500 focus:ring-red-200 dark:focus:ring-red-900/30"
+              : "border-[#D4AF37]/20 dark:border-[#D4AF37]/10 focus:border-[#FF6B00] focus:ring-[#FF6B00]/20",
+            "disabled:cursor-not-allowed disabled:bg-[#FDF8F0] disabled:text-[#8B4513]/50 dark:disabled:bg-[#0D0907] dark:disabled:text-[#E8DDD0]/30",
             className
           )}
           {...props}
         />
         {error && (
-          <p className="mt-1.5 text-sm text-red-600">{error}</p>
+          <p className="mt-1.5 text-sm text-red-600 dark:text-red-400">{error}</p>
         )}
         {helperText && !error && (
-          <p className="mt-1.5 text-sm text-gray-500">{helperText}</p>
+          <p className="mt-1.5 text-sm text-[#8B4513]/60 dark:text-[#E8DDD0]/50">{helperText}</p>
         )}
       </div>
     );

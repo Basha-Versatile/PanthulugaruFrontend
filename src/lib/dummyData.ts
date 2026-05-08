@@ -835,7 +835,7 @@ export const DUMMY_OFFERS = [
     code: 'FIRST15',
     discount: '15%',
     validTill: '2026-06-30',
-    color: 'from-[#E07B39] to-[#D4A017]',
+    color: 'from-[#FF6B00] to-[#D4AF37]',
   },
   {
     id: 'o2',
@@ -844,7 +844,7 @@ export const DUMMY_OFFERS = [
     code: 'FESTIVAL500',
     discount: '₹500',
     validTill: '2026-05-31',
-    color: 'from-[#8B1A1A] to-[#CC3333]',
+    color: 'from-[#361E1E] to-[#CC3333]',
   },
   {
     id: 'o3',

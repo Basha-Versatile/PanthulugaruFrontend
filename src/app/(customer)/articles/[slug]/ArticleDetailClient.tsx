@@ -17,7 +17,7 @@ export function ArticleDetailClient({ article, relatedArticles }: Props) {
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <Link href="/articles" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#E07B39] transition-colors">
+          <Link href="/articles" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">
             <ArrowLeft className="h-4 w-4" />
             Back to Articles
           </Link>
@@ -65,7 +65,7 @@ export function ArticleDetailClient({ article, relatedArticles }: Props) {
 
         {/* Content */}
         <div
-          className="mt-8 prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-a:text-[#E07B39] prose-img:rounded-xl"
+          className="mt-8 prose prose-lg max-w-none prose-headings:text-gray-900 prose-p:text-gray-600 prose-a:text-[#FF6B00] prose-img:rounded-xl"
           dangerouslySetInnerHTML={{ __html: article.content }}
         />
 

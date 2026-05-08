@@ -75,7 +75,7 @@ function BookingSuccessInner() {
               {booking.totalAmount && (
                 <div className="mt-4 pt-3 border-t border-gray-200 flex justify-between">
                   <span className="font-medium text-gray-700">Amount Paid</span>
-                  <span className="font-bold text-[#E07B39]">&#8377;{booking.totalAmount}</span>
+                  <span className="font-bold text-[#FF6B00]">&#8377;{booking.totalAmount}</span>
                 </div>
               )}
             </CardContent>

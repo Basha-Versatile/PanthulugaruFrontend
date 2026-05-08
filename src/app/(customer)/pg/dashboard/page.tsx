@@ -49,9 +49,9 @@ function PGDashboardContent() {
     { label: 'Total Bookings', value: stats?.totalBookings || 0, icon: Calendar, color: 'text-blue-600 bg-blue-50' },
     { label: 'Completed', value: stats?.completedBookings || 0, icon: BarChart3, color: 'text-green-600 bg-green-50' },
     { label: 'Upcoming', value: stats?.upcomingBookings || 0, icon: TrendingUp, color: 'text-amber-600 bg-amber-50' },
-    { label: 'Total Earnings', value: `₹${(stats?.totalEarnings || 0).toLocaleString()}`, icon: IndianRupee, color: 'text-[#E07B39] bg-[#E07B39]/10' },
+    { label: 'Total Earnings', value: `₹${(stats?.totalEarnings || 0).toLocaleString()}`, icon: IndianRupee, color: 'text-[#FF6B00] bg-[#FF6B00]/10' },
     { label: 'This Month', value: `₹${(stats?.thisMonthEarnings || 0).toLocaleString()}`, icon: IndianRupee, color: 'text-purple-600 bg-purple-50' },
-    { label: 'Rating', value: stats?.rating ? stats.rating.toFixed(1) : 'N/A', icon: Star, color: 'text-[#D4A017] bg-[#D4A017]/10' },
+    { label: 'Rating', value: stats?.rating ? stats.rating.toFixed(1) : 'N/A', icon: Star, color: 'text-[#D4AF37] bg-[#D4AF37]/10' },
     { label: 'Profile Views', value: stats?.profileViews || 0, icon: Eye, color: 'text-indigo-600 bg-indigo-50' },
     { label: 'Leads', value: stats?.leadsReceived || 0, icon: Users, color: 'text-pink-600 bg-pink-50' },
   ];
@@ -75,8 +75,8 @@ function PGDashboardContent() {
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <span className="text-xl text-[#E07B39] font-bold">Om</span>
-            <span className="text-lg font-bold text-gray-900">PG Dashboard</span>
+            <img src="/logo-full.png" alt="Panthulu Garu" className="h-8 w-8 rounded-full object-cover" />
+            <span className="text-lg font-bold text-[#361E1E] dark:text-[#E8DDD0]">PG Dashboard</span>
           </Link>
           <div className="flex items-center gap-3">
             <Link href="/pg/dashboard/profile/edit">
@@ -158,7 +158,7 @@ function PGDashboardContent() {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              <BookOpen className="h-5 w-5 text-[#E07B39]" />
+              <BookOpen className="h-5 w-5 text-[#FF6B00]" />
               Recent Bookings
             </CardTitle>
           </CardHeader>

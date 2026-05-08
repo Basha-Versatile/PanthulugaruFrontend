@@ -54,7 +54,7 @@ function getPrice(type: string, data: any): string | null {
 }
 
 const TYPE_COLORS: Record<string, string> = {
-  pandit: 'from-[#E07B39] via-[#D4A017] to-[#8B1A1A]',
+  pandit: 'from-[#FF6B00] via-[#D4AF37] to-[#361E1E]',
   photographer: 'from-blue-500 via-blue-600 to-indigo-700',
   caterer: 'from-green-500 via-emerald-600 to-teal-700',
 };
@@ -87,13 +87,13 @@ export function ServiceProviderCard({ type, data, onView }: ServiceProviderCardP
           <div className="relative">
             <Avatar src={profileImage} alt={name} fallback={name} size="lg" />
             {isVerified && (
-              <div className="absolute -bottom-1 -right-1 h-5 w-5 bg-[#E07B39] rounded-full flex items-center justify-center ring-2 ring-white">
+              <div className="absolute -bottom-1 -right-1 h-5 w-5 bg-[#FF6B00] rounded-full flex items-center justify-center ring-2 ring-white">
                 <CheckCircle className="h-3 w-3 text-white" />
               </div>
             )}
           </div>
           <div className="flex-1 min-w-0">
-            <h3 className="text-base font-bold text-gray-900 dark:text-white truncate group-hover:text-[#E07B39] transition-colors">
+            <h3 className="text-base font-bold text-gray-900 dark:text-white truncate group-hover:text-[#FF6B00] transition-colors">
               {name}
             </h3>
             <div className="flex items-center gap-1.5 mt-1 text-sm text-gray-500 dark:text-gray-400">
@@ -103,7 +103,7 @@ export function ServiceProviderCard({ type, data, onView }: ServiceProviderCardP
             <div className="flex items-center gap-3 mt-2 flex-wrap">
               {rating > 0 && (
                 <div className="flex items-center gap-1">
-                  <Star className="h-3.5 w-3.5 text-[#D4A017] fill-[#D4A017]" />
+                  <Star className="h-3.5 w-3.5 text-[#D4AF37] fill-[#D4AF37]" />
                   <span className="text-sm font-semibold text-gray-700 dark:text-gray-300">{rating.toFixed(1)}</span>
                   {data.reviewCount > 0 && <span className="text-xs text-gray-400">({data.reviewCount})</span>}
                 </div>
@@ -128,7 +128,7 @@ export function ServiceProviderCard({ type, data, onView }: ServiceProviderCardP
         {specialties.length > 0 && (
           <div className="flex flex-wrap gap-1.5 mt-3">
             {specialties.map((spec) => (
-              <span key={spec} className="px-2 py-0.5 text-[10px] font-medium bg-[#E07B39]/5 text-[#E07B39] rounded-full">
+              <span key={spec} className="px-2 py-0.5 text-[10px] font-medium bg-[#FF6B00]/5 text-[#FF6B00] rounded-full">
                 {spec}
               </span>
             ))}
@@ -139,9 +139,9 @@ export function ServiceProviderCard({ type, data, onView }: ServiceProviderCardP
         <div className="flex items-center justify-between mt-4 pt-3 border-t border-gray-100 dark:border-gray-700">
           <div className="flex items-center gap-2">
             {isAvailable && <Badge variant="green" className="text-[10px]">Available</Badge>}
-            {price && <span className="text-sm font-semibold text-[#E07B39]">{price}</span>}
+            {price && <span className="text-sm font-semibold text-[#FF6B00]">{price}</span>}
           </div>
-          <span className="text-xs text-[#E07B39] font-medium group-hover:underline flex items-center gap-1">
+          <span className="text-xs text-[#FF6B00] font-medium group-hover:underline flex items-center gap-1">
             View Profile <ArrowRight className="h-3 w-3" />
           </span>
         </div>

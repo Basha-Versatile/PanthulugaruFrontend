@@ -56,8 +56,8 @@ function TempleJobsInner() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-[#121212]">
-      <div className="bg-white border-b border-gray-200 dark:bg-[#1e1e1e] dark:border-gray-700">
+    <div className="min-h-screen bg-gray-50 dark:bg-[#0D0907]">
+      <div className="bg-white border-b border-gray-200 dark:bg-[#1A1210] dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">Temple Jobs</h1>
           <p className="text-gray-500 dark:text-gray-400 mt-1">Find sacred job opportunities at temples across India</p>
@@ -74,7 +74,7 @@ function TempleJobsInner() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search jobs..."
-              className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39] dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white dark:placeholder:text-gray-500"
+              className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:bg-[#241C16] dark:border-gray-600 dark:text-white dark:placeholder:text-gray-500"
             />
           </div>
           <input
@@ -82,7 +82,7 @@ function TempleJobsInner() {
             value={cityFilter}
             onChange={(e) => setCityFilter(e.target.value)}
             placeholder="Filter by city"
-            className="px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39] sm:w-40 dark:bg-[#2a2a2a] dark:border-gray-600 dark:text-white dark:placeholder:text-gray-500"
+            className="px-3 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] sm:w-40 dark:bg-[#241C16] dark:border-gray-600 dark:text-white dark:placeholder:text-gray-500"
           />
           <Button type="submit" variant="primary">Search</Button>
         </form>
@@ -92,7 +92,7 @@ function TempleJobsInner() {
             {Array.from({ length: 6 }).map((_, i) => <Skeleton key={i} className="h-40 rounded-xl" />)}
           </div>
         ) : jobs.length === 0 ? (
-          <div className="bg-white rounded-xl border border-gray-200 dark:bg-[#1e1e1e] dark:border-gray-700 p-12 text-center">
+          <div className="bg-white rounded-xl border border-gray-200 dark:bg-[#1A1210] dark:border-gray-700 p-12 text-center">
             <Briefcase className="h-12 w-12 text-gray-400 mx-auto mb-3" />
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-1">No jobs found</h3>
             <p className="text-gray-500 dark:text-gray-400">Check back later for new opportunities</p>
@@ -107,7 +107,7 @@ function TempleJobsInner() {
                       <div className="flex items-start justify-between">
                         <div className="flex-1">
                           <h3 className="font-semibold text-gray-900 dark:text-white">{job.jobTitle}</h3>
-                          <p className="text-sm text-[#E07B39] font-medium mt-0.5">{job.templeName}</p>
+                          <p className="text-sm text-[#FF6B00] font-medium mt-0.5">{job.templeName}</p>
                         </div>
                         <Badge variant={job.isActive ? 'green' : 'default'}>
                           {job.isActive ? 'Active' : 'Closed'}
@@ -167,7 +167,7 @@ function TempleJobsInner() {
 
 export default function TempleJobsPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-gray-50 dark:bg-[#121212]"><div className="max-w-7xl mx-auto px-4 py-12"><Skeleton className="h-8 w-48 mb-4" /><div className="grid grid-cols-1 md:grid-cols-2 gap-4">{Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-40 rounded-xl" />)}</div></div></div>}>
+    <Suspense fallback={<div className="min-h-screen bg-gray-50 dark:bg-[#0D0907]"><div className="max-w-7xl mx-auto px-4 py-12"><Skeleton className="h-8 w-48 mb-4" /><div className="grid grid-cols-1 md:grid-cols-2 gap-4">{Array.from({ length: 4 }).map((_, i) => <Skeleton key={i} className="h-40 rounded-xl" />)}</div></div></div>}>
       <TempleJobsInner />
     </Suspense>
   );

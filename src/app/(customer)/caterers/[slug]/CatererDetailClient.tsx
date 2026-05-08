@@ -23,7 +23,7 @@ export function CatererDetailClient({ caterer: cat }: Props) {
       <div className="min-h-screen bg-gray-50">
         <div className="bg-white border-b border-gray-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <Link href="/caterers" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#E07B39] transition-colors">
+            <Link href="/caterers" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-[#FF6B00] transition-colors">
               <ArrowLeft className="h-4 w-4" />
               Back to Caterers
             </Link>
@@ -43,7 +43,7 @@ export function CatererDetailClient({ caterer: cat }: Props) {
               <div className="flex-1">
                 <div className="flex items-center gap-2 flex-wrap">
                   <h1 className="text-2xl font-bold text-gray-900">{cat.businessName}</h1>
-                  {cat.isVerified && <BadgeCheck className="h-6 w-6 text-[#E07B39]" />}
+                  {cat.isVerified && <BadgeCheck className="h-6 w-6 text-[#FF6B00]" />}
                 </div>
                 <p className="text-sm text-gray-500 mt-0.5">by {cat.ownerName}</p>
                 <div className="flex items-center gap-4 mt-2 flex-wrap text-sm text-gray-600">
@@ -51,7 +51,7 @@ export function CatererDetailClient({ caterer: cat }: Props) {
                   <div className="flex items-center gap-1"><Clock className="h-4 w-4 text-gray-400" /><span>{cat.experience} years exp</span></div>
                   {cat.rating > 0 && (
                     <div className="flex items-center gap-1">
-                      <Star className="h-4 w-4 text-[#D4A017] fill-[#D4A017]" />
+                      <Star className="h-4 w-4 text-[#D4AF37] fill-[#D4AF37]" />
                       <span className="font-medium">{cat.rating.toFixed(1)}</span>
                       <span className="text-gray-400">({cat.reviewCount})</span>
                     </div>
@@ -93,7 +93,7 @@ export function CatererDetailClient({ caterer: cat }: Props) {
                 <Card>
                   <CardContent className="p-6">
                     <h2 className="text-lg font-semibold text-gray-900 mb-3">
-                      <UtensilsCrossed className="h-5 w-5 inline mr-2 text-[#E07B39]" />
+                      <UtensilsCrossed className="h-5 w-5 inline mr-2 text-[#FF6B00]" />
                       Gallery
                     </h2>
                     <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -138,7 +138,7 @@ export function CatererDetailClient({ caterer: cat }: Props) {
                     {cat.pricePerPlate && (
                       <div className="flex justify-between text-sm">
                         <span className="text-gray-500">Price per plate</span>
-                        <span className="font-medium text-[#E07B39]">&#8377;{cat.pricePerPlate}</span>
+                        <span className="font-medium text-[#FF6B00]">&#8377;{cat.pricePerPlate}</span>
                       </div>
                     )}
                     {cat.minPlateCount && (

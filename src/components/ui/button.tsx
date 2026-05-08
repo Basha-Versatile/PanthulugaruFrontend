@@ -4,7 +4,7 @@ import React, { forwardRef } from "react";
 import { cn } from "@/lib/utils/cn";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "ghost" | "link";
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "link" | "sacred";
   size?: "sm" | "md" | "lg";
   isLoading?: boolean;
 }
@@ -12,19 +12,21 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant = "primary", size = "md", isLoading = false, disabled, children, ...props }, ref) => {
     const baseStyles =
-      "inline-flex items-center justify-center font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
+      "inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
 
     const variants = {
       primary:
-        "bg-[#E07B39] text-white hover:bg-[#c96a2e] focus:ring-[#E07B39] active:bg-[#b35d26]",
+        "bg-[#FF6B00] text-white hover:bg-[#E05E00] focus:ring-[#FF6B00] active:bg-[#CC5500] shadow-sm hover:shadow-md hover:shadow-[#FF6B00]/15",
       secondary:
-        "bg-[#8B1A1A] text-white hover:bg-[#721515] focus:ring-[#8B1A1A] active:bg-[#5e1111]",
+        "bg-[#361E1E] text-white hover:bg-[#4A2828] focus:ring-[#361E1E] active:bg-[#1F0F0F]",
       outline:
-        "border-2 border-[#E07B39] text-[#E07B39] bg-transparent hover:bg-[#E07B39] hover:text-white focus:ring-[#E07B39]",
+        "border-2 border-[#D4AF37] text-[#8B4513] bg-transparent hover:bg-[#D4AF37]/10 focus:ring-[#D4AF37]",
       ghost:
-        "text-gray-700 bg-transparent hover:bg-gray-100 focus:ring-gray-300 dark:text-gray-300 dark:hover:bg-gray-800",
+        "text-[#361E1E] bg-transparent hover:bg-[#D4AF37]/10 focus:ring-[#D4AF37]/30 dark:text-[#E8DDD0] dark:hover:bg-[#D4AF37]/10",
       link:
-        "text-[#E07B39] bg-transparent underline-offset-4 hover:underline focus:ring-[#E07B39] p-0",
+        "text-[#FF6B00] bg-transparent underline-offset-4 hover:underline focus:ring-[#FF6B00] p-0",
+      sacred:
+        "bg-gradient-to-r from-[#D4AF37] to-[#FF6B00] text-white hover:from-[#B8962E] hover:to-[#E05E00] focus:ring-[#D4AF37] shadow-md shadow-[#D4AF37]/20 hover:shadow-lg hover:shadow-[#D4AF37]/30",
     };
 
     const sizes = {
