@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFDF0"/>
+      <stop offset="100%" style="stop-color:#FFF0D0"/>
+    </linearGradient>
+    <linearGradient id="gold4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="100%" style="stop-color:#D4A017"/>
+    </linearGradient>
+    <linearGradient id="lotus4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF69B4"/>
+      <stop offset="100%" style="stop-color:#DB2777"/>
+    </linearGradient>
+    <radialGradient id="diwaliglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg4)"/>
+  <!-- Golden glow -->
+  <circle cx="200" cy="140" r="90" fill="url(#diwaliglow)"/>
+  <!-- Lotus flower -->
+  <!-- Back petals -->
+  <ellipse cx="175" cy="175" rx="22" ry="8" fill="#FF69B4" transform="rotate(-30,175,175)" opacity="0.7"/>
+  <ellipse cx="225" cy="175" rx="22" ry="8" fill="#FF69B4" transform="rotate(30,225,175)" opacity="0.7"/>
+  <ellipse cx="165" cy="190" rx="22" ry="8" fill="#FF69B4" transform="rotate(-60,165,190)" opacity="0.6"/>
+  <ellipse cx="235" cy="190" rx="22" ry="8" fill="#FF69B4" transform="rotate(60,235,190)" opacity="0.6"/>
+  <!-- Front petals -->
+  <ellipse cx="183" cy="185" rx="25" ry="9" fill="url(#lotus4)" transform="rotate(-20,183,185)"/>
+  <ellipse cx="217" cy="185" rx="25" ry="9" fill="url(#lotus4)" transform="rotate(20,217,185)"/>
+  <ellipse cx="170" cy="200" rx="25" ry="9" fill="url(#lotus4)" transform="rotate(-50,170,200)"/>
+  <ellipse cx="230" cy="200" rx="25" ry="9" fill="url(#lotus4)" transform="rotate(50,230,200)"/>
+  <ellipse cx="200" cy="195" rx="25" ry="9" fill="#EC4899"/>
+  <!-- Center -->
+  <circle cx="200" cy="185" r="12" fill="#FFD700"/>
+  <circle cx="200" cy="185" r="8" fill="#F0C040"/>
+  <!-- Gold coins scattered -->
+  <circle cx="130" cy="235" r="10" fill="url(#gold4)" stroke="#B8860B" stroke-width="1"/>
+  <text x="130" y="239" text-anchor="middle" font-size="10" fill="#8B6914" font-family="serif">₹</text>
+  <circle cx="150" cy="245" r="10" fill="url(#gold4)" stroke="#B8860B" stroke-width="1"/>
+  <text x="150" y="249" text-anchor="middle" font-size="10" fill="#8B6914" font-family="serif">₹</text>
+  <circle cx="250" cy="235" r="10" fill="url(#gold4)" stroke="#B8860B" stroke-width="1"/>
+  <text x="250" y="239" text-anchor="middle" font-size="10" fill="#8B6914" font-family="serif">₹</text>
+  <circle cx="270" cy="245" r="10" fill="url(#gold4)" stroke="#B8860B" stroke-width="1"/>
+  <text x="270" y="249" text-anchor="middle" font-size="10" fill="#8B6914" font-family="serif">₹</text>
+  <!-- Diyas -->
+  <ellipse cx="100" cy="260" rx="12" ry="5" fill="#CD853F"/>
+  <rect x="93" y="250" width="14" height="10" rx="3" fill="#D4A017"/>
+  <path d="M100 250 Q97 242 100 233 Q103 242 100 250Z" fill="#F0C040"/>
+  <circle cx="100" cy="235" r="3" fill="#FFE88A" opacity="0.7"/>
+  <ellipse cx="300" cy="260" rx="12" ry="5" fill="#CD853F"/>
+  <rect x="293" y="250" width="14" height="10" rx="3" fill="#D4A017"/>
+  <path d="M300 250 Q297 242 300 233 Q303 242 300 250Z" fill="#F0C040"/>
+  <circle cx="300" cy="235" r="3" fill="#FFE88A" opacity="0.7"/>
+  <!-- Rangoli dots -->
+  <circle cx="140" cy="270" r="2" fill="#FF6B6B" opacity="0.4"/>
+  <circle cx="160" cy="275" r="2" fill="#FFB347" opacity="0.4"/>
+  <circle cx="240" cy="275" r="2" fill="#FFB347" opacity="0.4"/>
+  <circle cx="260" cy="270" r="2" fill="#FF6B6B" opacity="0.4"/>
+  <!-- Lakshmi text -->
+  <text x="200" y="80" text-anchor="middle" font-size="24" fill="#D4A017" opacity="0.12" font-family="serif">श्री</text>
+  <!-- Mandala ring -->
+  <circle cx="200" cy="160" r="120" fill="none" stroke="#D4A017" stroke-opacity="0.06" stroke-width="1"/>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF5F0"/>
+      <stop offset="100%" style="stop-color:#FFE0CC"/>
+    </linearGradient>
+    <linearGradient id="fire2" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#CC3300"/>
+      <stop offset="40%" style="stop-color:#E07B39"/>
+      <stop offset="70%" style="stop-color:#F0C040"/>
+      <stop offset="100%" style="stop-color:#FFE88A"/>
+    </linearGradient>
+    <radialGradient id="fireglow" cx="50%" cy="60%" r="50%">
+      <stop offset="0%" style="stop-color:#F0C040;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#E07B39;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg2)"/>
+  <!-- Mandala circles -->
+  <circle cx="200" cy="150" r="130" fill="none" stroke="#E07B39" stroke-opacity="0.06" stroke-width="1"/>
+  <circle cx="200" cy="150" r="110" fill="none" stroke="#E07B39" stroke-opacity="0.04" stroke-width="1"/>
+  <!-- Fire glow -->
+  <circle cx="200" cy="160" r="70" fill="url(#fireglow)"/>
+  <!-- Homa Kundam (fire pit) -->
+  <polygon points="140,240 260,240 250,200 150,200" fill="#8B4513"/>
+  <polygon points="145,240 255,240 248,205 152,205" fill="#A0522D"/>
+  <!-- Inner fire pit -->
+  <rect x="158" y="195" width="84" height="10" rx="2" fill="#CD853F"/>
+  <!-- Fire flames -->
+  <path d="M200 195 Q185 160 195 130 Q200 150 210 130 Q215 160 200 195Z" fill="url(#fire2)" opacity="0.9"/>
+  <path d="M185 195 Q175 170 182 150 Q188 165 185 195Z" fill="url(#fire2)" opacity="0.7"/>
+  <path d="M215 195 Q225 170 218 150 Q212 165 215 195Z" fill="url(#fire2)" opacity="0.7"/>
+  <path d="M193 195 Q188 175 193 155 Q197 170 193 195Z" fill="#FFE88A" opacity="0.6"/>
+  <path d="M207 195 Q212 175 207 155 Q203 170 207 195Z" fill="#FFE88A" opacity="0.6"/>
+  <!-- Sparks -->
+  <circle cx="190" cy="125" r="2" fill="#FFE88A" opacity="0.8"/>
+  <circle cx="215" cy="120" r="1.5" fill="#F0C040" opacity="0.7"/>
+  <circle cx="178" cy="140" r="1.5" fill="#FFE88A" opacity="0.6"/>
+  <circle cx="225" cy="135" r="2" fill="#F0C040" opacity="0.5"/>
+  <!-- Offering items - left -->
+  <ellipse cx="110" cy="230" rx="15" ry="8" fill="#D4A017"/>
+  <rect x="100" y="215" width="20" height="15" rx="5" fill="#CD853F"/>
+  <circle cx="110" cy="212" r="4" fill="#228B22"/>
+  <!-- Offering items - right -->
+  <ellipse cx="290" cy="230" rx="15" ry="8" fill="#D4A017"/>
+  <rect x="280" y="215" width="20" height="15" rx="5" fill="#CD853F"/>
+  <circle cx="290" cy="212" r="4" fill="#228B22"/>
+  <!-- Swastik symbol -->
+  <g transform="translate(200, 78)" opacity="0.15" fill="#E07B39">
+    <rect x="-12" y="-2" width="24" height="4"/>
+    <rect x="-2" y="-12" width="4" height="24"/>
+    <rect x="10" y="-12" width="4" height="8"/>
+    <rect x="-14" y="4" width="4" height="8"/>
+    <rect x="10" y="4" width="8" height="4"/>
+    <rect x="-14" y="-8" width="8" height="4"/>
+  </g>
+  <!-- Decorative dots -->
+  <circle cx="130" cy="260" r="3" fill="#FF6B6B" opacity="0.5"/>
+  <circle cx="150" cy="265" r="2.5" fill="#FFB347" opacity="0.5"/>
+  <circle cx="250" cy="265" r="2.5" fill="#FFB347" opacity="0.5"/>
+  <circle cx="270" cy="260" r="3" fill="#FF6B6B" opacity="0.5"/>
+</svg>

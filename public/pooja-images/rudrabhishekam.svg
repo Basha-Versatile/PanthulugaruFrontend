@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F5F0FF"/>
+      <stop offset="100%" style="stop-color:#E8E0F5"/>
+    </linearGradient>
+    <linearGradient id="shivling" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#555555"/>
+      <stop offset="100%" style="stop-color:#333333"/>
+    </linearGradient>
+    <linearGradient id="water6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#87CEEB;stop-opacity:0.3"/>
+    </linearGradient>
+    <radialGradient id="divine6" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:#E8E0F5;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#9370DB;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg6)"/>
+  <!-- Divine glow -->
+  <circle cx="200" cy="130" r="80" fill="url(#divine6)"/>
+  <!-- Mandala circles -->
+  <circle cx="200" cy="150" r="130" fill="none" stroke="#9370DB" stroke-opacity="0.06" stroke-width="1"/>
+  <circle cx="200" cy="150" r="100" fill="none" stroke="#9370DB" stroke-opacity="0.04" stroke-width="1"/>
+  <!-- Yoni base (oval platform) -->
+  <ellipse cx="200" cy="225" rx="70" ry="18" fill="#666"/>
+  <ellipse cx="200" cy="222" rx="65" ry="15" fill="#777"/>
+  <!-- Spout -->
+  <path d="M270 222 Q285 222 290 218 Q285 225 270 225Z" fill="#666"/>
+  <!-- Shivling -->
+  <ellipse cx="200" cy="195" rx="30" ry="8" fill="#555"/>
+  <path d="M170 195 Q170 130 200 110 Q230 130 230 195Z" fill="url(#shivling)"/>
+  <path d="M175 195 Q175 135 200 118 Q225 135 225 195Z" fill="#444"/>
+  <!-- Abhishekam water dripping -->
+  <path d="M200 90 L197 100 L200 95 L203 100Z" fill="url(#water6)"/>
+  <ellipse cx="200" cy="88" rx="8" ry="4" fill="#CD853F"/>
+  <!-- Water drops -->
+  <ellipse cx="195" cy="130" rx="2" ry="3" fill="white" opacity="0.5"/>
+  <ellipse cx="205" cy="145" rx="2" ry="3" fill="white" opacity="0.4"/>
+  <ellipse cx="198" cy="160" rx="2" ry="3" fill="white" opacity="0.3"/>
+  <!-- Water streaming -->
+  <path d="M200 115 Q195 140 198 170 Q200 175 202 170 Q205 140 200 115Z" fill="white" opacity="0.15"/>
+  <!-- Bilva leaves on shivling -->
+  <g transform="translate(200,140)">
+    <path d="M0,-8 Q-5,-3 0,5 Q5,-3 0,-8Z" fill="#228B22" opacity="0.7"/>
+    <path d="M-6,-5 Q-11,0 -6,8 Q-1,0 -6,-5Z" fill="#2E8B57" opacity="0.6"/>
+    <path d="M6,-5 Q11,0 6,8 Q1,0 6,-5Z" fill="#2E8B57" opacity="0.6"/>
+  </g>
+  <!-- Rudraksha beads around base -->
+  <g opacity="0.5">
+    <circle cx="145" cy="215" r="4" fill="#8B4513"/>
+    <circle cx="155" cy="210" r="4" fill="#8B4513"/>
+    <circle cx="245" cy="210" r="4" fill="#8B4513"/>
+    <circle cx="255" cy="215" r="4" fill="#8B4513"/>
+  </g>
+  <!-- Flowers -->
+  <circle cx="175" cy="195" r="4" fill="#FF69B4" opacity="0.6"/>
+  <circle cx="225" cy="195" r="4" fill="#FF69B4" opacity="0.6"/>
+  <circle cx="185" cy="200" r="3" fill="#FFB347" opacity="0.5"/>
+  <circle cx="215" cy="200" r="3" fill="#FFB347" opacity="0.5"/>
+  <!-- Incense smoke -->
+  <path d="M130 240 Q128 220 132 200 Q130 190 133 180" stroke="#9370DB" stroke-opacity="0.15" stroke-width="1.5" fill="none"/>
+  <path d="M270 240 Q272 220 268 200 Q270 190 267 180" stroke="#9370DB" stroke-opacity="0.15" stroke-width="1.5" fill="none"/>
+  <!-- Diya left -->
+  <ellipse cx="130" cy="250" rx="12" ry="4" fill="#CD853F"/>
+  <rect x="124" y="240" width="12" height="10" rx="3" fill="#D4A017"/>
+  <path d="M130 240 Q127 232 130 223 Q133 232 130 240Z" fill="#F0C040"/>
+  <!-- Diya right -->
+  <ellipse cx="270" cy="250" rx="12" ry="4" fill="#CD853F"/>
+  <rect x="264" y="240" width="12" height="10" rx="3" fill="#D4A017"/>
+  <path d="M270 240 Q267 232 270 223 Q273 232 270 240Z" fill="#F0C040"/>
+  <!-- Om Namah Shivaya -->
+  <text x="200" y="70" text-anchor="middle" font-size="18" fill="#9370DB" opacity="0.1" font-family="serif">ॐ नमः शिवाय</text>
+  <!-- Trishul hint -->
+  <g transform="translate(200,55)" opacity="0.1" fill="#9370DB">
+    <rect x="-1" y="0" width="2" height="25"/>
+    <path d="M0,0 Q-8,-10 -6,-18 Q-3,-8 0,0Z"/>
+    <path d="M0,0 Q8,-10 6,-18 Q3,-8 0,0Z"/>
+    <path d="M0,-2 Q0,-15 0,-20"/>
+  </g>
+</svg>

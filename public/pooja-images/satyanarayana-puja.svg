@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFF8F0"/>
+      <stop offset="100%" style="stop-color:#FFE8CC"/>
+    </linearGradient>
+    <linearGradient id="gold1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0C040"/>
+      <stop offset="100%" style="stop-color:#D4A017"/>
+    </linearGradient>
+    <linearGradient id="flame1" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" style="stop-color:#E07B39"/>
+      <stop offset="50%" style="stop-color:#F0C040"/>
+      <stop offset="100%" style="stop-color:#FFE88A"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#F0C040;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#F0C040;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg1)"/>
+  <!-- Decorative mandala pattern -->
+  <circle cx="200" cy="150" r="120" fill="none" stroke="#D4A017" stroke-opacity="0.08" stroke-width="1"/>
+  <circle cx="200" cy="150" r="100" fill="none" stroke="#D4A017" stroke-opacity="0.06" stroke-width="1"/>
+  <circle cx="200" cy="150" r="80" fill="none" stroke="#D4A017" stroke-opacity="0.04" stroke-width="1"/>
+  <!-- Glow -->
+  <circle cx="200" cy="140" r="60" fill="url(#glow1)"/>
+  <!-- Kalash (Sacred Pot) -->
+  <ellipse cx="200" cy="220" rx="45" ry="12" fill="#CD853F"/>
+  <rect x="160" y="160" width="80" height="60" rx="8" fill="url(#gold1)"/>
+  <rect x="155" y="155" width="90" height="10" rx="5" fill="#D4A017"/>
+  <!-- Coconut on top -->
+  <ellipse cx="200" cy="145" rx="18" ry="16" fill="#8B4513"/>
+  <ellipse cx="200" cy="140" rx="10" ry="3" fill="#654321"/>
+  <!-- Mango leaves -->
+  <path d="M182 155 Q170 130 175 115" stroke="#228B22" stroke-width="3" fill="none"/>
+  <path d="M175 115 Q168 125 175 135 Q180 125 175 115Z" fill="#2E8B57"/>
+  <path d="M218 155 Q230 130 225 115" stroke="#228B22" stroke-width="3" fill="none"/>
+  <path d="M225 115 Q232 125 225 135 Q220 125 225 115Z" fill="#2E8B57"/>
+  <path d="M195 155 Q185 125 190 110" stroke="#228B22" stroke-width="2.5" fill="none"/>
+  <path d="M190 110 Q185 120 190 128 Q194 120 190 110Z" fill="#2E8B57"/>
+  <path d="M205 155 Q215 125 210 110" stroke="#228B22" stroke-width="2.5" fill="none"/>
+  <path d="M210 110 Q215 120 210 128 Q206 120 210 110Z" fill="#2E8B57"/>
+  <!-- Diya (oil lamp) left -->
+  <ellipse cx="120" cy="235" rx="18" ry="6" fill="#CD853F"/>
+  <rect x="110" y="220" width="20" height="15" rx="3" fill="#D4A017"/>
+  <path d="M120 220 Q115 208 120 195 Q125 208 120 220Z" fill="url(#flame1)"/>
+  <circle cx="120" cy="198" r="4" fill="#FFE88A" opacity="0.6"/>
+  <!-- Diya (oil lamp) right -->
+  <ellipse cx="280" cy="235" rx="18" ry="6" fill="#CD853F"/>
+  <rect x="270" y="220" width="20" height="15" rx="3" fill="#D4A017"/>
+  <path d="M280 220 Q275 208 280 195 Q285 208 280 220Z" fill="url(#flame1)"/>
+  <circle cx="280" cy="198" r="4" fill="#FFE88A" opacity="0.6"/>
+  <!-- Flowers -->
+  <circle cx="155" cy="175" r="5" fill="#FF6B6B" opacity="0.7"/>
+  <circle cx="245" cy="175" r="5" fill="#FF6B6B" opacity="0.7"/>
+  <circle cx="145" cy="195" r="4" fill="#FFB347" opacity="0.7"/>
+  <circle cx="255" cy="195" r="4" fill="#FFB347" opacity="0.7"/>
+  <!-- Om symbol -->
+  <text x="200" y="85" text-anchor="middle" font-size="36" fill="#D4A017" opacity="0.2" font-family="serif">ॐ</text>
+</svg>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F0F0FF"/>
+      <stop offset="100%" style="stop-color:#E8E0F0"/>
+    </linearGradient>
+    <radialGradient id="sunglow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#F0C040;stop-opacity:0.6"/>
+      <stop offset="60%" style="stop-color:#F0C040;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#F0C040;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="300" fill="url(#bg3)"/>
+  <!-- Star field -->
+  <circle cx="50" cy="40" r="1" fill="#D4A017" opacity="0.3"/>
+  <circle cx="120" cy="25" r="1.5" fill="#D4A017" opacity="0.2"/>
+  <circle cx="300" cy="35" r="1" fill="#D4A017" opacity="0.3"/>
+  <circle cx="350" cy="60" r="1.5" fill="#D4A017" opacity="0.2"/>
+  <circle cx="80" cy="80" r="1" fill="#D4A017" opacity="0.2"/>
+  <circle cx="320" cy="90" r="1" fill="#D4A017" opacity="0.25"/>
+  <!-- Central Sun (Surya) -->
+  <circle cx="200" cy="130" r="45" fill="url(#sunglow)"/>
+  <circle cx="200" cy="130" r="25" fill="#F0C040"/>
+  <circle cx="200" cy="130" r="20" fill="#E07B39"/>
+  <!-- Sun rays -->
+  <g stroke="#F0C040" stroke-width="2" opacity="0.5">
+    <line x1="200" y1="95" x2="200" y2="80"/>
+    <line x1="200" y1="165" x2="200" y2="180"/>
+    <line x1="165" y1="130" x2="150" y2="130"/>
+    <line x1="235" y1="130" x2="250" y2="130"/>
+    <line x1="175" y1="105" x2="165" y2="95"/>
+    <line x1="225" y1="105" x2="235" y2="95"/>
+    <line x1="175" y1="155" x2="165" y2="165"/>
+    <line x1="225" y1="155" x2="235" y2="165"/>
+  </g>
+  <!-- 8 Planets orbiting -->
+  <!-- Moon (Chandra) -->
+  <circle cx="200" cy="60" r="10" fill="#E8E8F0"/>
+  <circle cx="205" cy="57" r="8" fill="url(#bg3)"/>
+  <!-- Mars (Mangal) -->
+  <circle cx="280" cy="90" r="9" fill="#CC3333"/>
+  <!-- Mercury (Budh) -->
+  <circle cx="310" cy="150" r="8" fill="#4CAF50"/>
+  <!-- Jupiter (Guru) -->
+  <circle cx="280" cy="210" r="11" fill="#E07B39"/>
+  <!-- Venus (Shukra) -->
+  <circle cx="200" cy="240" r="9" fill="#FFB6C1"/>
+  <!-- Saturn (Shani) -->
+  <circle cx="120" cy="210" r="10" fill="#5C6BC0"/>
+  <ellipse cx="120" cy="210" rx="16" ry="4" fill="none" stroke="#7986CB" stroke-width="1.5"/>
+  <!-- Rahu -->
+  <circle cx="90" cy="150" r="8" fill="#455A64"/>
+  <circle cx="93" cy="147" r="6" fill="#37474F"/>
+  <!-- Ketu -->
+  <circle cx="120" cy="90" r="8" fill="#795548"/>
+  <!-- Orbit rings -->
+  <circle cx="200" cy="150" r="95" fill="none" stroke="#D4A017" stroke-opacity="0.1" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <circle cx="200" cy="150" r="70" fill="none" stroke="#D4A017" stroke-opacity="0.08" stroke-width="0.5" stroke-dasharray="4,4"/>
+  <!-- Yantra base -->
+  <rect x="155" y="255" width="90" height="8" rx="4" fill="#D4A017" opacity="0.2"/>
+  <!-- Om -->
+  <text x="200" y="290" text-anchor="middle" font-size="18" fill="#5C6BC0" opacity="0.15" font-family="serif">नवग्रह</text>
+</svg>
