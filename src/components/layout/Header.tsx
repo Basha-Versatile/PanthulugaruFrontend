@@ -134,11 +134,11 @@ export function Header() {
           <div className="flex items-center justify-between h-8 text-xs">
             <div className="hidden sm:flex items-center gap-4">
               <a
-                href="tel:+919876543210"
+                href="tel:+919999999999"
                 className="flex items-center gap-1.5 hover:text-[#F0C040] transition-colors"
               >
                 <Phone className="h-3 w-3" />
-                <span>+91 98765 43210</span>
+                <span>+91 99999 99999</span>
               </a>
               <span className="w-px h-3 bg-white/20" />
               <a
@@ -806,11 +806,11 @@ export function Header() {
             <div className="mt-4 pt-3 border-t border-[#D4A017]/10 dark:border-gray-700">
               <div className="flex flex-wrap items-center gap-3 px-3 text-xs text-gray-400">
                 <a
-                  href="tel:+919876543210"
+                  href="tel:+919999999999"
                   className="flex items-center gap-1.5 hover:text-[#D4A017] transition-colors"
                 >
                   <Phone className="h-3 w-3" />
-                  <span>+91 98765 43210</span>
+                  <span>+91 99999 99999</span>
                 </a>
                 <a
                   href="mailto:info@panthulugaru.com"
