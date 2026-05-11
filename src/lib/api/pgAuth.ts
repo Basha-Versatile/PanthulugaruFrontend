@@ -67,7 +67,32 @@ export async function completePGProfile(data: Partial<Panthulugaru>): Promise<Ap
 export async function getAvailableRituals(): Promise<ApiResponse<Ritual[]>> {
   try {
     const response = await apiClient.get(ENDPOINTS.PG_RITUALS);
-    return response.data;
+    const res = response.data;
+
+    // Backend returns Map<String, List<Ritual>> grouped by categoryName.
+    // Flatten into a single Ritual[] with mapped field names.
+    if (res.success && res.data && typeof res.data === 'object' && !Array.isArray(res.data)) {
+      const grouped = res.data as Record<string, any[]>;
+      const flat: Ritual[] = [];
+      for (const [categoryName, rituals] of Object.entries(grouped)) {
+        if (!Array.isArray(rituals)) continue;
+        for (const r of rituals) {
+          flat.push({
+            id: r.id,
+            name: r.ritualName || r.name || '',
+            description: r.description,
+            image: r.image || r.ritualImage,
+            bannerImage: r.bannerImage,
+            category: r.categoryName || categoryName,
+            isActive: r.isBanner ?? true,
+            subRituals: [],
+          });
+        }
+      }
+      return { success: true, message: res.message, data: flat };
+    }
+
+    return res;
   } catch (error: unknown) {
     const err = error as { response?: { data?: ApiResponse<null> } };
     return (err.response?.data || { success: false, message: 'Failed to get rituals', data: [] }) as any;

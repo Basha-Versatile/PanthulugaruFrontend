@@ -76,7 +76,7 @@ export default function CustomerDetailPage({ params }: { params: Promise<{ id: s
   if (!customer) {
     return (
       <div className="text-center py-16">
-        <p className="text-gray-500 mb-4">Customer not found</p>
+        <p className="text-gray-500 dark:text-[#E8DDD0]/60 mb-4">Customer not found</p>
         <Button variant="outline" onClick={() => router.push('/admin/customers')}>
           <ArrowLeft className="h-4 w-4" /> Back to list
         </Button>
@@ -93,8 +93,8 @@ export default function CustomerDetailPage({ params }: { params: Promise<{ id: s
         </Button>
         <Avatar src={customer.profileImage} fallback={`${customer.firstName} ${customer.lastName}`} size="lg" />
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">{customer.firstName} {customer.lastName}</h1>
-          <p className="text-sm text-gray-500">Customer ID: {customer.id}</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{customer.firstName} {customer.lastName}</h1>
+          <p className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">Customer ID: {customer.id}</p>
         </div>
       </div>
 
@@ -172,7 +172,7 @@ export default function CustomerDetailPage({ params }: { params: Promise<{ id: s
                 onChange={(e) => setNotes(e.target.value)}
                 placeholder="Add internal notes about this customer..."
                 rows={4}
-                className="w-full rounded-lg border border-gray-300 bg-white px-3.5 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                className="w-full rounded-lg border border-gray-300 dark:border-[#D4AF37]/15 bg-white dark:bg-[#241C16] px-3.5 py-2.5 text-sm text-gray-900 dark:text-white placeholder:text-gray-400 dark:placeholder:text-[#E8DDD0]/30 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:focus:ring-[#D4AF37]/20 dark:focus:border-[#D4AF37]"
               />
             </CardContent>
           </Card>
@@ -183,7 +183,7 @@ export default function CustomerDetailPage({ params }: { params: Promise<{ id: s
               <CardTitle className="text-lg">Booking History</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-gray-400 text-center py-8">Booking history will appear here once integrated.</p>
+              <p className="text-sm text-gray-400 dark:text-[#E8DDD0]/40 text-center py-8">Booking history will appear here once integrated.</p>
             </CardContent>
           </Card>
 
@@ -193,7 +193,7 @@ export default function CustomerDetailPage({ params }: { params: Promise<{ id: s
               <CardTitle className="text-lg">Lead History</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-gray-400 text-center py-8">Lead history will appear here once integrated.</p>
+              <p className="text-sm text-gray-400 dark:text-[#E8DDD0]/40 text-center py-8">Lead history will appear here once integrated.</p>
             </CardContent>
           </Card>
         </div>
@@ -206,16 +206,16 @@ export default function CustomerDetailPage({ params }: { params: Promise<{ id: s
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Email</span>
+                <span className="text-sm text-gray-600 dark:text-[#E8DDD0]/70">Email</span>
                 {customer.isEmailVerified ? <Badge variant="green">Verified</Badge> : <Badge variant="gold">Unverified</Badge>}
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-600">Phone</span>
+                <span className="text-sm text-gray-600 dark:text-[#E8DDD0]/70">Phone</span>
                 {customer.isPhoneVerified ? <Badge variant="green">Verified</Badge> : <Badge variant="gold">Unverified</Badge>}
               </div>
               {customer.googleId && (
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-600">Google</span>
+                  <span className="text-sm text-gray-600 dark:text-[#E8DDD0]/70">Google</span>
                   <Badge variant="green">Linked</Badge>
                 </div>
               )}
@@ -228,12 +228,12 @@ export default function CustomerDetailPage({ params }: { params: Promise<{ id: s
             </CardHeader>
             <CardContent className="space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">Joined</span>
-                <span className="text-sm font-medium text-gray-900">{dayjs(customer.createdAt).format('DD MMM YYYY')}</span>
+                <span className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">Joined</span>
+                <span className="text-sm font-medium text-gray-900 dark:text-white">{dayjs(customer.createdAt).format('DD MMM YYYY')}</span>
               </div>
               <div className="flex items-center justify-between">
-                <span className="text-sm text-gray-500">Updated</span>
-                <span className="text-sm font-medium text-gray-900">{dayjs(customer.updatedAt).format('DD MMM YYYY')}</span>
+                <span className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">Updated</span>
+                <span className="text-sm font-medium text-gray-900 dark:text-white">{dayjs(customer.updatedAt).format('DD MMM YYYY')}</span>
               </div>
             </CardContent>
           </Card>

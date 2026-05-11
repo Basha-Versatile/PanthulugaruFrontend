@@ -10,7 +10,13 @@ export async function customerEmailSignup(data: {
   password: string;
 }): Promise<ApiResponse<{ token: string; user: Customer }>> {
   try {
-    const response = await apiClient.post(ENDPOINTS.CUSTOMER_SIGNUP, data);
+    const payload = {
+      fullName: `${data.firstName} ${data.lastName}`.trim(),
+      email: data.email,
+      phone: data.phone,
+      password: data.password,
+    };
+    const response = await apiClient.post(ENDPOINTS.CUSTOMER_SIGNUP, payload);
     return response.data;
   } catch (error: unknown) {
     const err = error as { response?: { data?: ApiResponse<null> } };

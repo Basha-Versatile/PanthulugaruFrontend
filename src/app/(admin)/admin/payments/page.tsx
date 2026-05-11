@@ -97,8 +97,8 @@ export default function PaymentsPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Payments</h1>
-        <p className="text-sm text-gray-500">{totalElements} total payments</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Payments</h1>
+        <p className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">{totalElements} total payments</p>
       </div>
 
       {/* Summary */}
@@ -109,19 +109,19 @@ export default function PaymentsPage() {
               <IndianRupee className="h-5 w-5 text-green-600" />
             </div>
             <div>
-              <p className="text-xs text-gray-500">Total Amount (page)</p>
-              <p className="text-lg font-bold text-gray-900">₹{totalAmount.toLocaleString('en-IN')}</p>
+              <p className="text-xs text-gray-500 dark:text-[#E8DDD0]/60">Total Amount (page)</p>
+              <p className="text-lg font-bold text-gray-900 dark:text-white">₹{totalAmount.toLocaleString('en-IN')}</p>
             </div>
           </CardContent>
         </Card>
         <Card>
           <CardContent className="p-4 flex items-center gap-3">
-            <div className="h-10 w-10 rounded-lg bg-[#E07B39]/10 flex items-center justify-center">
-              <CreditCard className="h-5 w-5 text-[#E07B39]" />
+            <div className="h-10 w-10 rounded-lg bg-[#FF6B00]/10 flex items-center justify-center">
+              <CreditCard className="h-5 w-5 text-[#FF6B00]" />
             </div>
             <div>
-              <p className="text-xs text-gray-500">Total Transactions</p>
-              <p className="text-lg font-bold text-gray-900">{totalElements}</p>
+              <p className="text-xs text-gray-500 dark:text-[#E8DDD0]/60">Total Transactions</p>
+              <p className="text-lg font-bold text-gray-900 dark:text-white">{totalElements}</p>
             </div>
           </CardContent>
         </Card>
@@ -131,8 +131,8 @@ export default function PaymentsPage() {
               <CreditCard className="h-5 w-5 text-blue-600" />
             </div>
             <div>
-              <p className="text-xs text-gray-500">Showing</p>
-              <p className="text-lg font-bold text-gray-900">{payments.length} records</p>
+              <p className="text-xs text-gray-500 dark:text-[#E8DDD0]/60">Showing</p>
+              <p className="text-lg font-bold text-gray-900 dark:text-white">{payments.length} records</p>
             </div>
           </CardContent>
         </Card>
@@ -143,19 +143,19 @@ export default function PaymentsPage() {
         <CardContent className="p-4">
           <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
             <div className="relative flex-1 min-w-[200px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-[#E8DDD0]/40" />
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search by ID, order, customer..."
-                className="w-full rounded-lg border border-gray-300 bg-white pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                className="w-full rounded-lg border border-gray-300 dark:border-[#D4AF37]/15 bg-white dark:bg-[#241C16] dark:text-white dark:placeholder:text-[#E8DDD0]/30 pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:focus:ring-[#D4AF37]/20 dark:focus:border-[#D4AF37]"
               />
             </div>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+              className="rounded-lg border border-gray-300 dark:border-[#D4AF37]/15 bg-white dark:bg-[#241C16] dark:text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:focus:ring-[#D4AF37]/20 dark:focus:border-[#D4AF37]"
             >
               <option value="">All Status</option>
               {PAYMENT_STATUSES.map((s) => (
@@ -165,7 +165,7 @@ export default function PaymentsPage() {
             <select
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+              className="rounded-lg border border-gray-300 dark:border-[#D4AF37]/15 bg-white dark:bg-[#241C16] dark:text-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:focus:ring-[#D4AF37]/20 dark:focus:border-[#D4AF37]"
             >
               <option value="">All Types</option>
               {PAYMENT_TYPES.map((t) => (
@@ -186,19 +186,19 @@ export default function PaymentsPage() {
         <CardContent className="p-0">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="bg-gray-50 border-b border-gray-200 sticky top-0">
+              <thead className="bg-gray-50 dark:bg-[#241C16] border-b border-gray-200 dark:border-[#D4AF37]/10 sticky top-0">
                 <tr>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Payment ID</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Customer</th>
-                  <th className="text-right font-medium text-gray-500 px-4 py-3">Amount</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Type</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Provider</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Status</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Date</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">View</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Payment ID</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Customer</th>
+                  <th className="text-right font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Amount</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Type</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Provider</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Status</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Date</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">View</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-gray-100 dark:divide-[#D4AF37]/5">
                 {loading ? (
                   Array.from({ length: 8 }).map((_, i) => (
                     <tr key={i}>
@@ -209,18 +209,18 @@ export default function PaymentsPage() {
                   ))
                 ) : payments.length === 0 ? (
                   <tr>
-                    <td colSpan={8} className="text-center py-12 text-gray-400">No payments found.</td>
+                    <td colSpan={8} className="text-center py-12 text-gray-400 dark:text-[#E8DDD0]/40">No payments found.</td>
                   </tr>
                 ) : (
                   payments.map((payment) => (
-                    <tr key={payment.id} className="hover:bg-gray-50 transition-colors">
-                      <td className="px-4 py-3 text-gray-600 font-mono text-xs">{payment.id.slice(0, 12)}...</td>
-                      <td className="px-4 py-3 text-gray-900">{payment.customerName || '-'}</td>
-                      <td className="px-4 py-3 text-right font-medium text-gray-900">₹{payment.amount?.toLocaleString('en-IN')}</td>
+                    <tr key={payment.id} className="hover:bg-gray-50 dark:hover:bg-[#241C16] transition-colors">
+                      <td className="px-4 py-3 text-gray-600 dark:text-[#E8DDD0]/70 font-mono text-xs">{payment.id.slice(0, 12)}...</td>
+                      <td className="px-4 py-3 text-gray-900 dark:text-white">{payment.customerName || '-'}</td>
+                      <td className="px-4 py-3 text-right font-medium text-gray-900 dark:text-white">₹{payment.amount?.toLocaleString('en-IN')}</td>
                       <td className="px-4 py-3"><Badge variant="outline">{payment.paymentType}</Badge></td>
-                      <td className="px-4 py-3 text-gray-600">{payment.provider}</td>
+                      <td className="px-4 py-3 text-gray-600 dark:text-[#E8DDD0]/70">{payment.provider}</td>
                       <td className="px-4 py-3">{getPaymentStatusBadge(payment.status)}</td>
-                      <td className="px-4 py-3 text-gray-500">{dayjs(payment.createdAt).format('DD MMM YYYY')}</td>
+                      <td className="px-4 py-3 text-gray-500 dark:text-[#E8DDD0]/60">{dayjs(payment.createdAt).format('DD MMM YYYY')}</td>
                       <td className="px-4 py-3">
                         <Button variant="ghost" size="sm" onClick={() => setSelectedPayment(payment)}>
                           <Eye className="h-4 w-4" />
@@ -238,7 +238,7 @@ export default function PaymentsPage() {
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex items-center justify-between">
-          <p className="text-sm text-gray-500">Page {page + 1} of {totalPages}</p>
+          <p className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">Page {page + 1} of {totalPages}</p>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" disabled={page === 0} onClick={() => setPage(page - 1)}>
               <ChevronLeft className="h-4 w-4" /> Previous
@@ -253,10 +253,10 @@ export default function PaymentsPage() {
       {/* Detail Modal */}
       {selectedPayment && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4" onClick={() => setSelectedPayment(null)}>
-          <div className="bg-white rounded-xl shadow-xl max-w-lg w-full max-h-[80vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between p-6 border-b border-gray-200">
-              <h2 className="text-lg font-semibold text-gray-900">Payment Details</h2>
-              <button onClick={() => setSelectedPayment(null)} className="text-gray-400 hover:text-gray-600">
+          <div className="bg-white dark:bg-[#1A1210] rounded-xl shadow-xl max-w-lg w-full max-h-[80vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+            <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-[#D4AF37]/10">
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white">Payment Details</h2>
+              <button onClick={() => setSelectedPayment(null)} className="text-gray-400 dark:text-[#E8DDD0]/40 hover:text-gray-600 dark:hover:text-[#E8DDD0]/70">
                 <XCircle className="h-5 w-5" />
               </button>
             </div>
@@ -285,8 +285,8 @@ export default function PaymentsPage() {
 function DetailRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-start justify-between gap-4">
-      <span className="text-sm text-gray-500 shrink-0">{label}</span>
-      <span className="text-sm font-medium text-gray-900 text-right break-all">{value}</span>
+      <span className="text-sm text-gray-500 dark:text-[#E8DDD0]/60 shrink-0">{label}</span>
+      <span className="text-sm font-medium text-gray-900 dark:text-white text-right break-all">{value}</span>
     </div>
   );
 }

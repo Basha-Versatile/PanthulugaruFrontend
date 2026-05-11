@@ -96,7 +96,7 @@ export default function PGDetailPage({ params }: { params: Promise<{ id: string 
   if (!pg) {
     return (
       <div className="text-center py-16">
-        <p className="text-gray-500 mb-4">PG not found</p>
+        <p className="text-gray-500 dark:text-[#E8DDD0]/60 mb-4">PG not found</p>
         <Button variant="outline" onClick={() => router.push('/admin/pgs')}>
           <ArrowLeft className="h-4 w-4" /> Back to list
         </Button>
@@ -113,8 +113,8 @@ export default function PGDetailPage({ params }: { params: Promise<{ id: string 
             <ArrowLeft className="h-4 w-4" />
           </Button>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">{pg.firstName} {pg.lastName}</h1>
-            <p className="text-sm text-gray-500">PG ID: {pg.id}</p>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{pg.firstName} {pg.lastName}</h1>
+            <p className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">PG ID: {pg.id}</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -143,9 +143,9 @@ export default function PGDetailPage({ params }: { params: Promise<{ id: string 
                 <InfoRow label="Specializations" value={pg.specializations?.join(', ') || '-'} />
               </div>
               {pg.aboutMe && (
-                <div className="mt-4 pt-4 border-t border-gray-100">
-                  <p className="text-sm font-medium text-gray-500 mb-1">About</p>
-                  <p className="text-sm text-gray-700">{pg.aboutMe}</p>
+                <div className="mt-4 pt-4 border-t border-gray-100 dark:border-[#D4AF37]/5">
+                  <p className="text-sm font-medium text-gray-500 dark:text-[#E8DDD0]/60 mb-1">About</p>
+                  <p className="text-sm text-gray-700 dark:text-[#E8DDD0]/80">{pg.aboutMe}</p>
                 </div>
               )}
             </CardContent>
@@ -158,8 +158,8 @@ export default function PGDetailPage({ params }: { params: Promise<{ id: string 
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <InfoRow label="Email" value={pg.email} icon={<Mail className="h-4 w-4 text-gray-400" />} />
-                <InfoRow label="Phone" value={pg.phone} icon={<Phone className="h-4 w-4 text-gray-400" />} />
+                <InfoRow label="Email" value={pg.email} icon={<Mail className="h-4 w-4 text-gray-400 dark:text-[#E8DDD0]/40" />} />
+                <InfoRow label="Phone" value={pg.phone} icon={<Phone className="h-4 w-4 text-gray-400 dark:text-[#E8DDD0]/40" />} />
               </div>
             </CardContent>
           </Card>
@@ -173,12 +173,12 @@ export default function PGDetailPage({ params }: { params: Promise<{ id: string 
               {pg.rituals && pg.rituals.length > 0 ? (
                 <div className="space-y-3">
                   {pg.rituals.map((r, idx) => (
-                    <div key={idx} className="p-3 bg-gray-50 rounded-lg">
-                      <p className="font-medium text-gray-900 text-sm">{r.ritualName}</p>
+                    <div key={idx} className="p-3 bg-gray-50 dark:bg-[#241C16] rounded-lg">
+                      <p className="font-medium text-gray-900 dark:text-white text-sm">{r.ritualName}</p>
                       {r.subRituals && r.subRituals.length > 0 && (
                         <div className="mt-2 space-y-1">
                           {r.subRituals.map((sr, si) => (
-                            <div key={si} className="flex items-center justify-between text-xs text-gray-600 pl-3">
+                            <div key={si} className="flex items-center justify-between text-xs text-gray-600 dark:text-[#E8DDD0]/70 pl-3">
                               <span>{sr.subRitualName}</span>
                               <span className="font-medium">₹{sr.price?.toLocaleString('en-IN')}</span>
                             </div>
@@ -189,7 +189,7 @@ export default function PGDetailPage({ params }: { params: Promise<{ id: string 
                   ))}
                 </div>
               ) : (
-                <p className="text-sm text-gray-400">No rituals added</p>
+                <p className="text-sm text-gray-400 dark:text-[#E8DDD0]/40">No rituals added</p>
               )}
             </CardContent>
           </Card>
@@ -205,12 +205,12 @@ export default function PGDetailPage({ params }: { params: Promise<{ id: string 
                   {pg.serviceAreas.map((area, idx) => (
                     <Badge key={idx} variant="outline">
                       {area.city}, {area.district}, {area.state}
-                      {area.isPrimary && <span className="ml-1 text-[#E07B39]">(Primary)</span>}
+                      {area.isPrimary && <span className="ml-1 text-[#FF6B00]">(Primary)</span>}
                     </Badge>
                   ))}
                 </div>
               ) : (
-                <p className="text-sm text-gray-400">No service areas added</p>
+                <p className="text-sm text-gray-400 dark:text-[#E8DDD0]/40">No service areas added</p>
               )}
             </CardContent>
           </Card>
@@ -244,11 +244,11 @@ export default function PGDetailPage({ params }: { params: Promise<{ id: string 
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1.5">Current Status</label>
+                <label className="block text-sm font-medium text-gray-700 dark:text-[#E8DDD0]/80 mb-1.5">Current Status</label>
                 <select
                   value={statusValue}
                   onChange={(e) => setStatusValue(e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                  className="w-full rounded-lg border border-gray-300 dark:border-[#D4AF37]/15 bg-white dark:bg-[#241C16] px-3 py-2.5 text-sm dark:text-white focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:focus:ring-[#D4AF37]/20 dark:focus:border-[#D4AF37]"
                 >
                   {STATUS_OPTIONS.map((opt) => (
                     <option key={opt.value} value={opt.value}>{opt.label}</option>
@@ -325,10 +325,10 @@ export default function PGDetailPage({ params }: { params: Promise<{ id: string 
 function InfoRow({ label, value, icon }: { label: string; value: string; icon?: React.ReactNode }) {
   return (
     <div>
-      <p className="text-xs font-medium text-gray-500 mb-0.5">{label}</p>
+      <p className="text-xs font-medium text-gray-500 dark:text-[#E8DDD0]/60 mb-0.5">{label}</p>
       <div className="flex items-center gap-1.5">
         {icon}
-        <p className="text-sm text-gray-900">{value}</p>
+        <p className="text-sm text-gray-900 dark:text-white">{value}</p>
       </div>
     </div>
   );
@@ -336,9 +336,9 @@ function InfoRow({ label, value, icon }: { label: string; value: string; icon?: 
 
 function StatRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="flex items-center justify-between py-1.5 border-b border-gray-50 last:border-0">
-      <span className="text-sm text-gray-500">{label}</span>
-      <span className="text-sm font-medium text-gray-900">{value}</span>
+    <div className="flex items-center justify-between py-1.5 border-b border-gray-50 dark:border-[#D4AF37]/5 last:border-0">
+      <span className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">{label}</span>
+      <span className="text-sm font-medium text-gray-900 dark:text-white">{value}</span>
     </div>
   );
 }

@@ -58,8 +58,8 @@ export default function RitualsListPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Rituals</h1>
-        <p className="text-sm text-gray-500">{rituals.length} master rituals</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Rituals</h1>
+        <p className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">{rituals.length} master rituals</p>
       </div>
 
       {/* Search */}
@@ -67,13 +67,13 @@ export default function RitualsListPage() {
         <CardContent className="p-4">
           <div className="flex gap-3 items-center">
             <div className="relative flex-1 min-w-[200px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-[#E8DDD0]/40" />
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search rituals..."
-                className="w-full rounded-lg border border-gray-300 bg-white pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                className="w-full rounded-lg border border-gray-300 dark:border-[#D4AF37]/15 bg-white dark:bg-[#241C16] pl-10 pr-4 py-2 text-sm dark:text-white dark:placeholder:text-[#E8DDD0]/30 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 dark:focus:ring-[#D4AF37]/20 focus:border-[#FF6B00] dark:focus:border-[#D4AF37]"
               />
             </div>
             {search && (
@@ -104,8 +104,8 @@ export default function RitualsListPage() {
       ) : Object.keys(grouped).length === 0 ? (
         <Card>
           <CardContent className="p-12 text-center">
-            <BookOpen className="h-12 w-12 text-gray-300 mx-auto mb-3" />
-            <p className="text-gray-400">No rituals found</p>
+            <BookOpen className="h-12 w-12 text-gray-300 dark:text-[#E8DDD0]/30 mx-auto mb-3" />
+            <p className="text-gray-400 dark:text-[#E8DDD0]/40">No rituals found</p>
           </CardContent>
         </Card>
       ) : (
@@ -113,7 +113,7 @@ export default function RitualsListPage() {
           <Card key={category}>
             <CardHeader>
               <CardTitle className="text-lg flex items-center gap-2">
-                <BookOpen className="h-5 w-5 text-[#E07B39]" />
+                <BookOpen className="h-5 w-5 text-[#FF6B00]" />
                 {category}
                 <Badge variant="saffron" className="ml-2">{items.length}</Badge>
               </CardTitle>
@@ -122,19 +122,19 @@ export default function RitualsListPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-gray-100">
-                      <th className="text-left font-medium text-gray-500 pb-2">Name</th>
-                      <th className="text-left font-medium text-gray-500 pb-2">Sub-rituals</th>
-                      <th className="text-left font-medium text-gray-500 pb-2">Active</th>
-                      <th className="text-left font-medium text-gray-500 pb-2">Banner</th>
-                      <th className="text-left font-medium text-gray-500 pb-2"></th>
+                    <tr className="border-b border-gray-100 dark:border-[#D4AF37]/5">
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Name</th>
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Sub-rituals</th>
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Active</th>
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Banner</th>
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2"></th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-50">
+                  <tbody className="divide-y divide-gray-50 dark:divide-[#D4AF37]/5">
                     {items.map((ritual) => (
                       <tr
                         key={ritual.id}
-                        className="hover:bg-gray-50 cursor-pointer transition-colors"
+                        className="hover:bg-gray-50 dark:hover:bg-[#241C16] cursor-pointer transition-colors"
                         onClick={() => router.push(`/admin/rituals/${ritual.id}`)}
                       >
                         <td className="py-3">
@@ -142,19 +142,19 @@ export default function RitualsListPage() {
                             {ritual.image ? (
                               <img src={ritual.image} alt={ritual.name} className="h-10 w-10 rounded-lg object-cover" />
                             ) : (
-                              <div className="h-10 w-10 rounded-lg bg-[#E07B39]/10 flex items-center justify-center">
-                                <BookOpen className="h-5 w-5 text-[#E07B39]" />
+                              <div className="h-10 w-10 rounded-lg bg-[#FF6B00]/10 flex items-center justify-center">
+                                <BookOpen className="h-5 w-5 text-[#FF6B00]" />
                               </div>
                             )}
                             <div>
-                              <p className="font-medium text-gray-900">{ritual.name}</p>
+                              <p className="font-medium text-gray-900 dark:text-white">{ritual.name}</p>
                               {ritual.nameLocalized?.te && (
-                                <p className="text-xs text-gray-400">{ritual.nameLocalized.te}</p>
+                                <p className="text-xs text-gray-400 dark:text-[#E8DDD0]/40">{ritual.nameLocalized.te}</p>
                               )}
                             </div>
                           </div>
                         </td>
-                        <td className="py-3 text-gray-600">{ritual.subRituals?.length ?? 0}</td>
+                        <td className="py-3 text-gray-600 dark:text-[#E8DDD0]/70">{ritual.subRituals?.length ?? 0}</td>
                         <td className="py-3">
                           {ritual.isActive ? <Badge variant="green">Active</Badge> : <Badge variant="red">Inactive</Badge>}
                         </td>
@@ -162,11 +162,11 @@ export default function RitualsListPage() {
                           {ritual.bannerImage ? (
                             <Badge variant="saffron"><Image className="h-3 w-3" /> Yes</Badge>
                           ) : (
-                            <span className="text-gray-400">-</span>
+                            <span className="text-gray-400 dark:text-[#E8DDD0]/40">-</span>
                           )}
                         </td>
                         <td className="py-3">
-                          <ChevronRight className="h-4 w-4 text-gray-400" />
+                          <ChevronRight className="h-4 w-4 text-gray-400 dark:text-[#E8DDD0]/40" />
                         </td>
                       </tr>
                     ))}

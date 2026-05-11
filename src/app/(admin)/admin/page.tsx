@@ -61,7 +61,7 @@ export default function AdminDashboardPage() {
   }, []);
 
   const statCards = [
-    { label: 'Total PGs', value: stats?.totalPGs ?? 0, icon: Users, color: 'text-[#E07B39]', bg: 'bg-[#E07B39]/10' },
+    { label: 'Total PGs', value: stats?.totalPGs ?? 0, icon: Users, color: 'text-[#FF6B00]', bg: 'bg-[#FF6B00]/10' },
     { label: 'Total Leads', value: stats?.totalLeads ?? 0, icon: TrendingUp, color: 'text-blue-600', bg: 'bg-blue-50' },
     { label: 'Total Revenue', value: `₹${(stats?.totalRevenue ?? 0).toLocaleString('en-IN')}`, icon: CreditCard, color: 'text-green-600', bg: 'bg-green-50' },
     { label: 'Active Ads', value: stats?.activePGs ?? 0, icon: Megaphone, color: 'text-purple-600', bg: 'bg-purple-50' },
@@ -72,8 +72,8 @@ export default function AdminDashboardPage() {
       {/* Page Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Dashboard</h1>
-          <p className="text-sm text-gray-500">Welcome back! Here is an overview of the platform.</p>
+          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
+          <p className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">Welcome back! Here is an overview of the platform.</p>
         </div>
         <Button variant="outline" size="sm" onClick={fetchStats} disabled={loading}>
           <RefreshCw className={`h-4 w-4 ${loading ? 'animate-spin' : ''}`} />
@@ -98,12 +98,12 @@ export default function AdminDashboardPage() {
                 <Card key={item.label}>
                   <CardContent className="p-6">
                     <div className="flex items-center justify-between mb-3">
-                      <p className="text-sm font-medium text-gray-500">{item.label}</p>
+                      <p className="text-sm font-medium text-gray-500 dark:text-[#E8DDD0]/60">{item.label}</p>
                       <div className={`h-10 w-10 rounded-lg ${item.bg} flex items-center justify-center`}>
                         <Icon className={`h-5 w-5 ${item.color}`} />
                       </div>
                     </div>
-                    <p className="text-2xl font-bold text-gray-900">{item.value}</p>
+                    <p className="text-2xl font-bold text-gray-900 dark:text-white">{item.value}</p>
                   </CardContent>
                 </Card>
               );
@@ -145,7 +145,7 @@ export default function AdminDashboardPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle className="text-lg">Recent Leads</CardTitle>
-            <Link href="/admin/leads" className="text-sm text-[#E07B39] hover:underline flex items-center gap-1">
+            <Link href="/admin/leads" className="text-sm text-[#FF6B00] hover:underline flex items-center gap-1">
               View all <ArrowRight className="h-3 w-3" />
             </Link>
           </CardHeader>
@@ -160,27 +160,27 @@ export default function AdminDashboardPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-gray-100">
-                      <th className="text-left font-medium text-gray-500 pb-2">Customer</th>
-                      <th className="text-left font-medium text-gray-500 pb-2">PG</th>
-                      <th className="text-left font-medium text-gray-500 pb-2">Status</th>
-                      <th className="text-left font-medium text-gray-500 pb-2">Date</th>
+                    <tr className="border-b border-gray-100 dark:border-[#D4AF37]/5">
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Customer</th>
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">PG</th>
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Status</th>
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Date</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-50">
+                  <tbody className="divide-y divide-gray-50 dark:divide-[#D4AF37]/5">
                     {stats.recentLeads.slice(0, 5).map((lead: Lead) => (
-                      <tr key={lead.id} className="hover:bg-gray-50">
-                        <td className="py-2.5 text-gray-900">{lead.customerName}</td>
-                        <td className="py-2.5 text-gray-600 truncate max-w-[120px]">{lead.panthulugaruName}</td>
+                      <tr key={lead.id} className="hover:bg-gray-50 dark:hover:bg-[#241C16]">
+                        <td className="py-2.5 text-gray-900 dark:text-white">{lead.customerName}</td>
+                        <td className="py-2.5 text-gray-600 dark:text-[#E8DDD0]/70 truncate max-w-[120px]">{lead.panthulugaruName}</td>
                         <td className="py-2.5">{getLeadStatusBadge(lead.status)}</td>
-                        <td className="py-2.5 text-gray-500">{dayjs(lead.createdAt).format('DD MMM')}</td>
+                        <td className="py-2.5 text-gray-500 dark:text-[#E8DDD0]/60">{dayjs(lead.createdAt).format('DD MMM')}</td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
               </div>
             ) : (
-              <p className="text-sm text-gray-400 text-center py-8">No recent leads</p>
+              <p className="text-sm text-gray-400 dark:text-[#E8DDD0]/40 text-center py-8">No recent leads</p>
             )}
           </CardContent>
         </Card>
@@ -189,7 +189,7 @@ export default function AdminDashboardPage() {
         <Card>
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle className="text-lg">Recent Bookings</CardTitle>
-            <Link href="/admin/payments" className="text-sm text-[#E07B39] hover:underline flex items-center gap-1">
+            <Link href="/admin/payments" className="text-sm text-[#FF6B00] hover:underline flex items-center gap-1">
               View all <ArrowRight className="h-3 w-3" />
             </Link>
           </CardHeader>
@@ -204,19 +204,19 @@ export default function AdminDashboardPage() {
               <div className="overflow-x-auto">
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b border-gray-100">
-                      <th className="text-left font-medium text-gray-500 pb-2">Customer</th>
-                      <th className="text-left font-medium text-gray-500 pb-2">Ritual</th>
-                      <th className="text-right font-medium text-gray-500 pb-2">Amount</th>
-                      <th className="text-left font-medium text-gray-500 pb-2">Status</th>
+                    <tr className="border-b border-gray-100 dark:border-[#D4AF37]/5">
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Customer</th>
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Ritual</th>
+                      <th className="text-right font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Amount</th>
+                      <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 pb-2">Status</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-gray-50">
+                  <tbody className="divide-y divide-gray-50 dark:divide-[#D4AF37]/5">
                     {stats.recentBookings.slice(0, 5).map((booking: BookingCeremony) => (
-                      <tr key={booking.id} className="hover:bg-gray-50">
-                        <td className="py-2.5 text-gray-900">{booking.customerName}</td>
-                        <td className="py-2.5 text-gray-600 truncate max-w-[120px]">{booking.ritualName}</td>
-                        <td className="py-2.5 text-right text-gray-900 font-medium">₹{booking.amount?.toLocaleString('en-IN')}</td>
+                      <tr key={booking.id} className="hover:bg-gray-50 dark:hover:bg-[#241C16]">
+                        <td className="py-2.5 text-gray-900 dark:text-white">{booking.customerName}</td>
+                        <td className="py-2.5 text-gray-600 dark:text-[#E8DDD0]/70 truncate max-w-[120px]">{booking.ritualName}</td>
+                        <td className="py-2.5 text-right text-gray-900 dark:text-white font-medium">₹{booking.amount?.toLocaleString('en-IN')}</td>
                         <td className="py-2.5">{getPaymentStatusBadge(booking.paymentStatus)}</td>
                       </tr>
                     ))}
@@ -224,7 +224,7 @@ export default function AdminDashboardPage() {
                 </table>
               </div>
             ) : (
-              <p className="text-sm text-gray-400 text-center py-8">No recent bookings</p>
+              <p className="text-sm text-gray-400 dark:text-[#E8DDD0]/40 text-center py-8">No recent bookings</p>
             )}
           </CardContent>
         </Card>
@@ -245,9 +245,9 @@ export default function AdminDashboardPage() {
               { label: 'Completed', value: stats?.completedBookings ?? 0 },
               { label: 'Cancelled', value: stats?.cancelledBookings ?? 0 },
             ].map((item) => (
-              <div key={item.label} className="text-center p-3 rounded-lg bg-gray-50">
-                <p className="text-2xl font-bold text-gray-900">{item.value}</p>
-                <p className="text-xs text-gray-500 mt-1">{item.label}</p>
+              <div key={item.label} className="text-center p-3 rounded-lg bg-gray-50 dark:bg-[#241C16]">
+                <p className="text-2xl font-bold text-gray-900 dark:text-white">{item.value}</p>
+                <p className="text-xs text-gray-500 dark:text-[#E8DDD0]/60 mt-1">{item.label}</p>
               </div>
             ))}
           </div>

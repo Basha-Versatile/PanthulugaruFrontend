@@ -99,11 +99,16 @@ export function PGAuthProvider({ children }: { children: ReactNode }) {
     refreshProfile();
   }, [refreshProfile, updateApprovalState]);
 
+  const extractPGData = (data: any) => {
+    return data.user || data.pg;
+  };
+
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
       const response = await pgEmailLogin({ email, password });
       if (response.success && response.data) {
-        const { token, user: userData } = response.data;
+        const { token } = response.data;
+        const userData = extractPGData(response.data);
         if (typeof window !== "undefined") {
           localStorage.setItem("pg_panthulugaru_token", token);
           localStorage.setItem("pg_panthulugaru_user", JSON.stringify(userData));
@@ -125,7 +130,8 @@ export function PGAuthProvider({ children }: { children: ReactNode }) {
     try {
       const response = await pgEmailSignup(data);
       if (response.success && response.data) {
-        const { token, user: userData } = response.data;
+        const { token } = response.data;
+        const userData = extractPGData(response.data);
         if (typeof window !== "undefined") {
           localStorage.setItem("pg_panthulugaru_token", token);
           localStorage.setItem("pg_panthulugaru_user", JSON.stringify(userData));
@@ -147,7 +153,8 @@ export function PGAuthProvider({ children }: { children: ReactNode }) {
     try {
       const response = await verifyPGOtp({ phone, otp });
       if (response.success && response.data) {
-        const { token, user: userData } = response.data;
+        const { token } = response.data;
+        const userData = extractPGData(response.data);
         if (typeof window !== "undefined") {
           localStorage.setItem("pg_panthulugaru_token", token);
           localStorage.setItem("pg_panthulugaru_user", JSON.stringify(userData));

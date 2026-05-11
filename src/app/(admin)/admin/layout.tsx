@@ -23,10 +23,10 @@ function AdminAuthGuard({ children }: { children: React.ReactNode }) {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-[#0D0907]">
         <div className="flex flex-col items-center gap-4">
-          <div className="h-10 w-10 border-4 border-[#E07B39] border-t-transparent rounded-full animate-spin" />
-          <p className="text-sm text-gray-500">Loading...</p>
+          <div className="h-10 w-10 border-4 border-[#FF6B00] border-t-transparent rounded-full animate-spin" />
+          <p className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">Loading...</p>
         </div>
       </div>
     );

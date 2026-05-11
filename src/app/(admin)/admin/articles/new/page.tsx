@@ -79,8 +79,8 @@ export default function NewArticlePage() {
             <ArrowLeft className="h-4 w-4" />
           </Button>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">New Article</h1>
-            <p className="text-sm text-gray-500">Create a new article</p>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">New Article</h1>
+            <p className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">Create a new article</p>
           </div>
         </div>
         <div className="flex items-center gap-2">
@@ -103,12 +103,12 @@ export default function NewArticlePage() {
             {coverImage && (
               <img src={coverImage} alt="Cover" className="w-full h-64 object-cover rounded-lg mb-6" />
             )}
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">{title || 'Untitled'}</h1>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{title || 'Untitled'}</h1>
             <div className="flex items-center gap-2 mb-6">
-              {category && <span className="text-sm text-[#E07B39]">{category}</span>}
-              <span className="text-sm text-gray-400">{language.toUpperCase()}</span>
+              {category && <span className="text-sm text-[#FF6B00]">{category}</span>}
+              <span className="text-sm text-gray-400 dark:text-[#E8DDD0]/40">{language.toUpperCase()}</span>
             </div>
-            <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: content }} />
+            <div className="prose max-w-none dark:prose-invert" dangerouslySetInnerHTML={{ __html: content }} />
           </CardContent>
         </Card>
       ) : (
@@ -126,7 +126,7 @@ export default function NewArticlePage() {
                   placeholder="Enter article title"
                 />
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Body</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-[#E8DDD0]/80 mb-1.5">Body</label>
                   <div className="min-h-[300px]">
                     <ReactQuill
                       theme="snow"
@@ -148,11 +148,11 @@ export default function NewArticlePage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Language</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-[#E8DDD0]/80 mb-1.5">Language</label>
                   <select
                     value={language}
                     onChange={(e) => setLanguage(e.target.value)}
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                    className="w-full rounded-lg border border-gray-300 dark:border-[#D4AF37]/15 bg-white dark:bg-[#241C16] dark:text-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:focus:ring-[#D4AF37]/20 dark:focus:border-[#D4AF37]"
                   >
                     <option value="en">English</option>
                     <option value="hi">Hindi</option>
@@ -160,11 +160,11 @@ export default function NewArticlePage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-1.5">Category</label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-[#E8DDD0]/80 mb-1.5">Category</label>
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full rounded-lg border border-gray-300 bg-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                    className="w-full rounded-lg border border-gray-300 dark:border-[#D4AF37]/15 bg-white dark:bg-[#241C16] dark:text-white px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 focus:border-[#FF6B00] dark:focus:ring-[#D4AF37]/20 dark:focus:border-[#D4AF37]"
                   >
                     <option value="">Select category</option>
                     {CATEGORIES.map((c) => (

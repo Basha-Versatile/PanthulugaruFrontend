@@ -83,8 +83,8 @@ export default function PhotographersPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Photographers</h1>
-        <p className="text-sm text-gray-500">{totalElements} registered photographers</p>
+        <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Photographers</h1>
+        <p className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">{totalElements} registered photographers</p>
       </div>
 
       {/* Filters */}
@@ -92,19 +92,19 @@ export default function PhotographersPage() {
         <CardContent className="p-4">
           <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
             <div className="relative flex-1 min-w-[200px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 dark:text-[#E8DDD0]/40" />
               <input
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search by name, phone, city..."
-                className="w-full rounded-lg border border-gray-300 bg-white pl-10 pr-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+                className="w-full rounded-lg border border-gray-300 dark:border-[#D4AF37]/15 bg-white dark:bg-[#241C16] pl-10 pr-4 py-2 text-sm dark:text-white dark:placeholder:text-[#E8DDD0]/30 focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 dark:focus:ring-[#D4AF37]/20 focus:border-[#FF6B00] dark:focus:border-[#D4AF37]"
               />
             </div>
             <select
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
-              className="rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#E07B39]/20 focus:border-[#E07B39]"
+              className="rounded-lg border border-gray-300 dark:border-[#D4AF37]/15 bg-white dark:bg-[#241C16] px-3 py-2 text-sm dark:text-white focus:outline-none focus:ring-2 focus:ring-[#FF6B00]/20 dark:focus:ring-[#D4AF37]/20 focus:border-[#FF6B00] dark:focus:border-[#D4AF37]"
             >
               <option value="">All Status</option>
               <option value="DRAFT">Draft</option>
@@ -126,17 +126,17 @@ export default function PhotographersPage() {
         <CardContent className="p-0">
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="bg-gray-50 border-b border-gray-200 sticky top-0">
+              <thead className="bg-gray-50 dark:bg-[#241C16] border-b border-gray-200 dark:border-[#D4AF37]/10 sticky top-0">
                 <tr>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Name</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Phone</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">City</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Specializations</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Status</th>
-                  <th className="text-left font-medium text-gray-500 px-4 py-3">Created</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Name</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Phone</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">City</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Specializations</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Status</th>
+                  <th className="text-left font-medium text-gray-500 dark:text-[#E8DDD0]/60 px-4 py-3">Created</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-100">
+              <tbody className="divide-y divide-gray-100 dark:divide-[#D4AF37]/5">
                 {loading ? (
                   Array.from({ length: 8 }).map((_, i) => (
                     <tr key={i}>
@@ -147,25 +147,25 @@ export default function PhotographersPage() {
                   ))
                 ) : photographers.length === 0 ? (
                   <tr>
-                    <td colSpan={6} className="text-center py-12 text-gray-400">
-                      <Camera className="h-8 w-8 mx-auto mb-2 text-gray-300" />
+                    <td colSpan={6} className="text-center py-12 text-gray-400 dark:text-[#E8DDD0]/40">
+                      <Camera className="h-8 w-8 mx-auto mb-2 text-gray-300 dark:text-[#E8DDD0]/30" />
                       No photographers found.
                     </td>
                   </tr>
                 ) : (
                   photographers.map((p) => (
-                    <tr key={p.id} className="hover:bg-gray-50 transition-colors">
+                    <tr key={p.id} className="hover:bg-gray-50 dark:hover:bg-[#241C16] transition-colors">
                       <td className="px-4 py-3">
                         <div className="flex items-center gap-3">
                           <Avatar src={p.profileImage} fallback={`${p.firstName} ${p.lastName}`} size="sm" />
                           <div>
-                            <p className="font-medium text-gray-900">{p.firstName} {p.lastName}</p>
-                            <p className="text-xs text-gray-400">{p.email}</p>
+                            <p className="font-medium text-gray-900 dark:text-white">{p.firstName} {p.lastName}</p>
+                            <p className="text-xs text-gray-400 dark:text-[#E8DDD0]/40">{p.email}</p>
                           </div>
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-gray-600">{p.phone}</td>
-                      <td className="px-4 py-3 text-gray-600">{p.primaryCity || '-'}</td>
+                      <td className="px-4 py-3 text-gray-600 dark:text-[#E8DDD0]/70">{p.phone}</td>
+                      <td className="px-4 py-3 text-gray-600 dark:text-[#E8DDD0]/70">{p.primaryCity || '-'}</td>
                       <td className="px-4 py-3">
                         <div className="flex flex-wrap gap-1 max-w-[200px]">
                           {p.specializations?.slice(0, 3).map((s, i) => (
@@ -177,7 +177,7 @@ export default function PhotographersPage() {
                         </div>
                       </td>
                       <td className="px-4 py-3">{getStatusBadge(p.status)}</td>
-                      <td className="px-4 py-3 text-gray-500">{dayjs(p.createdAt).format('DD MMM YYYY')}</td>
+                      <td className="px-4 py-3 text-gray-500 dark:text-[#E8DDD0]/60">{dayjs(p.createdAt).format('DD MMM YYYY')}</td>
                     </tr>
                   ))
                 )}
@@ -190,7 +190,7 @@ export default function PhotographersPage() {
       {/* Pagination */}
       {totalPages > 1 && (
         <div className="flex items-center justify-between">
-          <p className="text-sm text-gray-500">Page {page + 1} of {totalPages}</p>
+          <p className="text-sm text-gray-500 dark:text-[#E8DDD0]/60">Page {page + 1} of {totalPages}</p>
           <div className="flex items-center gap-2">
             <Button variant="outline" size="sm" disabled={page === 0} onClick={() => setPage(page - 1)}>
               <ChevronLeft className="h-4 w-4" /> Previous

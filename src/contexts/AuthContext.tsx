@@ -70,11 +70,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     checkAuth();
   }, [checkAuth]);
 
+  const extractUserData = (data: any) => {
+    return data.user || data.customer;
+  };
+
   const login = async (email: string, password: string): Promise<boolean> => {
     try {
       const response = await customerEmailLogin({ email, password });
       if (response.success && response.data) {
-        const { token, user: userData } = response.data;
+        const { token } = response.data;
+        const userData = extractUserData(response.data);
         if (typeof window !== "undefined") {
           localStorage.setItem("pg_customer_token", token);
           localStorage.setItem("pg_user", JSON.stringify(userData));
@@ -95,7 +100,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       const response = await customerEmailSignup(data);
       if (response.success && response.data) {
-        const { token, user: userData } = response.data;
+        const { token } = response.data;
+        const userData = extractUserData(response.data);
         if (typeof window !== "undefined") {
           localStorage.setItem("pg_customer_token", token);
           localStorage.setItem("pg_user", JSON.stringify(userData));
@@ -116,7 +122,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     try {
       const response = await customerGoogleAuth(data);
       if (response.success && response.data) {
-        const { token, user: userData } = response.data;
+        const { token } = response.data;
+        const userData = extractUserData(response.data);
         if (typeof window !== "undefined") {
           localStorage.setItem("pg_customer_token", token);
           localStorage.setItem("pg_user", JSON.stringify(userData));
